@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { motion, AnimatePresence } from 'framer-motion';
+import { LOGO_URL, LOGO_ALT, LOGO_DIMENSIONS } from '../../assets/images/logo';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -40,18 +41,29 @@ export const Navbar: FC = () => {
         className="container mx-auto px-6 lg:px-8" 
         aria-label="Global"
       >
-        <div className="flex h-12 items-center justify-between">
+        <div className="flex h-16 items-center justify-between">
           <div className="flex lg:flex-1">
             <Link 
               to="/" 
-              className="-m-1.5 p-1.5 transition-opacity hover:opacity-75"
+              className="flex items-center space-x-2 transition-opacity hover:opacity-90"
             >
-              <span className="sr-only">SACKOBA Qatar</span>
-              <img 
-                className="h-6 w-auto" 
-                src="/logo.png" 
-                alt="SACKOBA Qatar" 
-              />
+              <div className="relative w-[40px] h-[40px]">
+                <img 
+                  src={LOGO_URL}
+                  alt={LOGO_ALT}
+                  width={LOGO_DIMENSIONS.navbar.width}
+                  height={LOGO_DIMENSIONS.navbar.height}
+                  className="object-contain"
+                />
+              </div>
+              <div className="hidden md:block">
+                <h1 className="text-sm font-medium text-primary-700">
+                  St. Anthony's College
+                </h1>
+                <p className="text-2xs text-primary-500">
+                  Kandy OBA Qatar
+                </p>
+              </div>
             </Link>
           </div>
           
@@ -123,15 +135,26 @@ export const Navbar: FC = () => {
               <div className="flex items-center justify-between">
                 <Link 
                   to="/" 
-                  className="-m-1.5 p-1.5" 
+                  className="flex items-center space-x-2"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <span className="sr-only">SACKOBA Qatar</span>
-                  <img 
-                    className="h-6 w-auto" 
-                    src="/logo.png" 
-                    alt="SACKOBA Qatar" 
-                  />
+                  <div className="relative w-[40px] h-[40px]">
+                    <img 
+                      src={LOGO_URL}
+                      alt={LOGO_ALT}
+                      width={LOGO_DIMENSIONS.navbar.width}
+                      height={LOGO_DIMENSIONS.navbar.height}
+                      className="object-contain"
+                    />
+                  </div>
+                  <div>
+                    <h1 className="text-sm font-medium text-primary-700">
+                      St. Anthony's College
+                    </h1>
+                    <p className="text-2xs text-primary-500">
+                      Kandy OBA Qatar
+                    </p>
+                  </div>
                 </Link>
                 <button
                   type="button"
