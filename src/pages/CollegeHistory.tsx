@@ -1,94 +1,111 @@
 import { FC } from 'react';
 import { motion } from 'framer-motion';
+import { HistorySection } from '../components/history/HistorySection';
+import { HistoryTimeline } from '../components/history/HistoryTimeline';
 
-interface TimelineEvent {
-  year: string;
-  events: string[];
-}
-
-const timeline: TimelineEvent[] = [
+const timelineEvents = [
   {
-    year: '1908',
-    events: [
-      'Reclamation Grounds granted by the Kandy Municipal Council for college sports',
-      'Release of the first college publication, "St. Anthony\'s Manual"',
-      'New buildings replace the old red building near the Bishop\'s Palace'
-    ],
+    year: '1820',
+    title: 'The Beginning',
+    description: 'Vincent de Rozairo became the first missionary to Kandy, establishing a church on the grounds of the present Scots Kirk.'
   },
   {
-    year: '1909',
-    events: [
-      'Death of Charlie Hamilton, a promising young student-athlete',
-      'The Physical Laboratory is dedicated to his memory'
-    ],
+    year: '1828',
+    title: 'New Church Site',
+    description: 'Governor-General Sir Edward Barnes presented the Catholic Church with a new site, where St. Anthony\'s Cathedral stands today.'
   },
   {
-    year: '2003',
-    events: [
-      'Formation of an "Ex-Boarders" subcommittee by the OBA Colombo Branch',
-      'Active support from Old Boys Associations (OBAs) worldwide',
-      'Launch of the OBA Colombo Branch website'
-    ],
+    year: '1854',
+    title: 'School Foundation',
+    description: 'Fr. Felice Zoppi opened St. Anthony\'s School with 62 boys and 28 girls.'
   },
+  {
+    year: '1876',
+    title: 'Boarding Introduction',
+    description: 'Boarding life was first introduced under Fr. D. Paul Perera O.S.B.'
+  },
+  {
+    year: '1927',
+    title: 'Move to Katugastota',
+    description: 'Bishop Bede Beeckmeyer purchased the old Dunuwille Walauwa, the present premises.'
+  },
+  {
+    year: '1954',
+    title: 'Centenary Year',
+    description: 'The Golden Year of the College, marked by academic excellence and sporting achievements.'
+  }
 ];
 
 export const CollegeHistory: FC = () => {
   return (
-    <div className="bg-white py-16">
-      <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h1 className="text-4xl font-bold text-gray-900 mb-12">College History</h1>
-
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-4 md:left-1/2 h-full w-0.5 bg-gray-200 transform -translate-x-1/2" />
-
-            {/* Timeline events */}
-            {timeline.map((event, index) => (
-              <motion.div
-                key={event.year}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="relative mb-12"
-              >
-                <div className="flex flex-col md:flex-row items-start md:items-center">
-                  {/* Year */}
-                  <div className="flex-1 md:text-right md:pr-8">
-                    <div className="inline-block bg-primary text-white px-4 py-2 rounded-lg text-xl font-bold">
-                      {event.year}
-                    </div>
-                  </div>
-
-                  {/* Timeline dot */}
-                  <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-primary rounded-full transform -translate-x-1/2 mt-3 md:mt-0" />
-
-                  {/* Events */}
-                  <div className="flex-1 pl-8 md:pl-8 mt-4 md:mt-0">
-                    <ul className="space-y-4">
-                      {event.events.map((item, eventIndex) => (
-                        <motion.li
-                          key={eventIndex}
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.5, delay: (index * 0.2) + (eventIndex * 0.1) }}
-                          className="text-gray-600"
-                        >
-                          {item}
-                        </motion.li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      {/* Hero Section */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="relative pt-24 pb-16 overflow-hidden"
+      >
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.h1 
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-900 mb-6"
+            >
+              Our Rich History
+            </motion.h1>
+            <motion.p 
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              className="text-xl text-primary-600 leading-relaxed"
+            >
+              A Legacy of Excellence Since 1854
+            </motion.p>
           </div>
-        </motion.div>
+        </div>
+      </motion.div>
+
+      {/* Main Content */}
+      <div className="container mx-auto px-6 py-16">
+        <div className="max-w-4xl mx-auto">
+          {/* The Beginning */}
+          <HistorySection
+            title="The Beginning"
+            content={`The Roman Catholic Church had established itself in the Maritime areas from 1505. In 1820 the superior of all the Oratorians in Ceylon, Vincent de Rozairo, himself came as the first missionary to Kandy. He put up a church, which occupied the very same grounds whereon the present Scots Kirk stands.`}
+          />
+
+          {/* Foundation Years */}
+          <HistorySection
+            title="Foundation Years"
+            content={`In January of 1854, Fr. Felice Zoppi opened a school for boys and one for girls at the house where he resided, with Mr. Van Twest as Head Teacher of the Boys School. This was the birth of St. Anthony's School. The number of students on roll at the inception was 62 boys and 28 girls.`}
+          />
+
+          {/* Timeline */}
+          <div className="my-20">
+            <h2 className="text-3xl font-display font-bold text-primary-900 mb-12 text-center">
+              Key Milestones
+            </h2>
+            <HistoryTimeline events={timelineEvents} />
+          </div>
+
+          {/* The Centenary */}
+          <HistorySection
+            title="The Centenary (1954)"
+            content={`1954, the Centenary year, is described as the 'Golden Year' of the College. The most memorable event was the Big Match, in which the Antonians triumphed over their traditional rivals Trinity College by an innings, with A.C.M. Lafir and Ronnie Stevens putting on a partnership of 276 runs for the first wicket, establishing a new schools record.`}
+          />
+
+          {/* Modern Era */}
+          <HistorySection
+            title="The Modern Era"
+            content={`Today, St. Anthony's College continues to uphold its tradition of excellence in both academics and sports. The college has produced numerous national athletes, cricketers, and leaders in various fields, while maintaining its commitment to holistic education and character development.`}
+          />
+        </div>
       </div>
     </div>
   );
 };
+
+export default CollegeHistory;
