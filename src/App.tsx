@@ -7,6 +7,7 @@ import { VideoGallery } from './pages/VideoGallery';
 import { CollegeHistory } from './pages/CollegeHistory';
 import { Exco } from './pages/Exco';
 import { Contact } from './pages/Contact';
+import { Events } from './pages/Events';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/history" element={<CollegeHistory />} />
           <Route path="/exco" element={<Exco />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/events" element={<Events />} />
         </Routes>
       </Layout>
     </Router>
