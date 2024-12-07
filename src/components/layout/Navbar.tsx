@@ -116,75 +116,76 @@ export const Navbar: FC = () => {
         {mobileMenuOpen && (
           <Dialog
             as="div"
+            className="lg:hidden"
             open={mobileMenuOpen}
             onClose={setMobileMenuOpen}
-            className="lg:hidden"
           >
             <div className="fixed inset-0 z-10 bg-black/20 backdrop-blur-sm" />
-            <Dialog.Panel 
-              as={motion.div}
-              initial={{ x: '100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '100%' }}
-              transition={{ type: "spring", bounce: 0, duration: 0.4 }}
-              className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm"
-            >
-              <div className="flex items-center justify-between">
-                <Link 
-                  to="/" 
-                  className="flex items-center space-x-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <div className="relative w-[40px] h-[40px]">
-                    <img 
-                      src={LOGO_URL}
-                      alt={LOGO_ALT}
-                      width={LOGO_DIMENSIONS.navbar.width}
-                      height={LOGO_DIMENSIONS.navbar.height}
-                      className="object-contain"
-                    />
-                  </div>
-                  <div>
-                    <h1 className="text-sm font-medium text-primary-700">
-                      St. Anthony's College
-                    </h1>
-                    <p className="text-2xs text-primary-500">
-                      Kandy OBA Qatar
-                    </p>
-                  </div>
-                </Link>
-                <button
-                  type="button"
-                  className="-m-2.5 rounded-full p-2.5 text-gray-700"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <span className="sr-only">Close menu</span>
-                  <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
-              </div>
-              <div className="mt-6 flow-root">
-                <div className="-my-6 divide-y divide-gray-500/10">
-                  <div className="space-y-1 py-6">
-                    {navigation.map((item) => {
-                      const isActive = location.pathname === item.href;
-                      return (
-                        <Link
-                          key={item.name}
-                          to={item.href}
-                          className={`block rounded-lg px-3 py-2 text-base font-medium transition-colors ${
-                            isActive
-                              ? 'bg-primary-50 text-primary-600'
-                              : 'text-primary-500 hover:bg-primary-50 hover:text-primary-600'
-                          }`}
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          {item.name}
-                        </Link>
-                      );
-                    })}
+            <Dialog.Panel>
+              <motion.div
+                initial={{ x: '100%' }}
+                animate={{ x: 0 }}
+                exit={{ x: '100%' }}
+                transition={{ type: "spring", bounce: 0, duration: 0.4 }}
+                className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm"
+              >
+                <div className="flex items-center justify-between">
+                  <Link 
+                    to="/" 
+                    className="flex items-center space-x-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <div className="relative w-[40px] h-[40px]">
+                      <img 
+                        src={LOGO_URL}
+                        alt={LOGO_ALT}
+                        width={LOGO_DIMENSIONS.navbar.width}
+                        height={LOGO_DIMENSIONS.navbar.height}
+                        className="object-contain"
+                      />
+                    </div>
+                    <div>
+                      <h1 className="text-sm font-medium text-primary-700">
+                        St. Anthony's College
+                      </h1>
+                      <p className="text-2xs text-primary-500">
+                        Kandy OBA Qatar
+                      </p>
+                    </div>
+                  </Link>
+                  <button
+                    type="button"
+                    className="-m-2.5 rounded-full p-2.5 text-gray-700"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <span className="sr-only">Close menu</span>
+                    <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                  </button>
+                </div>
+                <div className="mt-6 flow-root">
+                  <div className="-my-6 divide-y divide-gray-500/10">
+                    <div className="space-y-1 py-6">
+                      {navigation.map((item) => {
+                        const isActive = location.pathname === item.href;
+                        return (
+                          <Link
+                            key={item.name}
+                            to={item.href}
+                            className={`block rounded-lg px-3 py-2 text-base font-medium transition-colors ${
+                              isActive
+                                ? 'bg-primary-50 text-primary-600'
+                                : 'text-primary-500 hover:bg-primary-50 hover:text-primary-600'
+                            }`}
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {item.name}
+                          </Link>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </Dialog.Panel>
           </Dialog>
         )}
