@@ -114,14 +114,11 @@ export const Navbar: FC = () => {
 
       <AnimatePresence>
         {mobileMenuOpen && (
-          <Dialog 
-            as={motion.div} 
-            initial={{ opacity: 0 }} 
-            animate={{ opacity: 1 }} 
-            exit={{ opacity: 0 }}
-            className="lg:hidden" 
-            open={mobileMenuOpen} 
+          <Dialog
+            as="div"
+            open={mobileMenuOpen}
             onClose={setMobileMenuOpen}
+            className="lg:hidden"
           >
             <div className="fixed inset-0 z-10 bg-black/20 backdrop-blur-sm" />
             <Dialog.Panel 
