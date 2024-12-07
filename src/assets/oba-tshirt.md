@@ -20,4 +20,31 @@ Sold at the College Souvenir Shop
 Colors: Navy Blue and Bright White
 Tagline: "From the office to the golf course. Nothing is more fitting for every occasion."
 
-Let me know if you need further assistance!
+# OBA T-Shirt Campaign 2024
+
+## Limited Edition Antonian Pride T-Shirts Now Available!
+
+We're excited to announce our exclusive OBA T-shirt collection for 2024! Show your Antonian pride with our beautifully designed commemorative t-shirts.
+
+### Features:
+- Premium quality cotton material
+- Elegant design featuring the college crest
+- Available in multiple sizes (S, M, L, XL, XXL)
+- Special edition maroon and gold color scheme
+
+### How to Order:
+1. Fill out the order form below
+2. Make the payment through our secure portal
+3. Collect your t-shirt at our next community event
+
+### Price:
+- QAR 100 per t-shirt
+- Special discount for bulk orders (5+ shirts)
+
+*All proceeds go towards supporting OBA community initiatives.*
+
+### Important Dates:
+- Order Period: January 15 - February 15, 2024
+- Distribution: Starting March 1, 2024
+
+Don't miss out on this opportunity to own a piece of Antonian history!

@@ -42,8 +42,46 @@ export const Home: FC = () => {
       {/* News Section */}
       <section className="py-16 bg-gray-50">
         <div className="container">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Latest News</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">Latest Updates</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* New T-Shirt Campaign Announcement */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-white rounded-lg shadow-md overflow-hidden border-2 border-accent-500/20"
+            >
+              <div className="bg-accent-500/10 p-2 text-accent-600 text-sm font-medium text-center">
+                New Announcement
+              </div>
+              <div className="p-6">
+                <span className="inline-block px-3 py-1 bg-accent-500 text-white text-xs font-semibold rounded-full mb-3">
+                  Limited Edition
+                </span>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  OBA T-Shirt Campaign 2024
+                </h3>
+                <p className="text-gray-600 mb-2 text-sm">
+                  January 15 - February 15, 2024
+                </p>
+                <p className="text-gray-700 mb-4">
+                  Show your Antonian pride with our exclusive commemorative t-shirts. Premium quality with elegant design featuring the college crest.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-accent-600 font-semibold">QAR 100</span>
+                  <Link 
+                    to="/merchandise" 
+                    className="inline-flex items-center text-sm font-medium text-accent-600 hover:text-accent-700"
+                  >
+                    Order Now 
+                    <svg className="w-4 h-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -65,7 +103,7 @@ export const Home: FC = () => {
           </div>
           <div className="mt-8 text-center">
             <Link to="/news" className="btn btn-primary">
-              View All News
+              View All Updates
             </Link>
           </div>
         </div>
