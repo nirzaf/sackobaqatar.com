@@ -14,7 +14,7 @@ const newsItems: NewsItem[] = [
 
 export const News: FC = () => {
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 mt-12">
+    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 mt-16">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

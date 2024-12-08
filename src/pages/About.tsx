@@ -8,7 +8,7 @@ import {
 
 export const About: FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 mt-12">
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 mt-16">
       <HeroSection
         title="About SACKOBA Qatar"
         subtitle="A Legacy of Brotherhood and Excellence"
