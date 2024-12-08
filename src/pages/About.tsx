@@ -57,7 +57,7 @@ export const About: FC = () => {
               transition={{ delay: 0.2, duration: 0.5 }}
               className="text-display-lg text-primary-700 mb-6"
             >
-              Our History
+              Legacy of Brotherhood
             </motion.h1>
             <motion.p
               initial={{ y: 20, opacity: 0 }}
@@ -72,7 +72,7 @@ export const About: FC = () => {
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-6 py-16">
+      <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           {/* Foundation Story */}
           <motion.section
