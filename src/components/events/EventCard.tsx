@@ -30,7 +30,7 @@ export const EventCard: FC<EventCardProps> = ({
       onClick={onClick}
     >
       {/* Event Image */}
-      <div className="aspect-w-16 aspect-h-9 bg-gray-200 relative overflow-hidden">
+      <div className="aspect-w-16 aspect-h-9 bg-[#F8F6F9] relative overflow-hidden">
         {imageUrl ? (
           <img
             src={imageUrl}
@@ -38,12 +38,14 @@ export const EventCard: FC<EventCardProps> = ({
             className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-300"
           />
         ) : (
-          <div className="flex items-center justify-center h-full bg-primary-100">
-            <CalendarIcon className="h-12 w-12 text-primary-500" />
+          <div className="flex items-center justify-center h-full bg-[#F8F6F9]">
+            <CalendarIcon className="h-12 w-12 text-[#541D67]" />
           </div>
         )}
         <div className="absolute top-4 left-4">
-          <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-white/90 text-primary-700">
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium 
+                         bg-white/90 text-[#B62D71] border border-[#B62D71]/20
+                         shadow-sm backdrop-blur-sm">
             {category}
           </span>
         </div>
@@ -51,31 +53,37 @@ export const EventCard: FC<EventCardProps> = ({
 
       {/* Event Details */}
       <div className="p-6">
-        <h3 className="text-xl font-display font-semibold text-gray-900 mb-2">
+        <h3 className="text-xl font-display font-semibold text-[#541D67] mb-2 
+                     group-hover:text-[#B62D71] transition-colors duration-300">
           {title}
         </h3>
-        <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+        <p className="text-[#5B4886] text-sm mb-4 line-clamp-2">
           {description}
         </p>
         
         <div className="space-y-2">
-          <div className="flex items-center text-sm text-gray-500">
-            <CalendarIcon className="h-4 w-4 mr-2" />
+          <div className="flex items-center text-sm text-[#9A78AB]">
+            <CalendarIcon className="h-4 w-4 mr-2 text-[#B62D71]" />
             {date}
           </div>
-          <div className="flex items-center text-sm text-gray-500">
-            <MapPinIcon className="h-4 w-4 mr-2" />
+          <div className="flex items-center text-sm text-[#9A78AB]">
+            <MapPinIcon className="h-4 w-4 mr-2 text-[#B62D71]" />
             {location}
           </div>
-          <div className="flex items-center text-sm text-gray-500">
-            <UserGroupIcon className="h-4 w-4 mr-2" />
+          <div className="flex items-center text-sm text-[#9A78AB]">
+            <UserGroupIcon className="h-4 w-4 mr-2 text-[#B62D71]" />
             {attendees} attending
           </div>
         </div>
       </div>
 
-      {/* Hover Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      {/* Hover Effects */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#541D67]/50 via-transparent to-transparent 
+                    opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      
+      {/* Card Border Hover Effect */}
+      <div className="absolute inset-0 border border-[#B1B3CE]/20 group-hover:border-[#9A78AB]/30 
+                    rounded-xl transition-colors duration-300" />
     </motion.div>
   );
 };
