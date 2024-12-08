@@ -60,8 +60,13 @@ export const Navbar: FC = () => {
                 />
               </div>
               <div className="hidden md:block ml-3">
-                <p className="text-lg font-bold text-[#000000] drop-shadow-[0_1px_1px_rgba(255,255,255,0.5)]">
-                  OBA Qatar
+                <p className="relative text-lg font-bold text-[#000000]">
+                  <span className="absolute -inset-1 bg-white/50 blur-md rounded-lg"></span>
+                  <span className="absolute -inset-2 bg-white/30 blur-lg rounded-lg"></span>
+                  <span className="absolute -inset-3 bg-white/20 blur-xl rounded-lg"></span>
+                  <span className="relative z-10 drop-shadow-[0_1px_1px_rgba(0,0,0,0.3)]">
+                    OBA Qatar
+                  </span>
                 </p>
               </div>
             </Link>
