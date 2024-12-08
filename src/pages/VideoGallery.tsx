@@ -57,7 +57,6 @@ const categories = Array.from(new Set(videos.map(video => video.category)));
 
 export const VideoGallery: FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
-  const [activeVideo, setActiveVideo] = useState<Video | null>(null);
 
   const filteredVideos = selectedCategory === 'All' 
     ? videos 
@@ -103,7 +102,7 @@ export const VideoGallery: FC = () => {
           >
             All
           </button>
-          {categories.map((category) => (
+          {categories.map(category => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
@@ -121,7 +120,12 @@ export const VideoGallery: FC = () => {
 
       {/* Video Grid */}
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {filteredVideos.map((video, index) => (
             <motion.div
               key={video.url}
@@ -130,29 +134,25 @@ export const VideoGallery: FC = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white rounded-lg shadow-lg overflow-hidden"
             >
-              <div className="relative aspect-video">
+              <div className="aspect-w-16 aspect-h-9 bg-gray-200">
                 <iframe
-                  src={`https://www.youtube-nocookie.com/embed/${getYouTubeVideoId(video.url)}`}
+                  src={`https://www.youtube.com/embed/${getYouTubeVideoId(video.url)}`}
                   title={video.title}
-                  className="absolute inset-0 w-full h-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
+                  className="w-full h-full"
                 />
               </div>
               <div className="p-4">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-medium text-primary-600 bg-primary-50 px-2 py-1 rounded-full">
-                    {video.category}
-                  </span>
-                  <span className="text-xs text-gray-500">{video.duration}</span>
+                <h3 className="text-lg font-semibold text-primary-900 mb-2">{video.title}</h3>
+                <div className="flex items-center justify-between text-sm text-primary-600">
+                  <span>{video.duration}</span>
+                  <span className="px-2 py-1 bg-primary-50 rounded-full">{video.category}</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 line-clamp-2">
-                  {video.title}
-                </h3>
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
