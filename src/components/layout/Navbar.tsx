@@ -33,8 +33,8 @@ export const Navbar: FC = () => {
     <header 
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-gradient-to-r from-[#541D67] via-[#541D67] to-[#5B4886] shadow-lg' 
-          : 'bg-gradient-to-r from-[#541D67]/95 via-[#541D67]/95 to-[#5B4886]/95 backdrop-blur-sm'
+          ? 'bg-gradient-to-r from-primary-600 via-primary-600 to-primary-500 shadow-lg' 
+          : 'bg-gradient-to-r from-primary-600/95 via-primary-600/95 to-primary-500/95 backdrop-blur-sm'
       }`}
     >
       <nav 

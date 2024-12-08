@@ -8,31 +8,31 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Primary colors
         primary: {
-          50: '#f5f5f7',
-          100: '#e8e8ed',
-          200: '#d2d2d9',
-          300: '#a1a1a7',
-          400: '#86868b',
-          500: '#6e6e73',
-          600: '#1d1d1f',
-          700: '#000000',
+          50: '#F8F6F9',  // Lightest
+          100: '#F0E6EC',
+          200: '#E8E1F0',
+          300: '#B1B3CE', // French gray
+          400: '#9A78AB', // African Violet
+          500: '#5B4886', // Ultra Violet
+          600: '#541D67', // Eminence
+          700: '#B62D71', // Magenta dye
         },
-        accent: {
-          50: '#f1f8ff',
-          100: '#e2f0ff',
-          200: '#baddff',
-          300: '#7cc0ff',
-          400: '#369eff',
-          500: '#0080ff',
-          600: '#0066cc',
-          700: '#004d99',
+        // Text colors
+        text: {
+          primary: '#000000',   // For main headings
+          secondary: '#541D67', // For subheadings
+          body: '#4A4A4A',      // For body text
         },
-      },
-      fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-      },
-    },
+        // Background colors
+        background: {
+          primary: '#FFFFFF',
+          secondary: '#F8F6F9',
+          accent: '#F0E6EC',
+        }
+      }
+    }
   },
   plugins: [],
 }

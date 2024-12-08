@@ -10,7 +10,11 @@
   }
   
   body {
-    @apply bg-white text-gray-900;
+    @apply bg-background-primary text-text-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-text-primary;
   }
 }
 
@@ -24,11 +28,15 @@
   }
   
   .btn-primary {
-    @apply bg-primary-600 text-white hover:bg-primary-700;
+    @apply bg-primary-600 text-white hover:bg-primary-700 transition-colors;
   }
   
   .btn-secondary {
-    @apply bg-accent-500 text-white hover:bg-accent-600;
+    @apply bg-primary-400 text-white hover:bg-primary-500 transition-colors;
+  }
+
+  .section-gradient {
+    @apply bg-gradient-to-br from-background-primary via-background-secondary to-primary-300/5;
   }
 }
 
