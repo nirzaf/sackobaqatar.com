@@ -33,8 +33,8 @@ export const Navbar: FC = () => {
     <header 
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/80 backdrop-blur-lg shadow-sm' 
-          : 'bg-white/0'
+          ? 'bg-[#541D67] shadow-lg' 
+          : 'bg-[#541D67]'
       }`}
     >
       <nav 
@@ -47,20 +47,21 @@ export const Navbar: FC = () => {
               to="/" 
               className="flex items-center space-x-2 transition-opacity hover:opacity-90"
             >
-              <div className="relative w-[40px] h-[40px]">
+              <div className="relative w-[48px] h-[48px] -mt-1 -mb-1">
+                <div className="absolute inset-0 bg-white/10 rounded-full blur-md"></div>
                 <img 
                   src={LOGO_URL}
                   alt={LOGO_ALT}
                   width={LOGO_DIMENSIONS.navbar.width}
                   height={LOGO_DIMENSIONS.navbar.height}
-                  className="object-contain"
+                  className="object-contain w-full h-full relative z-10"
                 />
               </div>
               <div className="hidden md:block">
-                <h1 className="text-sm font-medium text-primary-700">
+                <h1 className="text-sm font-medium text-white">
                   St. Anthony's College
                 </h1>
-                <p className="text-2xs text-primary-500">
+                <p className="text-2xs text-white">
                   Kandy OBA Qatar
                 </p>
               </div>
@@ -70,7 +71,7 @@ export const Navbar: FC = () => {
           <div className="flex lg:hidden">
             <button
               type="button"
-              className="-m-2.5 inline-flex items-center justify-center rounded-full p-2.5 text-gray-700"
+              className="-m-2.5 inline-flex items-center justify-center rounded-full p-2.5 text-white hover:text-white/90"
               onClick={() => setMobileMenuOpen(true)}
             >
               <span className="sr-only">Open main menu</span>
@@ -79,28 +80,28 @@ export const Navbar: FC = () => {
           </div>
 
           <div className="hidden lg:flex lg:gap-x-8">
-            <div className="bg-white/80 backdrop-blur-lg rounded-full px-4 py-1 flex gap-x-6">
+            <div className="bg-[#B62D71] backdrop-blur-lg rounded-full px-4 py-1 flex gap-x-6">
               {navigation.map((item) => {
                 const isActive = location.pathname === item.href;
                 return (
                   <Link
                     key={item.name}
                     to={item.href}
-                    className={`relative text-2xs font-medium py-1.5 transition-colors ${
+                    className={`relative text-sm font-medium py-1.5 transition-colors ${
                       isActive 
-                        ? 'text-primary-700' 
-                        : 'text-primary-500 hover:text-primary-600'
+                        ? 'text-white' 
+                        : 'text-white hover:text-white/90'
                     }`}
                   >
                     {item.name}
                     {isActive && (
                       <motion.div
                         layoutId="navbar-indicator"
-                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary-600 rounded-full"
+                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-white rounded-full"
                         transition={{ 
                           type: "spring", 
-                          bounce: 0.2, 
-                          duration: 0.6 
+                          stiffness: 500, 
+                          damping: 30 
                         }}
                       />
                     )}
@@ -110,52 +111,36 @@ export const Navbar: FC = () => {
             </div>
           </div>
         </div>
-      </nav>
 
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <Dialog
-            as="div"
-            className="lg:hidden"
-            open={mobileMenuOpen}
-            onClose={setMobileMenuOpen}
-          >
-            <div className="fixed inset-0 z-10 bg-black/20 backdrop-blur-sm" />
-            <Dialog.Panel>
-              <motion.div
-                initial={{ x: '100%' }}
-                animate={{ x: 0 }}
-                exit={{ x: '100%' }}
-                transition={{ type: "spring", bounce: 0, duration: 0.4 }}
-                className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm"
-              >
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <Dialog
+              as="div"
+              className="lg:hidden"
+              open={mobileMenuOpen}
+              onClose={setMobileMenuOpen}
+            >
+              <div className="fixed inset-0 z-50" />
+              <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-[#541D67] px-6 py-6 sm:max-w-sm">
                 <div className="flex items-center justify-between">
                   <Link 
                     to="/" 
-                    className="flex items-center space-x-2"
+                    className="-m-1.5 p-1.5"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    <div className="relative w-[40px] h-[40px]">
-                      <img 
+                    <span className="sr-only">SACKOBA Qatar</span>
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-white/10 rounded-full blur-md"></div>
+                      <img
+                        className="h-10 w-auto relative z-10"
                         src={LOGO_URL}
                         alt={LOGO_ALT}
-                        width={LOGO_DIMENSIONS.navbar.width}
-                        height={LOGO_DIMENSIONS.navbar.height}
-                        className="object-contain"
                       />
-                    </div>
-                    <div>
-                      <h1 className="text-sm font-medium text-primary-700">
-                        St. Anthony's College
-                      </h1>
-                      <p className="text-2xs text-primary-500">
-                        Kandy OBA Qatar
-                      </p>
                     </div>
                   </Link>
                   <button
                     type="button"
-                    className="-m-2.5 rounded-full p-2.5 text-gray-700"
+                    className="-m-2.5 rounded-md p-2.5 text-white hover:text-white/90"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     <span className="sr-only">Close menu</span>
@@ -163,33 +148,30 @@ export const Navbar: FC = () => {
                   </button>
                 </div>
                 <div className="mt-6 flow-root">
-                  <div className="-my-6 divide-y divide-gray-500/10">
-                    <div className="space-y-1 py-6">
-                      {navigation.map((item) => {
-                        const isActive = location.pathname === item.href;
-                        return (
-                          <Link
-                            key={item.name}
-                            to={item.href}
-                            className={`block rounded-lg px-3 py-2 text-base font-medium transition-colors ${
-                              isActive
-                                ? 'bg-primary-50 text-primary-600'
-                                : 'text-primary-500 hover:bg-primary-50 hover:text-primary-600'
-                            }`}
-                            onClick={() => setMobileMenuOpen(false)}
-                          >
-                            {item.name}
-                          </Link>
-                        );
-                      })}
+                  <div className="-my-6 divide-y divide-white/20">
+                    <div className="space-y-2 py-6">
+                      {navigation.map((item) => (
+                        <Link
+                          key={item.name}
+                          to={item.href}
+                          className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 ${
+                            location.pathname === item.href
+                              ? 'text-white bg-[#B62D71]'
+                              : 'text-white hover:bg-[#B62D71]/50 hover:text-white/90'
+                          }`}
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
                     </div>
                   </div>
                 </div>
-              </motion.div>
-            </Dialog.Panel>
-          </Dialog>
-        )}
-      </AnimatePresence>
+              </Dialog.Panel>
+            </Dialog>
+          )}
+        </AnimatePresence>
+      </nav>
     </header>
   );
 };
