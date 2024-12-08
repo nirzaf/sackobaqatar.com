@@ -21,6 +21,9 @@ export interface CardProps {
 export interface VideoCardProps {
   title: string;
   duration: string;
+  category?: string;
+  thumbnailUrl?: string;
+  url?: string;
 }
 
 export const fadeInUp = {
