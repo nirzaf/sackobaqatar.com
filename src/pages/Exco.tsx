@@ -11,7 +11,7 @@ export const Exco: FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-4xl font-bold text-gray-900 mb-12">Executive Committee</h1>
+          <h1 className="text-4xl font-bold text-gray-700 mb-12">Executive Committee</h1>
           <YearTabs years={excoYears} />
         </motion.div>
       </div>

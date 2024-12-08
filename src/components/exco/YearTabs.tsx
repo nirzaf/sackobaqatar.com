@@ -11,17 +11,17 @@ interface YearTabsProps {
 export const YearTabs: FC<YearTabsProps> = ({ years }) => {
   return (
     <Tab.Group>
-      <Tab.List className="flex space-x-1 rounded-xl bg-primary/10 p-1 mb-8">
+      <Tab.List className="flex space-x-1 rounded-xl bg-primary-50 p-1 mb-8">
         {years.map((year) => (
           <Tab
             key={year.year}
             className={({ selected }) =>
               clsx(
                 'w-full rounded-lg py-2.5 text-sm font-medium leading-5',
-                'ring-white ring-opacity-60 ring-offset-2 ring-offset-primary focus:outline-none focus:ring-2',
+                'ring-white ring-opacity-60 ring-offset-2 ring-offset-primary-100 focus:outline-none focus:ring-2',
                 selected
-                  ? 'bg-primary text-white shadow'
-                  : 'text-primary hover:bg-white/[0.12] hover:text-primary'
+                  ? 'bg-primary-600 text-white shadow hover:bg-primary-700'
+                  : 'text-primary-600 bg-white hover:bg-primary-50/80 hover:text-primary-700'
               )
             }
           >

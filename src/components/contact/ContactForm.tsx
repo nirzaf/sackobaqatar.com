@@ -20,12 +20,13 @@ export const ContactForm: FC<ContactFormProps> = memo(({ onSubmit }) => {
 
   const inputClasses = `
     mt-1 block w-full rounded-md 
-    border-gray-300 bg-white text-gray-900 
+    border-gray-300 bg-white text-gray-700 
     shadow-sm cursor-text
     focus:border-primary-500 focus:ring-2 
     focus:ring-primary-500 focus:ring-opacity-50 
     focus:bg-primary-50 focus:outline-none
-    selection:bg-primary-200 selection:text-primary-900
+    selection:bg-primary-100 selection:text-primary-700
+    placeholder:text-gray-400
   `;
 
   return (
