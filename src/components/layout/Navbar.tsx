@@ -33,8 +33,8 @@ export const Navbar: FC = () => {
     <header 
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-gradient-to-r from-[#541D67] via-[#B62D71] to-[#9A78AB] shadow-lg' 
-          : 'bg-gradient-to-r from-[#541D67]/90 via-[#B62D71]/90 to-[#9A78AB]/90 backdrop-blur-sm'
+          ? 'bg-gradient-to-r from-[#541D67] via-[#541D67] to-[#5B4886] shadow-lg' 
+          : 'bg-gradient-to-r from-[#541D67]/95 via-[#541D67]/95 to-[#5B4886]/95 backdrop-blur-sm'
       }`}
     >
       <nav 
@@ -82,24 +82,24 @@ export const Navbar: FC = () => {
           </div>
 
           <div className="hidden lg:flex lg:gap-x-8">
-            <div className="bg-[#B62D71] backdrop-blur-lg rounded-full px-4 py-1 flex gap-x-6">
+            <div className="bg-white/10 backdrop-blur-lg rounded-full px-4 py-1 flex gap-x-6 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
               {navigation.map((item) => {
                 const isActive = location.pathname === item.href;
                 return (
                   <Link
                     key={item.name}
                     to={item.href}
-                    className={`relative text-sm font-medium py-1.5 transition-colors ${
+                    className={`relative text-sm font-medium py-1.5 transition-all duration-300 ${
                       isActive 
-                        ? 'text-white' 
-                        : 'text-white hover:text-white/90'
+                        ? 'text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]' 
+                        : 'text-white/70 hover:text-white hover:drop-shadow-[0_0_4px_rgba(255,255,255,0.4)]'
                     }`}
                   >
                     {item.name}
                     {isActive && (
                       <motion.div
                         layoutId="navbar-indicator"
-                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-white rounded-full"
+                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.6)]"
                         transition={{ 
                           type: "spring", 
                           stiffness: 500, 
@@ -123,7 +123,7 @@ export const Navbar: FC = () => {
               onClose={setMobileMenuOpen}
             >
               <div className="fixed inset-0 z-50" />
-              <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gradient-to-r from-[#541D67] via-[#B62D71] to-[#9A78AB] px-6 py-6 sm:max-w-sm">
+              <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gradient-to-r from-[#541D67] via-[#541D67] to-[#5B4886] px-6 py-6 sm:max-w-sm">
                 <div className="flex items-center justify-between">
                   <Link 
                     to="/" 
@@ -158,10 +158,10 @@ export const Navbar: FC = () => {
                         <Link
                           key={item.name}
                           to={item.href}
-                          className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 ${
+                          className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 transition-all duration-300 ${
                             location.pathname === item.href
-                              ? 'text-white bg-[#B62D71]'
-                              : 'text-white hover:bg-[#B62D71]/50 hover:text-white/90'
+                              ? 'text-white bg-white/20 drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]'
+                              : 'text-white/70 hover:text-white hover:bg-white/10 hover:drop-shadow-[0_0_4px_rgba(255,255,255,0.4)]'
                           }`}
                           onClick={() => setMobileMenuOpen(false)}
                         >

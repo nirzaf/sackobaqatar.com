@@ -9,52 +9,58 @@ interface HeroSectionProps {
 
 export const HeroSection: FC<HeroSectionProps> = ({ title, description }) => {
   return (
-    <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-[#FFFAF0]">
-      {/* Background with subtle gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#FFFAF0] via-[#FFF8DC]/50 to-[#FFFAF0]" />
-      
-      {/* Decorative elements */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-[#F8F9FA] to-[#B1B3CE]/5" />
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-64 h-64 bg-[#F5DEB3]/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-[#FFE4B5]/20 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[#B1B3CE]/5 rounded-full blur-3xl" />
+        <div className="absolute top-40 right-20 w-96 h-96 bg-[#9A78AB]/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-[#5B4886]/3 rounded-full blur-3xl" />
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 relative z-10 text-center">
+      <div className="relative container mx-auto px-6 py-32 text-center">
         <motion.h1 
-          className="text-5xl md:text-6xl font-bold text-gray-800 mb-6"
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6"
         >
           {title}
         </motion.h1>
-        <motion.p 
-          className="text-xl text-gray-700 max-w-2xl mx-auto mb-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
+        
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto mb-8"
         >
           {description}
         </motion.p>
+        
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <Link 
+          <Link
             to="/about"
-            className="inline-block px-8 py-3 bg-gray-800 text-[#FFFAF0] font-semibold rounded-full 
-                     hover:bg-gray-900 transition-colors shadow-lg 
-                     hover:shadow-gray-400/20 hover:shadow-xl"
+            className="inline-block bg-[#541D67] text-white px-8 py-3 rounded-full text-lg font-medium
+                     shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300
+                     hover:bg-[#B62D71] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#541D67]
+                     relative z-10"
           >
             Learn More
           </Link>
         </motion.div>
+
+        {/* Decorative Elements */}
+        <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-full h-24 bg-gradient-to-b from-transparent to-white" />
       </div>
 
-      {/* Bottom fade effect */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FFFAF0] to-transparent" />
+      {/* Additional Light Effects */}
+      <div className="absolute inset-0 bg-white/40 mix-blend-soft-light pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white opacity-60" />
     </section>
   );
 };

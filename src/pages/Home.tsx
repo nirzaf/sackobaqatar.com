@@ -83,13 +83,18 @@ const VideoCard: FC<{ title: string; duration: string }> = ({ title, duration })
 
 export const Home: FC = () => {
   return (
-    <div className="bg-gradient-to-b from-white to-[#B1B3CE]/10">
+    <div className="bg-gradient-to-b from-[#F8F6F9] to-[#F8F6F9]">
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-[#541D67]">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#541D67] to-[#B62D71] opacity-90" />
+      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-[#F8F6F9]">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#F5F0F7] to-[#F0E6EC] opacity-95" />
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-[#E8E1F0]/30 rounded-full blur-3xl" />
+          <div className="absolute top-40 right-20 w-96 h-96 bg-[#F0E6EC]/30 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-[#F5F0F7]/30 rounded-full blur-3xl" />
+        </div>
         <div className="container mx-auto px-4 relative z-10 text-center">
           <motion.h1 
-            className="text-5xl md:text-6xl font-bold text-white mb-6"
+            className="text-5xl md:text-6xl font-bold text-black mb-6"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
@@ -97,7 +102,7 @@ export const Home: FC = () => {
             Welcome to SACKOBA Qatar
           </motion.h1>
           <motion.p 
-            className="text-xl text-white/90 max-w-2xl mx-auto mb-8"
+            className="text-xl text-black/90 max-w-2xl mx-auto mb-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -111,7 +116,7 @@ export const Home: FC = () => {
           >
             <Link 
               to="/about"
-              className="inline-block px-8 py-3 bg-white text-[#541D67] font-semibold rounded-full hover:bg-[#B1B3CE] transition-colors"
+              className="inline-block px-8 py-3 bg-white text-[#000000] font-semibold rounded-full hover:bg-[#B1B3CE] transition-colors"
             >
               Learn More
             </Link>
