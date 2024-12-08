@@ -33,8 +33,8 @@ export const Navbar: FC = () => {
     <header 
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-[#541D67] shadow-lg' 
-          : 'bg-[#541D67]'
+          ? 'bg-gradient-to-r from-[#541D67] via-[#B62D71] to-[#9A78AB] shadow-lg' 
+          : 'bg-gradient-to-r from-[#541D67]/90 via-[#B62D71]/90 to-[#9A78AB]/90 backdrop-blur-sm'
       }`}
     >
       <nav 
@@ -48,13 +48,15 @@ export const Navbar: FC = () => {
               className="flex items-center space-x-2 transition-opacity hover:opacity-90"
             >
               <div className="relative w-[48px] h-[48px] -mt-1 -mb-1">
+                <div className="absolute inset-0 bg-white/30 rounded-full blur-xl"></div>
+                <div className="absolute inset-0 bg-white/20 rounded-full blur-lg"></div>
                 <div className="absolute inset-0 bg-white/10 rounded-full blur-md"></div>
                 <img 
                   src={LOGO_URL}
                   alt={LOGO_ALT}
                   width={LOGO_DIMENSIONS.navbar.width}
                   height={LOGO_DIMENSIONS.navbar.height}
-                  className="object-contain w-full h-full relative z-10"
+                  className="object-contain w-full h-full relative z-10 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] hover:drop-shadow-[0_4px_4px_rgba(0,0,0,0.4)] transition-all duration-300 transform hover:-translate-y-0.5"
                 />
               </div>
               <div className="hidden md:block">
@@ -121,7 +123,7 @@ export const Navbar: FC = () => {
               onClose={setMobileMenuOpen}
             >
               <div className="fixed inset-0 z-50" />
-              <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-[#541D67] px-6 py-6 sm:max-w-sm">
+              <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gradient-to-r from-[#541D67] via-[#B62D71] to-[#9A78AB] px-6 py-6 sm:max-w-sm">
                 <div className="flex items-center justify-between">
                   <Link 
                     to="/" 
@@ -130,9 +132,11 @@ export const Navbar: FC = () => {
                   >
                     <span className="sr-only">SACKOBA Qatar</span>
                     <div className="relative">
+                      <div className="absolute inset-0 bg-white/30 rounded-full blur-xl"></div>
+                      <div className="absolute inset-0 bg-white/20 rounded-full blur-lg"></div>
                       <div className="absolute inset-0 bg-white/10 rounded-full blur-md"></div>
                       <img
-                        className="h-10 w-auto relative z-10"
+                        className="h-10 w-auto relative z-10 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] hover:drop-shadow-[0_4px_4px_rgba(0,0,0,0.4)] transition-all duration-300 transform hover:-translate-y-0.5"
                         src={LOGO_URL}
                         alt={LOGO_ALT}
                       />
