@@ -10,8 +10,8 @@ export const About: FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 mt-12">
       <HeroSection
-        title="Legacy of Brotherhood"
-        subtitle="St. Anthony's College Kandy Old Boys' Association Qatar - A Legacy of Brotherhood"
+        title="About SACKOBA Qatar"
+        subtitle="A Legacy of Brotherhood and Excellence"
       />
 
       <div className="container mx-auto px-6">

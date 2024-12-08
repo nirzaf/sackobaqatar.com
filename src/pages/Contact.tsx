@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { ContactForm, ContactInfo, ContactFormData } from '../components/contact';
+import { motion } from 'framer-motion';
 
 export const Contact: FC = () => {
   const handleSubmit = (data: ContactFormData) => {
@@ -11,13 +12,23 @@ export const Contact: FC = () => {
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 mt-12">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+        <div className="text-center mb-12">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-4xl font-bold text-gray-900 mb-4"
+          >
             Get in Touch
-          </h2>
-          <p className="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-lg text-gray-500"
+          >
             Have questions about SACKOBA Qatar? We're here to help. Send us a message and we'll respond as soon as possible.
-          </p>
+          </motion.p>
         </div>
 
         {/* Contact Grid */}

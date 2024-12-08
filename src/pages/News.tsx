@@ -21,7 +21,12 @@ export const News: FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-4xl font-bold text-gray-900 mb-12">Latest News</h1>
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-bold text-primary-900 mb-4">Latest News</h1>
+            <p className="text-lg text-primary-600">
+              Check out the latest news and updates from SACKOBA Qatar.
+            </p>
+          </div>
 
           <div className="grid gap-8">
             {newsItems.map((item, index) => (

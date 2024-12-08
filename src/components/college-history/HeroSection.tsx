@@ -10,9 +10,10 @@ export const HeroSection: FC<HeroSectionProps> = memo(({ title, subtitle }) => (
     <div className="container mx-auto px-6">
       <div className="max-w-4xl mx-auto text-center">
         <motion.h1 
-          {...fadeInUp}
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-900 mb-6"
+          className="text-4xl font-bold text-primary-900 mb-4"
         >
           {title}
         </motion.h1>
