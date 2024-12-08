@@ -19,7 +19,7 @@ export const Events: FC = () => {
   } = useEvents();
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 pt-16">
+    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 mt-12">
       <Navigation
         activeSection={activeSection}
         setActiveSection={setActiveSection}

@@ -37,7 +37,7 @@ const timelineEvents: TimelineEvent[] = [
 ];
 
 export const CollegeHistory: FC = () => (
-  <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+  <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 mt-12">
     <HeroSection
       title="Our Rich History"
       subtitle="A Legacy of Excellence Since 1854"
