@@ -1,12 +1,10 @@
 import { FC } from 'react';
 import {
-  HeroSection,
   Navigation,
   Filters,
   EventsGrid,
   useEvents
 } from '../components/events';
-import { heroImage } from '../components/events/data';
 
 export const Events: FC = () => {
   const {
@@ -21,13 +19,7 @@ export const Events: FC = () => {
   } = useEvents();
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
-      <HeroSection
-        title="Community Events"
-        description="Join us in celebrating our heritage, strengthening bonds, and creating lasting memories with the Antonian community in Qatar."
-        backgroundImage={heroImage}
-      />
-
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 pt-16">
       <Navigation
         activeSection={activeSection}
         setActiveSection={setActiveSection}
