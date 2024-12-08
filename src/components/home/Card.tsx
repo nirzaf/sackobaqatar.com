@@ -1,15 +1,14 @@
-import { FC, memo } from 'react';
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CardProps, fadeInUp } from './interfaces';
 
-export const Card: FC<CardProps> = memo(({ 
+export const Card: FC<CardProps> = ({ 
   title, 
   description, 
   date, 
   tag, 
-  link, 
-  className = '' 
+  link
 }) => (
   <motion.div 
     className="bg-background-primary rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
@@ -41,4 +40,4 @@ export const Card: FC<CardProps> = memo(({
       )}
     </div>
   </motion.div>
-));
+);

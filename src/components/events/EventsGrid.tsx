@@ -2,11 +2,16 @@ import { FC } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { format } from 'date-fns';
 import { Calendar } from 'react-feather';
-import { EventsGridProps } from './types';
+import { Event } from './types';
+
+interface EventsGridProps {
+  events: Event[];
+  searchQuery: string;
+  activeSection: string;
+}
 
 export const EventsGrid: FC<EventsGridProps> = ({
   events,
-  selectedCategory,
   searchQuery,
   activeSection
 }) => {
@@ -14,7 +19,7 @@ export const EventsGrid: FC<EventsGridProps> = ({
     <div className="container mx-auto px-6 pb-24">
       <AnimatePresence mode="wait">
         <motion.div
-          key={selectedCategory + searchQuery + activeSection}
+          key={searchQuery + activeSection}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
