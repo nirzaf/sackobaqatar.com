@@ -11,12 +11,20 @@ const historyData: HistoryPeriod[] = [
     year: '1820',
     title: 'The Beginning',
     content: `The Roman Catholic Church had established itself in the Maritime areas from 1505. In 1820 the superior of all the Oratorians in Ceylon, Vincent de Rozairo, himself came as the first missionary to Kandy. He put up a church, which occupied the very same grounds whereon the present Scots Kirk stands. In 1828 the Scots Kirk site was found to be too small and hilly and accordingly a petition was submitted to the Governor - General Sir Edward Barnes who promptly presented the Catholic Church with a new site. It was roughly a square 152 ft. by 150 ft. upon which the second Roman Catholic Church was built. This is the very same site on which St. Anthony's Cathedral stands today.`,
+    image: 'https://ik.imagekit.io/sackoba/history/Old%20Red%20Brick%20Building%20-1910.png?updatedAt=1734619941523',
     notablePersons: [
       {
         name: 'Vincent de Rozairo',
         role: 'First Missionary',
         period: '1820',
         description: 'The superior of all the Oratorians in Ceylon who established the first church in Kandy.'
+      },
+      {
+        name: 'Bishop Bede Beeckmeyer',
+        role: 'Bishop',
+        period: '1820-1935',
+        description: 'Significant contributor to the early development of the institution',
+        image: 'https://ik.imagekit.io/sackoba/history/Bishop%20Bede%20Beeckmeyer.png?updatedAt=1734619944721'
       }
     ]
   },
@@ -26,6 +34,7 @@ const historyData: HistoryPeriod[] = [
     content: `It was realized that building churches alone would not contribute to the success of the missionary efforts that commenced in 1820. In September 1843, an Italian Oratorian, Fr. Orazio Bettacchini was sent to the Kandyan mission who, during his missionary year 1843/44, opened a school in Kandy on the same premises. But, in August 1844, his successor Fr. Reinaud, who continued as missionary until 1848, began his missionary career by pulling down the school, which Fr. Bettacchini had put up.
 
     In November 1853, Fr. Felice Zoppi, a Franciscan from the Chinese missionary field was sent to Kandy by Monsignor Joseph Maria Bravi. Fr. Zoppi promptly set about his task by opening a school for boys and one for girls at the house where he resided, in January of 1854, with a Mr. Van Twest as Head Teacher of the Boys School. This was the birth of St. Anthony's School.`,
+    image: 'https://ik.imagekit.io/sackoba/history/Tiny%20Tots%20at%20the%20Boarding%20House-1924.png?updatedAt=1734619944158',
     notablePersons: [
       {
         name: 'Fr. Felice Zoppi',
@@ -37,6 +46,13 @@ const historyData: HistoryPeriod[] = [
           'Named the school after St. Anthony',
           'Started with 62 boys and 28 girls'
         ]
+      },
+      {
+        name: 'Charlie Hamilton',
+        role: 'Early Administrator',
+        period: '1896-1909',
+        description: 'Contributed significantly to the school\'s development',
+        image: 'https://ik.imagekit.io/sackoba/history/Charlie%20Hamilton%2010.12.1896%20-%205.11.1909.png?updatedAt=1734619944666'
       }
     ]
   },
@@ -46,12 +62,20 @@ const historyData: HistoryPeriod[] = [
     content: `Mr. Paul Poorey took over the administration of the Boys School from Mr. Van Twest in 1855, contributing immensely to the efficiency and prestige the school enjoyed in its formative years. Fr. Zoppi left the country at the end of September 1856. In the absence of sufficient missionaries to take over the school, which was then a parish school, a succession of laymen carried on the administration until 1870.
 
     In 1867, St. Anthony's Boys' School was referred as the 'second best school in English' among all the schools established by the Missionaries. In 1870, the Irish Christian Brothers John and Paul took over the administration, temporarily. The school continued to grow under various administrators until Fr. Dom Hildebrand Vanderstraaten O.S.B. was installed as Principal in 1875.`,
+    image: 'https://ik.imagekit.io/sackoba/history/The%20building%20was%20declared%20%20open%20on%20the%2015th%20of%20February%201934.png?updatedAt=1734619945510',
     notablePersons: [
       {
         name: 'Mr. Paul Poorey',
         role: 'Administrator',
         period: '1855-1870',
         description: 'Took over from Mr. Van Twest and contributed significantly to the school\'s early development.'
+      },
+      {
+        name: 'Rev. Fr. Stephen Abraham',
+        role: 'Administrator',
+        period: '1870-1875',
+        description: 'Served during a crucial transition period',
+        image: 'https://ik.imagekit.io/sackoba/history/Rev.%20Fr.%20Stephen%20Abraham.png?updatedAt=1734619944618'
       }
     ]
   },
@@ -61,6 +85,7 @@ const historyData: HistoryPeriod[] = [
     content: `Upon Mr. Jansz's retirement in 1892, the Benedictines appointed Fr. Hilarian Leitan O.S.B., who had only been ordained a priest in December 1891, as Principal. He continued for a period of six years until 1898. Fr. Leitan was the first, of an unbroken line of O.S.B. Priest-Principals of the College, to date.
 
     During his six years in office, he had the services of a few other Benedictine monks - Dom Hildebrand Georgesz, Dom Patrick Mckelvie, Dom Dominic Direckze and for a short term, a Benedictine Father from Scotland, Rev. Ryan whose brothers were in charge of tea plantations.`,
+    image: 'https://ik.imagekit.io/sackoba/history/New%20Three-Storey%20Block.png?updatedAt=1734619944418',
     notablePersons: [
       {
         name: 'Fr. Hilarian Leitan O.S.B.',
@@ -74,46 +99,80 @@ const historyData: HistoryPeriod[] = [
     year: '1950',
     title: 'Modern Development',
     content: `Between the 50's and the 70's, St. Anthony's College had a well-established hostel, with over 500 boarders, who came from all parts of the Island. They were spread among 14 cottage type dormitories, arranged in succession, according to age groups. The hostel was supported by a livestock farm, bakery and a fully equipped sickroom, to cater to the needs of the boarders.`,
-    image: 'https://ik.imagekit.io/sackoba/history/Rugger%20Team-%201968.png?updatedAt=1734619941797'
-  },
-  {
-    year: '1979',
-    title: '125th Anniversary',
-    content: `The Grand School Exhibition in 1979 marked 125 years of the school's existence (1854-1979), which was graced by President J.R. Jayawardena. This was followed by the celebration of 100 continuous years of Benedictine Monks as Principals (1892-1992). On the latter occasion portraits of all past Principals were unveiled in the hall by distinguished persons.`,
+    image: 'https://ik.imagekit.io/sackoba/history/Rugger%20Team-%201968.png?updatedAt=1734619941797',
     notablePersons: [
       {
-        name: 'Rev. Fr. Stephen Abraham',
+        name: 'Rev. Fr. Hilarion Fernando',
         role: 'Principal',
-        period: '1979-1994',
-        image: 'https://ik.imagekit.io/sackoba/history/Rev.%20Fr.%20Stephen%20Abraham.png?updatedAt=1734619944618',
-        description: 'In 1989 Fr. Stephen Abraham celebrated his Sacerdotal Silver Jubilee by building 25 houses for the minor staff naming the complex "Anthony Gammana".',
-        achievements: [
-          'Built Anthony Gammana housing complex',
-          'Improved sports performance in cricket and rugby',
-          'Maintained academic excellence'
-        ]
+        period: '1950-1960',
+        description: 'Led significant modernization efforts',
+        image: 'https://ik.imagekit.io/sackoba/history/Rev.%20Fr.%20Hilarion%20Fernando.png?updatedAt=1734619941686'
+      },
+      {
+        name: 'Mr. William Gopallawa',
+        role: 'Notable Alumni',
+        period: '1950s',
+        description: 'Distinguished alumnus who made significant contributions',
+        image: 'https://ik.imagekit.io/sackoba/history/Mr.%20William%20Gopallawa.png?updatedAt=1734619941683'
       }
     ]
   },
   {
-    year: '1994',
-    title: 'Recent History',
-    content: `Fr. Hilarion Fernando O.S.B. succeeded Fr. Stephen Abraham in April 1994, as the twenty seventh Principal of St. Anthony's College, in its 140th year. He is also the fifteenth member of the 'Sylvestro Benedictine Order' (O.S.B.) to hold the post, in 112 years. Prior to his appointment as Principal, Fr. Hilarion served as Warden of Hostels from 1983 - 1991, and as Principal of the Primary Department from 1990 - 1994.
-
-    The Old Boys Association, with Branches in Colombo, Nuwara Eliya, Australia, Canada and England, have provided much support to the College authorities and students over the years.`,
-    image: 'https://ik.imagekit.io/sackoba/history/Rev.%20Fr.%20Hilarion%20Fernando.png?updatedAt=1734619941686',
+    year: '1960',
+    title: 'Sports Excellence',
+    content: `The 1960s marked a golden era in sports at St. Anthony's College. The school excelled in various sports including rugby, cricket, and boxing. The establishment of new sporting facilities and dedicated coaching programs led to numerous achievements and the development of many talented athletes.`,
+    image: 'https://ik.imagekit.io/sackoba/history/Antonian%20Champion%20Boxers.png?updatedAt=1734619944293',
     notablePersons: [
       {
-        name: 'Fr. Hilarion Fernando O.S.B.',
-        role: '27th Principal',
-        period: '1994-Present',
-        image: 'https://ik.imagekit.io/sackoba/history/Rev.%20Fr.%20Hilarion%20Fernando.png?updatedAt=1734619941686',
-        description: 'The twenty-seventh Principal of St. Anthony\'s College who previously served as Warden of Hostels and Principal of the Primary Department.',
-        achievements: [
-          'Served as Warden of Hostels (1983-1991)',
-          'Principal of Primary Department (1990-1994)',
-          'Continued the Benedictine tradition of leadership'
-        ]
+        name: 'Mr. Cyril Brown',
+        role: 'Sports Coach',
+        period: '1960s',
+        description: 'Legendary sports coach who developed many champions',
+        image: 'https://ik.imagekit.io/sackoba/history/Mr.%20Cyril%20Brown.png?updatedAt=1734619942137'
+      },
+      {
+        name: 'Jack Anderson',
+        role: 'Sports Director',
+        period: '1960s',
+        description: 'Pioneered modern sports programs',
+        image: 'https://ik.imagekit.io/sackoba/history/Jack%20Anderson.png?updatedAt=1734619942144'
+      }
+    ]
+  },
+  {
+    year: '1970',
+    title: 'Infrastructure Development',
+    content: `The 1970s saw significant infrastructure development with the construction of new facilities including the Sports Complex and modern classroom blocks. The school continued to grow both in terms of student population and facilities.`,
+    image: 'https://ik.imagekit.io/sackoba/history/Bishop%20Leo%20%20Nanayakkara%20Sports%20%20&%20Pavilion%20Complex.png?updatedAt=1734619942141',
+    notablePersons: [
+      {
+        name: 'Hon. M.D. Banda',
+        role: 'Benefactor',
+        period: '1970s',
+        description: 'Major contributor to infrastructure development',
+        image: 'https://ik.imagekit.io/sackoba/history/Hon%20M.D.%20Banda.png?updatedAt=1734619941675'
+      },
+      {
+        name: 'Hon. K.D.M.C. Bandara',
+        role: 'Government Minister',
+        period: '1970s',
+        description: 'Supported the school\'s expansion projects',
+        image: 'https://ik.imagekit.io/sackoba/history/Hon.%20K.%20D.%20M.%20C.%20Bandara%20at%20the%20%20opening%20of%20the%20Sports%20Complex.png?updatedAt=1734619941695'
+      }
+    ]
+  },
+  {
+    year: '1990',
+    title: 'Modern Era',
+    content: `The 1990s marked the beginning of the modern era with the introduction of computer education and other technological advancements. The school maintained its excellence in both academics and sports, producing many notable achievements.`,
+    image: 'https://ik.imagekit.io/sackoba/history/Primary%20School%20Computer%20Center.png?updatedAt=1734619941793',
+    notablePersons: [
+      {
+        name: 'Ronnie Stevens',
+        role: 'Cricket Coach',
+        period: '1990s',
+        description: 'Led the cricket team to numerous victories',
+        image: 'https://ik.imagekit.io/sackoba/history/Ronnie%20Stevens%20and%20A.C.M.%20Lafir.png?updatedAt=1734619944290'
       }
     ]
   }
