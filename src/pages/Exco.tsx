@@ -374,7 +374,7 @@ const Exco: FC = () => {
       <div className="relative h-[40vh] bg-primary-900 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary-900/90 to-primary-800/90" />
         <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
-          <h1 className="text-4xl md:text-3xl font-bold text-black mb-4">
+          <h1 className="text-4xl md:text-3xl font-bold text-black mb-4 mt-12">
             Executive Committee
           </h1>
           <p className="text-xl text-black/80 max-w-2xl">
