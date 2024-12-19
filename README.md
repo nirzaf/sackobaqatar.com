@@ -23,83 +23,20 @@ To set up the project locally, follow these steps:
 
 2. Install dependencies:
    ```bash
-   npm install
+   pnpm install
    ```
 
 3. Start the development server:
    ```bash
-   npm run dev
+   pnpm dev
    ```
 
 ## Usage Guidelines
 
-- **Development:** Use `npm run dev` to start the development server.
-- **Build:** Use `npm run build` to create a production build.
-- **Lint:** Use `npm run lint` to run the linter and check for code quality issues.
-- **Preview:** Use `npm run preview` to preview the production build locally.
-
-## API Documentation
-
-Currently, there are no external APIs used in this project. All functionalities are implemented within the codebase.
-
-## Dependencies
-
-The project relies on the following dependencies:
-
-- **@headlessui/react:** ^2.2.0
-- **@heroicons/react:** ^2.2.0
-- **clsx:** ^2.1.1
-- **date-fns:** ^4.1.0
-- **framer-motion:** ^11.13.1
-- **lucide-react:** ^0.468.0
-- **react:** ^18.3.1
-- **react-dom:** ^18.3.1
-- **react-feather:** ^2.0.10
-- **react-router-dom:** ^7.0.2
-- **zustand:** ^5.0.2
-
-DevDependencies:
-
-- **@eslint/js:** ^9.15.0
-- **@tailwindcss/aspect-ratio:** ^0.4.2
-- **@tailwindcss/forms:** ^0.5.9
-- **@tailwindcss/typography:** ^0.5.15
-- **@types/node:** ^22.10.1
-- **@types/react:** ^18.3.12
-- **@types/react-dom:** ^18.3.1
-- **@vitejs/plugin-react-swc:** ^3.5.0
-- **autoprefixer:** ^10.4.20
-- **eslint:** ^9.15.0
-- **eslint-plugin-react-hooks:** ^5.0.0
-- **eslint-plugin-react-refresh:** ^0.4.14
-- **globals:** ^15.12.0
-- **postcss:** ^8.4.49
-- **tailwindcss:** ^3.4.16
-- **typescript:** ~5.6.2
-- **typescript-eslint:** ^8.15.0
-- **vite:** ^6.0.1
-
-## Configuration Details
-
-The project uses the following configuration files:
-
-- **.gitignore:** Specifies files and directories to be ignored by Git.
-- **eslint.config.js:** Configuration for ESLint to enforce code quality standards.
-- **postcss.config.js:** Configuration for PostCSS to process CSS files.
-- **tailwind.config.js:** Configuration for Tailwind CSS to customize the design system.
-- **vite.config.js:** Configuration for Vite to build and serve the project.
-
-## Contributing Guidelines
-
-We welcome contributions from the community. To contribute, please follow these guidelines:
-
-1. Fork the repository and create a new branch for your feature or bugfix.
-2. Make your changes and ensure that the code passes linting and tests.
-3. Submit a pull request with a clear description of your changes.
-
-## License Information
-
-This project is licensed under the MIT License. See the LICENSE file for more details.
+- **Development:** Use `pnpm dev` to start the development server.
+- **Build:** Use `pnpm run build` to create a production build.
+- **Lint:** Use `pnpm run lint` to run the linter and check for code quality issues.
+- **Preview:** Use `pnpm run preview` to preview the production build locally.
 
 ## Home
 
