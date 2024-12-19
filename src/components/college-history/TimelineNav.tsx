@@ -21,11 +21,13 @@ export const TimelineNav: FC<TimelineNavProps> = ({ activeYear, onYearChange }) 
     <div className="sticky top-20 z-40 bg-white/90 backdrop-blur-lg border-b border-[#B1B3CE]/20 py-4">
       <div className="container mx-auto px-4">
         <div className="overflow-x-auto no-scrollbar" style={{ msOverflowStyle: 'none', scrollbarWidth: 'none' }}>
-          <style jsx>{`
+          <style>
+            {`
             .no-scrollbar::-webkit-scrollbar {
               display: none;
             }
-          `}</style>
+            `}
+          </style>
           <div className="relative min-w-max">
             {/* Timeline Line */}
             <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-[#F8F6F9]" />

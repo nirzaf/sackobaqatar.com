@@ -1,9 +1,6 @@
 import { FC, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
-import { TimelineNav } from '../components/college-history/TimelineNav';
-import { HistorySection } from '../components/college-history/HistorySection';
-import { NotablePerson } from '../components/college-history/NotablePerson';
 import { HistoryPeriod } from '../components/college-history/types';
 
 const historyData: HistoryPeriod[] = [
@@ -178,97 +175,9 @@ const historyData: HistoryPeriod[] = [
   }
 ];
 
-const Accordion: FC<{
-  title: string;
-  year: string;
-  content: string;
-  image?: string;
-  notablePersons?: any[];
-  isOpen: boolean;
-  onToggle: () => void;
-}> = ({ title, year, content, image, notablePersons, isOpen, onToggle }) => {
-  return (
-    <div className="border-b border-[#E5E7EB]">
-      <button
-        onClick={onToggle}
-        className="w-full py-4 px-6 flex items-center justify-between hover:bg-[#F8F6F9]/50 transition-colors"
-      >
-        <div className="flex items-center gap-4">
-          <span className="text-sm font-medium text-[#B62D71]">{year}</span>
-          <h2 className="text-lg font-semibold text-[#541D67]">{title}</h2>
-        </div>
-        <ChevronDownIcon 
-          className={`w-5 h-5 text-[#5B4886] transition-transform duration-300 ${
-            isOpen ? 'transform rotate-180' : ''
-          }`}
-        />
-      </button>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden"
-          >
-            <div className="px-6 pb-6">
-              {image && (
-                <div className={`mb-6 rounded-lg overflow-hidden ${
-                  image.includes('Rugger%20Team') ? 'max-w-3xl' : 'max-w-sm'
-                }`}>
-                  <img 
-                    src={image} 
-                    alt={title}
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-              )}
-              <div className="prose max-w-none">
-                <div className="text-[#5B4886] leading-relaxed mb-6"
-                  dangerouslySetInnerHTML={{ __html: content }}
-                />
-              </div>
-              {notablePersons && notablePersons.length > 0 && (
-                <div className="mt-6 space-y-4">
-                  <h3 className="text-lg font-semibold text-[#541D67]">Notable Persons</h3>
-                  {notablePersons.map((person, index) => (
-                    <div key={index} className="bg-white p-4 rounded-lg shadow-sm">
-                      <div className="flex items-start gap-4">
-                        {person.image && (
-                          <img 
-                            src={person.image} 
-                            alt={person.name}
-                            className="w-20 h-20 object-cover rounded-lg"
-                          />
-                        )}
-                        <div>
-                          <h4 className="font-medium text-[#541D67]">{person.name}</h4>
-                          <p className="text-sm text-[#5B4886]">{person.role} ({person.period})</p>
-                          <p className="mt-2 text-[#5B4886]">{person.description}</p>
-                          {person.achievements && (
-                            <ul className="mt-2 list-disc list-inside text-sm text-[#5B4886]">
-                              {person.achievements.map((achievement: string, i: number) => (
-                                <li key={i}>{achievement}</li>
-                              ))}
-                            </ul>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
 
 export const CollegeHistory: FC = () => {
-  const [openSection, setOpenSection] = useState<string>(historyData[0].year);
+  const [openSection, setOpenSection] = useState<string>('');
 
   return (
     <div className="min-h-screen bg-white">
@@ -407,3 +316,5 @@ export const CollegeHistory: FC = () => {
     </div>
   );
 };
+
+export default CollegeHistory;
