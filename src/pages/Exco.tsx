@@ -81,7 +81,7 @@ const excoData: ExcoYear[] = [
             { name: 'Yogeswaran Sellamuthu', position: 'Member of the Committee' },
              { name: 'Malinda Dissanayake', position: 'Ex-co Coordinator' },
         ],
-        absentMembers:[
+        absentees:[
              { name: 'Aloy J. Cooray', position: 'Member of the committee' },
              { name: 'Mohammed Riyaz Nilabdeen', position: 'Secretary Sports' },
             { name: 'Sivaraja KP', position: 'Coordinator Events' }
@@ -130,7 +130,7 @@ const excoData: ExcoYear[] = [
          { name: 'Patterson Ferdinandus', position: 'Member of the committee' },
           { name: 'Milroy Perera', position: 'Coordinator Special events' }
     ],
-     absentMembers:[
+     absentees:[
             { name: 'Deyan Bastianz', position: 'Member of the committee' }
         ]
   },
@@ -181,7 +181,7 @@ const excoData: ExcoYear[] = [
          { name: 'Milroy Perera', position: 'Secretary Social & Religious Affairs' },
 
     ],
-    absentMembers:[
+    absentees:[
             { name: 'K. Sivaraj', position: 'Media Coordinator' }
         ]
  },
@@ -204,7 +204,7 @@ const excoData: ExcoYear[] = [
          { name: 'Mohamed Hifas', position: 'Member of the Committee' },
           { name: 'Clifford Ferguson', position: 'Member of the Committee' }
     ],
-     absentMembers: [
+     absentees: [
         { name: 'Mohamed Shafraz', position: 'Sports Secretary' },
         { name: 'Mohamed Riyas', position: 'member of the Committee' }
     ]
@@ -228,7 +228,7 @@ const excoData: ExcoYear[] = [
          { name: 'Clifford Ferguson', position: 'Member of the Committee' },
         { name: 'Anurudha Ellepola', position: 'Member of the Committee' }
     ],
-    absentMembers:[
+    absentees:[
          { name: 'K. Sivaraja', position: 'Vice President' }
         ]
  },
