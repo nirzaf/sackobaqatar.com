@@ -20,7 +20,7 @@ const historyData: HistoryPeriod[] = [
         role: 'Bishop',
         period: '1820-1935',
         description: 'Significant contributor to the early development of the institution',
-        image: 'https://ik.imagekit.io/sackoba/history/Bishop%20Bede%20Beeckmeyer.png?updatedAt=1734619944721'
+        image: 'https://ik.imagekit.io/sackoba/history/Bishop_Bede_Beeckmeyer.jpg?updatedAt=1734638870008'
       }
     ]
   },
@@ -131,7 +131,7 @@ const historyData: HistoryPeriod[] = [
         role: 'Sports Director',
         period: '1960s',
         description: 'Pioneered modern sports programs',
-        image: 'https://ik.imagekit.io/sackoba/history/Jack%20Anderson.png?updatedAt=1734619942144'
+        image: 'https://ik.imagekit.io/sackoba/history/Jack%20Anderson.png?updatedAt=1734639345549'
       }
     ]
   },
