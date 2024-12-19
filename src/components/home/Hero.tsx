@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 export const Hero: FC = memo(() => (
-  <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-[#F8F6F9]">
-    <div className="absolute inset-0 bg-gradient-to-r from-[#F5F0F7] to-[#F0E6EC] opacity-95" />
+  <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url("https://ik.imagekit.io/sackoba/anthonys.jpg?updatedAt=1734608960733")' }}>
+    <div className="absolute inset-0 bg-gradient-to-r from-[#F5F0F7]/90 to-[#F0E6EC]/70" />
     <div className="absolute inset-0">
       <div className="absolute top-20 left-10 w-72 h-72 bg-[#E8E1F0]/30 rounded-full blur-3xl" />
       <div className="absolute top-40 right-20 w-96 h-96 bg-[#F0E6EC]/30 rounded-full blur-3xl" />
@@ -34,7 +34,9 @@ export const Hero: FC = memo(() => (
       >
         <Link 
           to="/about"
-          className="inline-block px-8 py-3 bg-white text-[#000000] font-semibold rounded-full hover:bg-[#B1B3CE] transition-colors"
+          className="inline-block px-8 py-3 bg-white text-[#000000] font-semibold rounded-full hover:bg-[#B1B3CE] transition-all relative 
+          before:content-[''] before:absolute before:-inset-[2px] before:bg-gradient-to-r before:from-[#541D67] before:to-[#B62D71] before:rounded-full before:-z-10
+          hover:transform hover:scale-105 hover:shadow-lg"
         >
           Learn More
         </Link>
