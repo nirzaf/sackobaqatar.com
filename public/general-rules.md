@@ -5,3 +5,4 @@ Write clean, documented code
 Implement proper error handling
 Ensure responsive design
 Optimize code for performance
+
