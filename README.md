@@ -10,7 +10,7 @@ St. Anthony's College Kandy Old Boys' Association - Qatar (SACKOBA Qatar) was fo
 
 ### News
 
-*   **SACKOBA Qatar Web Launch (March 15th, 2018):** The new website, [sackobaqatar.org](http://sackobaqatar.org), was launched with a fresh look, improved design, and mobile optimization. It provides information about SACKOBA Qatar, St. Anthony's College, events, and images.
+*   **SACKOBA Qatar Web Launch (March 15th, 2018):** The new website, [sackobaqatar.com](https://sackobaqatar.com), was launched with a fresh look, improved design, and mobile optimization. It provides information about SACKOBA Qatar, St. Anthony's College, events, and images.
 
 ### Video Gallery
 
@@ -360,14 +360,7 @@ St. Anthony's College Kandy Old Boys' Association - Qatar (SACKOBA Qatar) was fo
 *   Over 150 Antonian undergraduates at the Peradeniya Campus.
 *   Emphasis on religious and cultural activities.
 *   Decrease in the number of boarders due to the "2-mile-radius" rule.
-*   **2003:** Formation of an 'Ex-Boarders' subcommittee by the OBA Colombo Branch.
-*   Active support from Old Boys Associations (OBAs) worldwide.
-*   Launch of the OBA Colombo Branch website: [www.cmboantonians.org](http://www.cmboantonians.org).
-
-## Contact Information (Implied)
-
-*   **Website:** [sackobaqatar.org](http://sackobaqatar.org) (SACKOBA Qatar)
-*   **Website:** [www.cmboantonians.org](http://www.cmboantonians.org) (OBA Colombo Branch)
+*   **2003:** Formation of an 'Ex-Boarders' subcommittee by the OBA Colombo
 
 ## Footer
 
