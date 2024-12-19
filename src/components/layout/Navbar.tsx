@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { motion, AnimatePresence } from 'framer-motion';
-import { LOGO_URL, LOGO_ALT, LOGO_DIMENSIONS } from '../../assets/images/logo';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -47,27 +46,16 @@ export const Navbar: FC = () => {
               to="/" 
               className="flex items-center space-x-2 transition-opacity hover:opacity-90"
             >
-              <div className="relative w-[48px] h-[48px] -mt-1 -mb-1">
-                <div className="absolute inset-0 bg-white/50 rounded-full blur-xl"></div>
-                <div className="absolute inset-0 bg-white/40 rounded-full blur-lg"></div>
-                <div className="absolute inset-0 bg-white/30 rounded-full blur-md"></div>
+              <div className="relative w-[120px] h-[48px]">
                 <img 
-                  src={LOGO_URL}
-                  alt={LOGO_ALT}
-                  width={LOGO_DIMENSIONS.navbar.width}
-                  height={LOGO_DIMENSIONS.navbar.height}
-                  className="object-contain w-full h-full relative z-10 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] hover:drop-shadow-[0_4px_4px_rgba(0,0,0,0.4)] transition-all duration-300 transform hover:-translate-y-0.5"
+                  src="https://ik.imagekit.io/sackoba/SackOBA%20Modern%20logo.png?updatedAt=1734615335593"
+                  alt="SACKOBA Logo"
+                  className="object-contain w-full h-full relative z-10 brightness-110 contrast-110
+                    drop-shadow-[0_2px_2px_rgba(255,255,255,0.5)] 
+                    hover:drop-shadow-[0_4px_8px_rgba(255,255,255,0.7)] 
+                    transition-all duration-300 transform hover:-translate-y-0.5
+                    filter hover:brightness-125"
                 />
-              </div>
-              <div className="hidden md:block ml-3">
-                <p className="relative text-lg font-bold text-[#000000]">
-                  <span className="absolute -inset-1 bg-white/50 blur-md rounded-lg"></span>
-                  <span className="absolute -inset-2 bg-white/30 blur-lg rounded-lg"></span>
-                  <span className="absolute -inset-3 bg-white/20 blur-xl rounded-lg"></span>
-                  <span className="relative z-10 drop-shadow-[0_1px_1px_rgba(0,0,0,0.3)]">
-                    OBA Qatar
-                  </span>
-                </p>
               </div>
             </Link>
           </div>
@@ -135,14 +123,15 @@ export const Navbar: FC = () => {
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     <span className="sr-only">SACKOBA Qatar</span>
-                    <div className="relative">
-                      <div className="absolute inset-0 bg-white/30 rounded-full blur-xl"></div>
-                      <div className="absolute inset-0 bg-white/20 rounded-full blur-lg"></div>
-                      <div className="absolute inset-0 bg-white/10 rounded-full blur-md"></div>
+                    <div className="relative w-[120px] h-[48px]">
                       <img
-                        className="h-10 w-auto relative z-10 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] hover:drop-shadow-[0_4px_4px_rgba(0,0,0,0.4)] transition-all duration-300 transform hover:-translate-y-0.5"
-                        src={LOGO_URL}
-                        alt={LOGO_ALT}
+                        className="object-contain w-full h-full relative z-10 brightness-110 contrast-110
+                          drop-shadow-[0_2px_2px_rgba(255,255,255,0.5)] 
+                          hover:drop-shadow-[0_4px_8px_rgba(255,255,255,0.7)] 
+                          transition-all duration-300 transform hover:-translate-y-0.5
+                          filter hover:brightness-125"
+                        src="https://ik.imagekit.io/sackoba/SackOBA%20Modern%20logo.png?updatedAt=1734615335593"
+                        alt="SACKOBA Logo"
                       />
                     </div>
                   </Link>
