@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 export const Hero: FC = memo(() => (
-  <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat" 
+  <section className="relative h-[76vh] flex flex-col items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat" 
     style={{ backgroundImage: 'url("https://ik.imagekit.io/sackoba/MainBuildingWithGround.jpg?updatedAt=1734610625018")' }}>
-    <div className="absolute inset-0 bg-gradient-to-r from-[#541D67]/80 to-[#B62D71]/70" />
-    
+
+    <div className="absolute inset-0 bg-gradient-to-r from-[#541D67]/80 to-[#B62D71]/70" /> 
     <div className="container mx-auto px-4 relative z-10 text-center flex flex-col items-center">
       <motion.img 
         src="https://ik.imagekit.io/sackoba/sack_badge_color_512X512.png?updatedAt=1734611412968"
