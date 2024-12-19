@@ -11,10 +11,21 @@ export const Hero: FC = memo(() => (
       <motion.img 
         src="https://ik.imagekit.io/sackoba/sack_badge_color_512X512.png?updatedAt=1734611412968"
         alt="SACKOBA Logo"
-        className="w-32 h-32 mb-8"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
+        className="w-44 h-44 mb-2 mt-20 relative
+          filter brightness-110 contrast-110
+          drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]
+          animate-float"
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ 
+          duration: 0.7,
+          type: "spring",
+          stiffness: 100,
+          damping: 10
+        }}
+        style={{
+          animation: 'float 6s ease-in-out infinite'
+        }}
       />
       
       <motion.h1 
@@ -27,7 +38,7 @@ export const Hero: FC = memo(() => (
       </motion.h1>
       
       <motion.h2
-        className="text-2xl md:text-3xl font-semibold text-white mb-6 font-old-english"
+        className="text-2xl md:text-3xl font-semibold text-white mb-2 font-old-english"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.3 }}
