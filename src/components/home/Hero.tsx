@@ -3,34 +3,52 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 export const Hero: FC = memo(() => (
-  <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url("https://ik.imagekit.io/sackoba/MainBuildingWithGround.jpg?updatedAt=1734610625018")' }}>
-    <div className="absolute inset-0 bg-gradient-to-r from-[#F5F0F7]/90 to-[#F0E6EC]/80" />
-    <div className="absolute inset-0">
-      <div className="absolute top-20 left-10 w-72 h-72 bg-[#E8E1F0]/30 rounded-full blur-3xl" />
-      <div className="absolute top-40 right-20 w-96 h-96 bg-[#F0E6EC]/30 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-[#F5F0F7]/30 rounded-full blur-3xl" />
-    </div>
-    <div className="container mx-auto px-4 relative z-10 text-center">
-      <motion.h1 
-        className="text-5xl md:text-6xl font-bold text-black mb-6"
+  <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat" 
+    style={{ backgroundImage: 'url("https://ik.imagekit.io/sackoba/MainBuildingWithGround.jpg?updatedAt=1734610625018")' }}>
+    <div className="absolute inset-0 bg-gradient-to-r from-[#541D67]/80 to-[#B62D71]/70" />
+    
+    <div className="container mx-auto px-4 relative z-10 text-center flex flex-col items-center">
+      <motion.img 
+        src="https://ik.imagekit.io/sackoba/sack_badge_color_512X512.png?updatedAt=1734611412968"
+        alt="SACKOBA Logo"
+        className="w-32 h-32 mb-8"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
-      >
-        Welcome to SACKOBA Qatar
-      </motion.h1>
-      <motion.p 
-        className="text-xl text-black/90 max-w-2xl mx-auto mb-8"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+      />
+      
+      <motion.h1 
+        className="text-4xl md:text-5xl font-bold text-white mb-4 font-old-english"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.2 }}
       >
-        St. Anthony's College Kandy Old Boys' Association - Qatar <br></br> Bringing together Antonian Alumni Since 2009
-      </motion.p>
-      <motion.div
+        Old Boys' Association
+      </motion.h1>
+      
+      <motion.h2
+        className="text-2xl md:text-3xl font-semibold text-white mb-6 font-old-english"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.3 }}
+      >
+        of St. Anthony's College, Kandy
+      </motion.h2>
+
+      <motion.p 
+        className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7, delay: 0.4 }}
+      >
+        Since 2009
+      </motion.p>
+
+      <motion.div
+        className="flex flex-col items-center gap-6"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.7, delay: 0.5 }}
       >
         <Link 
           to="/about"
