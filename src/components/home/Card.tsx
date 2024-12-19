@@ -1,37 +1,36 @@
-import { FC, memo } from 'react';
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CardProps, fadeInUp } from './interfaces';
 
-export const Card: FC<CardProps> = memo(({ 
+export const Card: FC<CardProps> = ({ 
   title, 
   description, 
   date, 
   tag, 
-  link, 
-  className = '' 
+  link
 }) => (
   <motion.div 
-    className={`bg-white rounded-lg shadow-lg overflow-hidden ${className}`}
+    className="bg-background-primary rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
     {...fadeInUp}
   >
     <div className="p-6">
       {tag && (
-        <span className="inline-block px-3 py-1 text-sm font-semibold text-[#B62D71] bg-[#B62D71]/10 rounded-full mb-3">
+        <span className="inline-block px-3 py-1 text-sm font-semibold text-primary-700 bg-primary-700/10 rounded-full mb-3">
           {tag}
         </span>
       )}
-      <h3 className="text-xl font-semibold text-[#5B4886] mb-2">{title}</h3>
+      <h3 className="text-xl font-semibold text-primary-500 mb-2">{title}</h3>
       {date && (
-        <p className="text-sm text-[#9A78AB] mb-3">{date}</p>
+        <p className="text-sm text-primary-400 mb-3">{date}</p>
       )}
       {description && (
-        <p className="text-[#000000]/80 mb-4">{description}</p>
+        <p className="text-text-body mb-4">{description}</p>
       )}
       {link && (
         <Link 
           to={link.to}
-          className="inline-flex items-center text-[#B62D71] hover:text-[#541D67] transition-colors"
+          className="inline-flex items-center text-primary-700 hover:text-primary-600 transition-colors"
         >
           {link.text}
           <svg className="w-4 h-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
@@ -41,4 +40,4 @@ export const Card: FC<CardProps> = memo(({
       )}
     </div>
   </motion.div>
-));
+);

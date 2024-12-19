@@ -3,14 +3,13 @@ import { Link, useLocation } from 'react-router-dom';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { motion, AnimatePresence } from 'framer-motion';
-import { LOGO_URL, LOGO_ALT, LOGO_DIMENSIONS } from '../../assets/images/logo';
 
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
   { name: 'Events', href: '/events' },
   { name: 'News', href: '/news' },
-  { name: 'Gallery', href: '/videos' },
+  { name: 'Gallery', href: '/gallery' },
   { name: 'History', href: '/history' },
   { name: 'Exco', href: '/exco' },
   { name: 'Contact', href: '/contact' },
@@ -33,8 +32,8 @@ export const Navbar: FC = () => {
     <header 
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-gradient-to-r from-[#541D67] via-[#541D67] to-[#5B4886] shadow-lg' 
-          : 'bg-gradient-to-r from-[#541D67]/95 via-[#541D67]/95 to-[#5B4886]/95 backdrop-blur-sm'
+          ? 'bg-gradient-to-r from-[#B62D71] via-[#541D67] to-[#5B4886] shadow-lg' 
+          : 'bg-gradient-to-r from-[#B62D71]/95 via-[#541D67]/95 to-[#5B4886]/95 backdrop-blur-sm'
       }`}
     >
       <nav 
@@ -47,42 +46,23 @@ export const Navbar: FC = () => {
               to="/" 
               className="flex items-center space-x-2 transition-opacity hover:opacity-90"
             >
-              <div className="relative w-[48px] h-[48px] -mt-1 -mb-1">
-                <div className="absolute inset-0 bg-white/30 rounded-full blur-xl"></div>
-                <div className="absolute inset-0 bg-white/20 rounded-full blur-lg"></div>
-                <div className="absolute inset-0 bg-white/10 rounded-full blur-md"></div>
+              <div className="relative w-[120px] h-[48px]">
                 <img 
-                  src={LOGO_URL}
-                  alt={LOGO_ALT}
-                  width={LOGO_DIMENSIONS.navbar.width}
-                  height={LOGO_DIMENSIONS.navbar.height}
-                  className="object-contain w-full h-full relative z-10 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] hover:drop-shadow-[0_4px_4px_rgba(0,0,0,0.4)] transition-all duration-300 transform hover:-translate-y-0.5"
+                  src="https://ik.imagekit.io/sackoba/SackOBA%20Modern%20logo.png?updatedAt=1734615335593"
+                  alt="SACKOBA Logo"
+                  className="object-contain w-full h-full relative z-10 brightness-110 contrast-110
+                    drop-shadow-[0_2px_2px_rgba(255,255,255,0.5)] 
+                    hover:drop-shadow-[0_4px_8px_rgba(255,255,255,0.7)] 
+                    transition-all duration-300 transform hover:-translate-y-0.5
+                    filter hover:brightness-125"
                 />
-              </div>
-              <div className="hidden md:block">
-                <h1 className="text-sm font-medium text-white">
-                  St. Anthony's College
-                </h1>
-                <p className="text-2xs text-white">
-                  Kandy OBA Qatar
-                </p>
               </div>
             </Link>
           </div>
           
-          <div className="flex lg:hidden">
-            <button
-              type="button"
-              className="-m-2.5 inline-flex items-center justify-center rounded-full p-2.5 text-white hover:text-white/90"
-              onClick={() => setMobileMenuOpen(true)}
-            >
-              <span className="sr-only">Open main menu</span>
-              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-            </button>
-          </div>
-
           <div className="hidden lg:flex lg:gap-x-8">
-            <div className="bg-white/10 backdrop-blur-lg rounded-full px-4 py-1 flex gap-x-6 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+            <div className="bg-[#541D67]/60 backdrop-blur-lg rounded-full px-6 py-2 flex gap-x-8 
+                          shadow-[0_0_15px_rgba(0,0,0,0.2)] border border-[#9A78AB]/20">
               {navigation.map((item) => {
                 const isActive = location.pathname === item.href;
                 return (
@@ -91,15 +71,15 @@ export const Navbar: FC = () => {
                     to={item.href}
                     className={`relative text-sm font-medium py-1.5 transition-all duration-300 ${
                       isActive 
-                        ? 'text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]' 
-                        : 'text-white/70 hover:text-white hover:drop-shadow-[0_0_4px_rgba(255,255,255,0.4)]'
+                        ? 'text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.7)]' 
+                        : 'text-white/90 hover:text-white hover:drop-shadow-[0_0_4px_rgba(255,255,255,0.5)]'
                     }`}
                   >
                     {item.name}
                     {isActive && (
                       <motion.div
                         layoutId="navbar-indicator"
-                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.6)]"
+                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.7)]"
                         transition={{ 
                           type: "spring", 
                           stiffness: 500, 
@@ -112,6 +92,18 @@ export const Navbar: FC = () => {
               })}
             </div>
           </div>
+
+          <div className="flex lg:hidden">
+            <button
+              type="button"
+              className="-m-2.5 inline-flex items-center justify-center rounded-full p-2.5 text-white hover:text-white/90
+                         bg-[#541D67]/60 backdrop-blur-sm border border-[#9A78AB]/20"
+              onClick={() => setMobileMenuOpen(true)}
+            >
+              <span className="sr-only">Open main menu</span>
+              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            </button>
+          </div>
         </div>
 
         <AnimatePresence>
@@ -123,7 +115,7 @@ export const Navbar: FC = () => {
               onClose={setMobileMenuOpen}
             >
               <div className="fixed inset-0 z-50" />
-              <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gradient-to-r from-[#541D67] via-[#541D67] to-[#5B4886] px-6 py-6 sm:max-w-sm">
+              <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gradient-to-r from-[#541D67] via-[#B62D71] to-[#5B4886] px-6 py-6 sm:max-w-sm">
                 <div className="flex items-center justify-between">
                   <Link 
                     to="/" 
@@ -131,14 +123,15 @@ export const Navbar: FC = () => {
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     <span className="sr-only">SACKOBA Qatar</span>
-                    <div className="relative">
-                      <div className="absolute inset-0 bg-white/30 rounded-full blur-xl"></div>
-                      <div className="absolute inset-0 bg-white/20 rounded-full blur-lg"></div>
-                      <div className="absolute inset-0 bg-white/10 rounded-full blur-md"></div>
+                    <div className="relative w-[120px] h-[48px]">
                       <img
-                        className="h-10 w-auto relative z-10 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] hover:drop-shadow-[0_4px_4px_rgba(0,0,0,0.4)] transition-all duration-300 transform hover:-translate-y-0.5"
-                        src={LOGO_URL}
-                        alt={LOGO_ALT}
+                        className="object-contain w-full h-full relative z-10 brightness-110 contrast-110
+                          drop-shadow-[0_2px_2px_rgba(255,255,255,0.5)] 
+                          hover:drop-shadow-[0_4px_8px_rgba(255,255,255,0.7)] 
+                          transition-all duration-300 transform hover:-translate-y-0.5
+                          filter hover:brightness-125"
+                        src="https://ik.imagekit.io/sackoba/SackOBA%20Modern%20logo.png?updatedAt=1734615335593"
+                        alt="SACKOBA Logo"
                       />
                     </div>
                   </Link>

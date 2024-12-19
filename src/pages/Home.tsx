@@ -1,14 +1,10 @@
 import { FC } from 'react';
 import { Hero } from '../components/home/Hero';
-import { NewsSection } from '../components/home/NewsSection';
-import { VideoSection } from '../components/home/VideoSection';
-import { AboutSection } from '../components/home/AboutSection';
+import { HomeContent } from '../components/home/HomeContent';
 
 export const Home: FC = () => (
-  <div className="bg-gradient-to-b from-[#F8F6F9] to-[#F8F6F9]">
+  <div className="bg-white">
     <Hero />
-    <NewsSection />
-    <VideoSection />
-    <AboutSection />
+    <HomeContent />
   </div>
 );

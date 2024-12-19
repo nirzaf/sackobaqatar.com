@@ -2,6 +2,7 @@ import { FC, useState } from 'react';
 import VideoHeader from '../components/video-gallery/VideoHeader';
 import CategoryFilter from '../components/video-gallery/CategoryFilter';
 import VideoGrid from '../components/video-gallery/VideoGrid';
+import ImageGallerySection from '../components/video-gallery/ImageGallerySection';
 import { Video } from '../components/video-gallery/types';
 
 const videos: Video[] = [
@@ -54,13 +55,16 @@ export const VideoGallery: FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 mt-16">
-      <VideoHeader />
-      <CategoryFilter
-        categories={categories}
-        selectedCategory={selectedCategory}
-        onCategoryChange={setSelectedCategory}
-      />
-      <VideoGrid videos={filteredVideos} />
+      <div className="min-h-screen">
+        <ImageGallerySection />
+        <VideoHeader />
+        <CategoryFilter
+          categories={categories}
+          selectedCategory={selectedCategory}
+          onCategoryChange={setSelectedCategory}
+        />
+        <VideoGrid videos={filteredVideos} />
+      </div>
     </div>
   );
 };

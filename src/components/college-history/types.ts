@@ -7,6 +7,23 @@ export interface TimelineEvent {
 export interface HistorySectionProps {
   title: string;
   content: string;
+  year: string;
+  image?: string;
+}
+
+export interface HistoryPeriod {
+  year: string;
+  title: string;
+  content: string;
+  image?: string;
+  notablePersons?: Array<{
+    name: string;
+    role: string;
+    period: string;
+    image?: string;
+    description: string;
+    achievements?: string[];
+  }>;
 }
 
 export interface HistoryTimelineProps {
