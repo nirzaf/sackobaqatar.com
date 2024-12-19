@@ -4,7 +4,7 @@ import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { News } from './pages/News';
 import { VideoGallery } from './pages/VideoGallery';
-import { CollegeHistory } from './pages/CollegeHistory';
+import CollegeHistory from './pages/CollegeHistory';
 import { Exco } from './pages/Exco';
 import { Contact } from './pages/Contact';
 import { Events } from './pages/Events';

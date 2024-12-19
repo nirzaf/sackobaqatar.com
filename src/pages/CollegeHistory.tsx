@@ -1,7 +1,6 @@
 import { FC, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDownIcon } from '@heroicons/react/24/outline';
-import { HistoryPeriod } from '../components/college-history/types';
+import HistoryAccordion from '../components/college-history/HistoryAccordion';
+import { HistoryPeriod } from '../types/collegeHistoryTypes'; // Import the type
 
 const historyData: HistoryPeriod[] = [
   {
@@ -176,7 +175,7 @@ const historyData: HistoryPeriod[] = [
 ];
 
 
-export const CollegeHistory: FC = () => {
+const CollegeHistory: FC = () => {
   const [openSection, setOpenSection] = useState<string>('');
 
   return (
@@ -205,112 +204,13 @@ export const CollegeHistory: FC = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           {historyData.map((period) => (
-            <div key={period.year} className="mb-4">
-              <button
-                onClick={() => setOpenSection(openSection === period.year ? '' : period.year)}
-                className="w-full bg-[#1A1A1A] hover:bg-[#2A2A2A] rounded-lg transition-colors duration-300"
-              >
-                <div className="py-6 px-6 flex items-center justify-between">
-                  <div className="flex items-center gap-6">
-                    <span className="text-xl font-bold text-[#FF69B4]">{period.year}</span>
-                    <h2 className="text-2xl font-bold text-white">{period.title}</h2>
-                  </div>
-                  <ChevronDownIcon 
-                    className={`w-6 h-6 text-white transition-transform duration-300 ${
-                      openSection === period.year ? 'transform rotate-180' : ''
-                    }`}
-                  />
-                </div>
-              </button>
-              <AnimatePresence>
-                {openSection === period.year && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden bg-white rounded-b-lg shadow-sm"
-                  >
-                    <div className="p-6">
-                      {period.image && (
-                        <div className={`mb-6 rounded-lg overflow-hidden ${
-                          period.image.includes('Rugger%20Team') ? 'max-w-3xl mx-auto' : 'max-w-sm mx-auto'
-                        }`}>
-                          <img 
-                            src={period.image} 
-                            alt={period.title}
-                            className="w-full h-auto object-cover"
-                          />
-                        </div>
-                      )}
-                      <div className="prose max-w-none">
-                        <div className="text-[#5B4886] leading-relaxed mb-6"
-                          dangerouslySetInnerHTML={{ __html: period.content }}
-                        />
-                      </div>
-                      {period.notablePersons && period.notablePersons.length > 0 && (
-                        <div className="mt-8">
-                          <h3 className="text-xl font-bold text-[#541D67] mb-4">Notable Persons</h3>
-                          <div className="space-y-6">
-                            {period.notablePersons.map((person, index) => (
-                              <div key={index} className="bg-[#F8F6F9] p-6 rounded-lg">
-                                <div className="flex items-start gap-6">
-                                  {person.image && (
-                                    <img 
-                                      src={person.image} 
-                                      alt={person.name}
-                                      className="w-24 h-24 object-cover rounded-lg shadow-sm"
-                                    />
-                                  )}
-                                  <div>
-                                    <h4 className="text-lg font-bold text-[#541D67]">{person.name}</h4>
-                                    <p className="text-[#B62D71] font-medium">{person.role}</p>
-                                    <p className="text-sm text-[#5B4886] mb-2">{person.period}</p>
-                                    <p className="text-[#5B4886]">{person.description}</p>
-                                    {person.achievements && (
-                                      <ul className="mt-3 space-y-1 list-disc list-inside text-sm text-[#5B4886]">
-                                        {person.achievements.map((achievement: string, i: number) => (
-                                          <li key={i}>{achievement}</li>
-                                        ))}
-                                      </ul>
-                                    )}
-                                  </div>
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+            <HistoryAccordion
+              key={period.year}
+              period={period}
+              isOpen={openSection === period.year}
+              onToggle={() => setOpenSection(openSection === period.year ? '' : period.year)}
+            />
           ))}
-        </div>
-      </div>
-
-      {/* Statistics Section */}
-      <div className="bg-[#F8F6F9] py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="text-center bg-white p-4 rounded-lg shadow-sm">
-              <div className="text-2xl md:text-3xl font-bold text-[#B62D71]">170</div>
-              <div className="text-sm text-[#5B4886]">Years of Excellence</div>
-            </div>
-            <div className="text-center bg-white p-4 rounded-lg shadow-sm">
-              <div className="text-2xl md:text-3xl font-bold text-[#B62D71]">27</div>
-              <div className="text-sm text-[#5B4886]">Principals</div>
-            </div>
-            <div className="text-center bg-white p-4 rounded-lg shadow-sm">
-              <div className="text-2xl md:text-3xl font-bold text-[#B62D71]">1000s</div>
-              <div className="text-sm text-[#5B4886]">Alumni Worldwide</div>
-            </div>
-            <div className="text-center bg-white p-4 rounded-lg shadow-sm">
-              <div className="text-2xl md:text-3xl font-bold text-[#B62D71]">15</div>
-              <div className="text-sm text-[#5B4886]">Benedictine Principals</div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
