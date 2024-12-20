@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { motion } from 'framer-motion';
 import HistoryAccordion from '../components/college-history/HistoryAccordion';
 import { HistoryPeriod } from '../types/collegeHistoryTypes'; // Import the type
@@ -176,6 +176,12 @@ const historyData: HistoryPeriod[] = [
 ];
 
 const CollegeHistory: FC = () => {
+  const [openPeriod, setOpenPeriod] = useState<string | null>(null);
+
+  const handleToggle = (year: string) => {
+    setOpenPeriod(openPeriod === year ? null : year);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       {/* Hero Section */}
@@ -208,8 +214,8 @@ const CollegeHistory: FC = () => {
             <HistoryAccordion
               key={period.year}
               period={period}
-              isOpen={false}
-              onToggle={() => {}}
+              isOpen={openPeriod === period.year}
+              onToggle={() => handleToggle(period.year)}
             />
           ))}
         </div>
