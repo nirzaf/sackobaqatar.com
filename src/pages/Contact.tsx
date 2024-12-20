@@ -9,29 +9,34 @@ export const Contact: FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 mt-16">
-      <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
-        <div className="text-center mb-12">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-4xl font-bold text-gray-900 mb-4"
-          >
-            Get in Touch
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-lg text-gray-500"
-          >
-            Have questions about SACKOBA Qatar? We're here to help. Send us a message and we'll respond as soon as possible.
-          </motion.p>
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero Section */}
+      <section className="relative h-[34vh] bg-gradient-to-r from-[#541D67] to-[#B62D71]">
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="relative h-full flex items-center justify-center">
+          <div className="text-center text-white z-10">
+            <motion.h1 
+              className="text-4xl md:text-3xl text-white font-bold mb-3"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+            >
+              Get in Touch
+            </motion.h1>
+            <motion.p
+              className="text-lg md:text-xl text-white/90"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+            >
+              Have questions about SACKOBA Qatar? We're here to help.
+            </motion.p>
+          </div>
         </div>
+      </section>
 
-        {/* Contact Grid */}
+      {/* Contact Grid */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Form */}
           <div className="bg-white rounded-lg shadow-lg p-6 sm:p-10">
@@ -51,3 +56,5 @@ export const Contact: FC = () => {
     </div>
   );
 };
+
+export default Contact;

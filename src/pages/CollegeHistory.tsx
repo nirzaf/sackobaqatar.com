@@ -1,4 +1,5 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
+import { motion } from 'framer-motion';
 import HistoryAccordion from '../components/college-history/HistoryAccordion';
 import { HistoryPeriod } from '../types/collegeHistoryTypes'; // Import the type
 
@@ -174,41 +175,41 @@ const historyData: HistoryPeriod[] = [
   }
 ];
 
-
 const CollegeHistory: FC = () => {
-  const [openSection, setOpenSection] = useState<string>('');
-
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section - Adjusted Height */}
-      <div className="relative h-[30vh] md:h-[36vh] bg-[#F8F6F9] overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://ik.imagekit.io/sackoba/history/College%20Building.png"
-            alt="St. Anthony's College"
-            className="w-full h-full object-cover opacity-90"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#F8F6F9]/50 to-[#F8F6F9]" />
-        </div>
-        <div className="relative container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-[#541D67] mb-2">
-            Our Rich History
-          </h1>
-          <p className="text-base md:text-lg text-[#5B4886] max-w-2xl">
-            Since 1854, St. Anthony's College has been shaping minds and building futures
-          </p>
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      {/* Hero Section */}
+      <div className="relative h-[40vh] flex items-center justify-center bg-gradient-to-r from-[#541D67] to-[#B62D71]">
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="relative z-10 text-center text-white">
+          <motion.h1 
+            className="text-4xl md:text-3xl text-white font-bold mb-4"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            College History
+          </motion.h1>
+          <motion.p
+            className="text-lg md:text-xl text-white/90"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            Exploring the rich heritage of St. Anthony's College Kandy
+          </motion.p>
         </div>
       </div>
 
-      {/* Main Content with Accordions */}
+      {/* Main Content */}
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           {historyData.map((period) => (
             <HistoryAccordion
               key={period.year}
               period={period}
-              isOpen={openSection === period.year}
-              onToggle={() => setOpenSection(openSection === period.year ? '' : period.year)}
+              isOpen={false}
+              onToggle={() => {}}
             />
           ))}
         </div>

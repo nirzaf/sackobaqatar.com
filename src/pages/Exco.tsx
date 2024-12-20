@@ -371,17 +371,27 @@ const Exco: FC = () => {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Hero Section */}
-      <div className="relative h-[40vh] bg-primary-900 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-900/90 to-primary-800/90" />
-        <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
-          <h1 className="text-4xl md:text-3xl font-bold text-black mb-4 mt-12">
+      <section className="relative h-[40vh] flex items-center justify-center bg-gradient-to-r from-[#541D67] to-[#B62D71]">
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="relative z-10 text-center text-white">
+          <motion.h1 
+            className="text-4xl md:text-3xl text-white font-bold mb-4"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
             Executive Committee
-          </h1>
-          <p className="text-xl text-black/80 max-w-2xl">
-            Meet the dedicated team leading SACKOBA Qatar through various initiatives and activities
-          </p>
+          </motion.h1>
+          <motion.p
+            className="text-lg md:text-xl text-white/90"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            Meet the dedicated team leading SACKOBA Qatar
+          </motion.p>
         </div>
-      </div>
+      </section>
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-2">
