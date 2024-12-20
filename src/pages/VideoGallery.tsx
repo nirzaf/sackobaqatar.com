@@ -1,8 +1,6 @@
 import { FC, useState } from 'react';
 import { motion } from 'framer-motion';
-import VideoHeader from '../components/video-gallery/VideoHeader';
-import CategoryFilter from '../components/video-gallery/CategoryFilter';
-import VideoGrid from '../components/video-gallery/VideoGrid';
+import ImageGallerySection from '../components/video-gallery/ImageGallerySection';
 import { Video } from '../components/video-gallery/types';
 
 const videos: Video[] = [
@@ -52,12 +50,12 @@ export const VideoGallery: FC = () => {
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 text-center text-white">
           <motion.h1 
-            className="text-4xl md:text-3xl font-bold mb-4"
+            className="text-4xl md:text-3xl text-white font-bold mb-4"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            Video Gallery
+            Media Gallery
           </motion.h1>
           <motion.p 
             className="text-lg md:text-xl text-white/90"
@@ -70,7 +68,26 @@ export const VideoGallery: FC = () => {
         </div>
       </section>
 
+      {/* Image Gallery Section */}
+      <ImageGallerySection />
+
+      {/* Video Gallery Section */}
       <div className="container mx-auto px-4 py-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-[#541D67] to-[#B62D71] bg-clip-text text-transparent">
+            Video Gallery
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Watch and relive the special moments from our events and gatherings
+          </p>
+        </motion.div>
+
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {categories.map((category) => (

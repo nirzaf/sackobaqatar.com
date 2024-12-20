@@ -3,6 +3,7 @@ export interface Video {
   url: string;
   duration: string;
   category: string;
+  description: string;
 }
 
 export interface CategoryFilterProps {
