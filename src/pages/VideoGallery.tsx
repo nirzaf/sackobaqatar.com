@@ -1,69 +1,129 @@
 import { FC, useState } from 'react';
+import { motion } from 'framer-motion';
 import VideoHeader from '../components/video-gallery/VideoHeader';
 import CategoryFilter from '../components/video-gallery/CategoryFilter';
 import VideoGrid from '../components/video-gallery/VideoGrid';
-import ImageGallerySection from '../components/video-gallery/ImageGallerySection';
 import { Video } from '../components/video-gallery/types';
 
 const videos: Video[] = [
   {
-    title: "St. Anthony's College Anthem",
-    url: "https://www.youtube.com/watch?v=XYZ123abc",
+    title: "SACKOBA Qatar Community Event",
+    url: "https://www.youtube.com/watch?v=XvXWZ2pV3Do",
     duration: "3:45",
-    category: "Anthem"
+    category: "Community",
+    description: "Highlights from our vibrant community gathering in Qatar"
   },
   {
-    title: "SACKOBA Qatar 10th Anniversary Highlights",
-    url: "https://www.youtube.com/watch?v=DEF456ghi",
-    duration: "15:20",
-    category: "Events"
+    title: "Annual Sports Meet 2023",
+    url: "https://www.youtube.com/watch?v=ix9COgFRPZc",
+    duration: "5:20",
+    category: "Sports",
+    description: "Exciting moments from our annual sports competition"
   },
   {
-    title: "Cricket Tournament 2023 Finals",
-    url: "https://www.youtube.com/watch?v=JKL789mno",
-    duration: "8:15",
-    category: "Sports"
+    title: "Cultural Evening Highlights",
+    url: "https://www.youtube.com/watch?v=bGXXF1Iuqd0",
+    duration: "4:15",
+    category: "Cultural",
+    description: "A celebration of our rich cultural heritage"
   },
   {
-    title: "Traditional Dance Performance - Cultural Night 2023",
-    url: "https://www.youtube.com/watch?v=PQR321stu",
-    duration: "12:30",
-    category: "Cultural"
-  },
-  {
-    title: "SACKOBA Qatar Community Service Day 2023",
-    url: "https://www.youtube.com/watch?v=VWX654xyz",
-    duration: "5:45",
-    category: "Community"
-  },
-  {
-    title: "A Day in the Life of an Antonian",
-    url: "https://www.youtube.com/watch?v=MNO987pqr",
-    duration: "18:25",
-    category: "Feature"
+    title: "SACKOBA Qatar Anniversary Celebration",
+    url: "https://www.youtube.com/watch?v=KKb4U9kSUCk",
+    duration: "6:30",
+    category: "Events",
+    description: "Special moments from our anniversary celebration"
   }
 ];
 
-const categories = Array.from(new Set(videos.map(video => video.category)));
+const categories = ['All', ...Array.from(new Set(videos.map(video => video.category)))];
 
 export const VideoGallery: FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
-  const filteredVideos = selectedCategory === 'All' 
-    ? videos 
+  const filteredVideos = selectedCategory === 'All'
+    ? videos
     : videos.filter(video => video.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 mt-16">
-      <div className="min-h-screen">
-        <ImageGallerySection />
-        <VideoHeader />
-        <CategoryFilter
-          categories={categories}
-          selectedCategory={selectedCategory}
-          onCategoryChange={setSelectedCategory}
-        />
-        <VideoGrid videos={filteredVideos} />
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      {/* Hero Section */}
+      <section className="relative h-[40vh] flex items-center justify-center bg-gradient-to-r from-[#541D67] to-[#B62D71]">
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="relative z-10 text-center text-white">
+          <motion.h1 
+            className="text-4xl md:text-3xl font-bold mb-4"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            Video Gallery
+          </motion.h1>
+          <motion.p 
+            className="text-lg md:text-xl text-white/90"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            Capturing Memorable Moments of SACKOBA Qatar
+          </motion.p>
+        </div>
+      </section>
+
+      <div className="container mx-auto px-4 py-12">
+        {/* Category Filter */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {categories.map((category) => (
+            <motion.button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-all
+                ${selectedCategory === category 
+                  ? 'bg-primary-600 text-white shadow-lg' 
+                  : 'bg-white text-primary-600 hover:bg-primary-50'}`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {category}
+            </motion.button>
+          ))}
+        </div>
+
+        {/* Video Grid */}
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
+          layout
+        >
+          {filteredVideos.map((video, index) => (
+            <motion.div
+              key={video.url}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+            >
+              <div className="aspect-w-16 aspect-h-9">
+                <iframe
+                  src={`https://www.youtube.com/embed/${video.url.split('v=')[1]}`}
+                  title={video.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-primary-900 mb-2">{video.title}</h3>
+                <p className="text-gray-600 mb-4">{video.description}</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-500">{video.duration}</span>
+                  <span className="px-3 py-1 bg-primary-50 text-primary-600 rounded-full text-sm font-medium">
+                    {video.category}
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </div>
   );
