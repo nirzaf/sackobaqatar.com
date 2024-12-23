@@ -8,7 +8,7 @@ export const NoticeBoard: FC = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="bg-white rounded-2xl shadow-2xl overflow-hidden mb-16 max-w-6xl mx-auto"
+      className="bg-white rounded-2xl shadow-2xl overflow-hidden mb-2 max-w-6xl mx-auto"
     >
       <div className="bg-gradient-to-r from-[#541D67] to-[#B62D71] p-4">
         <h2 className="text-2xl md:text-3xl font-bold text-white text-center">
