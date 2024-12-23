@@ -34,9 +34,13 @@ const features: Feature[] = [
   }
 ];
 
+/**
+ * FeaturesSection component - Displays feature cards in a responsive grid
+ * Includes membership CTA button
+ */
 export const FeaturesSection: FC = () => (
-  <div className="flex flex-col items-center">
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+  <div className="w-full">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-8">
       {features.map((feature, index) => (
         <FeatureCard
           key={index}
@@ -54,12 +58,13 @@ export const FeaturesSection: FC = () => (
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.6 }}
+      className="flex justify-center w-full"
     >
       <Link
         to="/membership-terms"
-        className="inline-block px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-bold rounded-lg
-          shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 mb-8
-          text-lg md:text-xl"
+        className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-primary-600 to-primary-700 
+          text-white font-bold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 
+          transition-all duration-300 text-base sm:text-lg md:text-xl text-center"
       >
         Become a Member
       </Link>
