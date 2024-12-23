@@ -26,3 +26,15 @@ export interface SectionProps {
   title: string;
   children: React.ReactNode;
 }
+
+export interface FeatureCardProps {
+  title: string;
+  description: string;
+  Icon: React.FC;
+  gradient: string;
+  delay?: number;
+}
+
+export interface Feature extends Omit<FeatureCardProps, 'Icon'> {
+  IconComponent: React.FC;
+}
