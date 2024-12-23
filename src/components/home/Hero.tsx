@@ -6,7 +6,7 @@ export const Hero: FC = memo(() => (
   <section className="relative h-[76vh] flex flex-col items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat" 
     style={{ backgroundImage: 'url("https://ik.imagekit.io/sackoba/MainBuildingWithGround.jpg?updatedAt=1734610625018")' }}>
 
-    <div className="absolute inset-0 bg-gradient-to-r from-[#541D67]/80 to-[#B62D71]/70" /> 
+    <div className="absolute inset-0 bg-gradient-to-r from-primary-600/80 to-primary-700/70" /> 
     <div className="container mx-auto px-4 relative z-10 text-center flex flex-col items-center">
       <motion.img 
         src="https://ik.imagekit.io/sackoba/sack_badge_color_512X512.png?updatedAt=1734611412968"
@@ -29,22 +29,14 @@ export const Hero: FC = memo(() => (
       />
       
       <motion.h1 
-        className="text-4xl md:text-5xl font-bold text-white mb-4 font-old-english"
+        className="text-3xl md:text-5xl lg:text-6xl font-normal text-white mb-4 font-['UnifrakturMaguntia'] tracking-wide flex flex-col"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.2 }}
       >
-        Old Boys' Association
+        <span>St. Anthony's College</span>
+        <span>Old Boys' Association - Qatar</span>
       </motion.h1>
-      
-      <motion.h2
-        className="text-2xl md:text-3xl font-semibold text-white mb-2 font-old-english"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.3 }}
-      >
-        of St. Anthony's College, Kandy
-      </motion.h2>
 
       <motion.p 
         className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8"

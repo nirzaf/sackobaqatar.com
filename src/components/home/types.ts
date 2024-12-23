@@ -1,7 +1,9 @@
-export interface HeroSectionProps {
+export interface HeroContentProps {
   title: string;
   description: string;
 }
+
+export interface HeroSectionProps extends HeroContentProps {}
 
 export interface NewsCardProps {
   tag?: string;
