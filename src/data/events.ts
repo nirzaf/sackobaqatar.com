@@ -75,7 +75,7 @@ export const events: Event[] = [
     date: "2023-04-14",
     images: [
       {
-        url: "https://ik.imagekit.io/sackoba/events/2023/Sinhala_&_Tamil_New_Year_and_Iftar_Celebration_2023_SACKOBA_Qatar/St_Anthony_s_College_Kandy_Old_Boys_Association_Qatar.jpg?updatedAt=1734808650769",
+        url: "https://ik.imagekit.io/sackoba/events/2023/Sinhala%20&%20Tamil%20New%20Year%20and%20Iftar%20Celebration%202023%20SACKOBA%20Qatar/St%20Anthonys%20College%20Old%20Boys%20Qatar%20Poster.jpg?updatedAt=1734955172648",
         title: "Traditional Kolam with Oil Lamp"
       },
       {

@@ -81,12 +81,6 @@ export const EventsGrid: FC<EventsGridProps> = ({
                       {event.description}
                     </p>
                   )}
-
-                  <button className="w-full px-6 py-2.5 bg-white text-[#541D67] rounded-full text-sm font-medium
-                    border border-[#B1B3CE]/20 hover:bg-[#541D67] hover:text-white
-                    transition-all duration-300 group-hover:shadow-lg group-hover:shadow-[#541D67]/10">
-                    Learn More
-                  </button>
                 </div>
 
                 <div className="absolute inset-0 bg-gradient-to-t from-white/10 via-transparent to-transparent 

@@ -58,7 +58,7 @@ export const FeaturesSection: FC = () => (
       <Link
         to="/membership-terms"
         className="inline-block px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-bold rounded-lg
-          shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300
+          shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 mb-8
           text-lg md:text-xl"
       >
         Become a Member

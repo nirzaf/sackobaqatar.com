@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { motion } from 'framer-motion';
+import { HiDownload } from 'react-icons/hi';
 
 export const MembershipTerms: FC = () => {
   const terms = [
@@ -26,50 +27,114 @@ export const MembershipTerms: FC = () => {
     iban: "QA28 DOHB 0211 0280 5730 0100 1000 0"
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-primary-800/30 py-16">
+    <div className="min-h-screen bg-gradient-to-br from-[#B62D71]/10 via-[#541D67]/20 to-[#5B4886]/30 py-16 px-4">
       <motion.div 
-        className="container mx-auto px-4 sm:px-6 lg:px-8"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        className="max-w-7xl mx-auto"
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
       >
-        <h1 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">
-          SACKOBA QATAR MEMBERSHIP GENERAL TERMS AND CONDITIONS
-        </h1>
-
-        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 md:p-8 mb-8">
-          <ol className="list-decimal pl-6 space-y-4">
-            {terms.map((term, index) => (
-              <motion.li 
-                key={index}
-                className="text-white/90"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                {term}
-              </motion.li>
-            ))}
-          </ol>
-        </div>
-
+        {/* Header Section */}
         <motion.div 
-          className="bg-white/10 backdrop-blur-sm rounded-lg p-6 md:p-8"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 1.5 }}
+          className="text-center mb-16"
+          variants={itemVariants}
         >
-          <h2 className="text-2xl font-bold text-white mb-4">Bank Account Details</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <p className="text-white/90">Bank: {bankDetails.bank}</p>
-              <p className="text-white/90">Branch: {bankDetails.branch}</p>
-              <p className="text-white/90">Account Name: {bankDetails.accountName}</p>
+          <h1 className="text-3xl mt-12 md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#B62D71] via-[#cb67ec] to-[#5513f0] mb-4">
+            Membership Terms
+          </h1>
+          <p className="text-lg text-white max-w-2xl mx-auto">
+            General terms and conditions for SACKOBA Qatar membership
+          </p>
+          <motion.div 
+            className="mt-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            <a 
+              href="https://workdrive.zohoexternal.com/file/5s3n9011971058c1e465a90bbb872188356b6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#B62D71] to-[#541D67] hover:from-[#B62D71]/90 hover:to-[#541D67]/90 text-white font-semibold rounded-lg transition-all shadow-lg hover:shadow-xl"
+              download
+            >
+              <HiDownload className="w-5 h-5" />
+              Download Membership Form
+            </a>
+          </motion.div>
+        </motion.div>
+
+        {/* Terms Section */}
+        <motion.div 
+          className="grid gap-8 mb-16"
+          variants={containerVariants}
+        >
+          <div className="bg-gradient-to-br from-[#B62D71]/5 via-[#541D67]/10 to-[#5B4886]/15 backdrop-blur-lg rounded-2xl p-8 shadow-xl border border-[#B62D71]/20">
+            <h2 className="text-2xl font-bold text-white mb-8 pb-4 border-b border-[#B62D71]/20">
+              Terms & Conditions
+            </h2>
+            <ol className="grid gap-6">
+              {terms.map((term, index) => (
+                <motion.li 
+                  key={index}
+                  className="flex gap-4 text-white hover:text-white transition-colors"
+                  variants={itemVariants}
+                >
+                  <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-r from-[#B62D71]/20 to-[#541D67]/20 text-white font-semibold">
+                    {index + 1}
+                  </span>
+                  <span className="text-lg leading-relaxed pt-1">{term}</span>
+                </motion.li>
+              ))}
+            </ol>
+          </div>
+        </motion.div>
+
+        {/* Bank Details Section */}
+        <motion.div 
+          className="bg-gradient-to-br from-[#B62D71]/5 via-[#541D67]/10 to-[#5B4886]/15 backdrop-blur-lg rounded-2xl p-8 shadow-xl border border-[#B62D71]/20"
+          variants={itemVariants}
+        >
+          <h2 className="text-2xl font-bold text-white mb-8 pb-4 border-b border-[#B62D71]/20">
+            Account Details of {bankDetails.bank} Account 
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="space-y-4">
+              <div className="bg-gradient-to-r from-[#B62D71]/10 to-[#541D67]/10 rounded-xl p-4 border border-[#B62D71]/10 hover:border-[#B62D71]/30 transition-colors">
+                <p className="text-sm text-white/80 mb-1">Branch</p>
+                <p className="text-lg text-white">{bankDetails.branch}</p>
+              </div>
+              <div className="bg-gradient-to-r from-[#B62D71]/10 to-[#541D67]/10 rounded-xl p-4 border border-[#B62D71]/10 hover:border-[#B62D71]/30 transition-colors">
+                <p className="text-sm text-white/80 mb-1">Account Name</p>
+                <p className="text-lg text-white">{bankDetails.accountName}</p>
+              </div>
             </div>
-            <div>
-              <p className="text-white/90">Account Number: {bankDetails.accountNumber}</p>
-              <p className="text-white/90">IBAN: {bankDetails.iban}</p>
+            <div className="space-y-4">
+              <div className="bg-gradient-to-r from-[#B62D71]/10 to-[#541D67]/10 rounded-xl p-4 border border-[#B62D71]/10 hover:border-[#B62D71]/30 transition-colors">
+                <p className="text-sm text-white/80 mb-1">Account Number</p>
+                <p className="text-lg text-white font-mono">{bankDetails.accountNumber}</p>
+              </div>
+              <div className="bg-gradient-to-r from-[#B62D71]/10 to-[#541D67]/10 rounded-xl p-4 border border-[#B62D71]/10 hover:border-[#B62D71]/30 transition-colors">
+                <p className="text-sm text-white/80 mb-1">IBAN</p>
+                <p className="text-lg text-white font-mono break-all">{bankDetails.iban}</p>
+              </div>
             </div>
           </div>
         </motion.div>
