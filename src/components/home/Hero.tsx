@@ -3,15 +3,20 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 export const Hero: FC = memo(() => (
-  <section className="relative h-[76vh] flex flex-col items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat" 
+  <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat" 
     style={{ backgroundImage: 'url("https://ik.imagekit.io/sackoba/MainBuildingWithGround.jpg?updatedAt=1734610625018")' }}>
 
+    {/* Dark overlay */}
+    <div className="absolute inset-0 bg-black/50" />
+    
+    {/* Gradient overlay */}
     <div className="absolute inset-0 bg-gradient-to-r from-primary-600/80 to-primary-700/70" /> 
+    
     <div className="container mx-auto px-4 relative z-10 text-center flex flex-col items-center">
       <motion.img 
         src="https://ik.imagekit.io/sackoba/sack_badge_color_512X512.png?updatedAt=1734611412968"
         alt="SACKOBA Logo"
-        className="w-44 h-44 mb-2 mt-20 relative
+        className="w-24 h-24 md:w-32 md:h-32 lg:w-36 lg:h-36 mb-6 relative
           filter brightness-110 contrast-110
           drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]
           animate-float"
@@ -29,7 +34,7 @@ export const Hero: FC = memo(() => (
       />
       
       <motion.h1 
-        className="text-3xl md:text-5xl lg:text-6xl font-normal text-white mb-4 font-['UnifrakturMaguntia'] tracking-wide flex flex-col"
+        className="text-3xl md:text-5xl lg:text-6xl font-normal text-white mb-4 font-['UnifrakturMaguntia'] tracking-wide flex flex-col hero-text"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.2 }}
@@ -39,7 +44,7 @@ export const Hero: FC = memo(() => (
       </motion.h1>
 
       <motion.p 
-        className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8"
+        className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8 hero-text"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7, delay: 0.4 }}

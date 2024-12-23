@@ -39,6 +39,13 @@
   .section-gradient {
     @apply bg-gradient-to-br from-slate-900 via-slate-800 to-primary-300/5;
   }
+
+  .hero-text {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8),
+                -2px -2px 4px rgba(0, 0, 0, 0.8),
+                2px -2px 4px rgba(0, 0, 0, 0.8),
+                -2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
 }
 
 :root {
