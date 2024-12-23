@@ -1,3 +1,5 @@
+import { FC } from 'react';
+
 export interface HeroContentProps {
   title: string;
   description: string;
@@ -32,7 +34,7 @@ export interface SectionProps {
 export interface FeatureCardProps {
   title: string;
   description: string;
-  Icon: React.FC;
+  Icon: FC;
   gradient: string;
   delay?: number;
   link?: {
@@ -43,7 +45,7 @@ export interface FeatureCardProps {
 }
 
 export interface Feature extends Omit<FeatureCardProps, 'Icon'> {
-  IconComponent: React.FC;
+  IconComponent: FC;
   link?: {
     text: string;
     url: string;

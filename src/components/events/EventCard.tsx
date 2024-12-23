@@ -1,17 +1,7 @@
 import { FC } from 'react';
 import { motion } from 'framer-motion';
 import { CalendarIcon, MapPinIcon, UserGroupIcon } from '@heroicons/react/24/outline';
-
-interface EventCardProps {
-  title: string;
-  date: string;
-  location: string;
-  attendees: number;
-  imageUrl?: string;
-  category: string;
-  description: string;
-  onClick?: () => void;
-}
+import { EventCardProps } from '@/types/components/events';
 
 export const EventCard: FC<EventCardProps> = ({
   title,

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { motion } from 'framer-motion';
-import { MemberCardProps } from './types';
+import { MemberCardProps } from '@/types/components/exco';
 
 export const MemberCard: FC<MemberCardProps> = ({ member, index }) => {
   return (

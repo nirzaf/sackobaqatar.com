@@ -1,50 +1,12 @@
 import { FC, memo } from 'react';
 import { NoticeBoard } from './NoticeBoard';
-import { FeatureCard } from './FeatureCard';
 import { HistorySection } from './HistorySection';
-import { ProjectsIcon, CommitteeIcon, MembershipIcon } from '../shared/icons';
-import { Feature } from './types';
-
-const features: Feature[] = [
-  {
-    title: "Projects & Assistance",
-    description: "SACKOBA is committed to assist the management in the highly complex operation of running the School.",
-    IconComponent: ProjectsIcon,
-    gradient: "bg-gradient-to-br from-[#541D67] to-[#9A78AB]",
-    delay: 0
-  },
-  {
-    title: "The Committee",
-    description: "We perpetuate the tradition of the Alma Mater beyond the precincts of the classroom.",
-    IconComponent: CommitteeIcon,
-    gradient: "bg-gradient-to-br from-[#B62D71] to-[#9A78AB]",
-    delay: 0.2
-  },
-  {
-    title: "Membership",
-    description: "Please fill the membership form and send the same to The Secretary via email / post.",
-    IconComponent: MembershipIcon,
-    gradient: "bg-gradient-to-br from-[#9A78AB] to-[#5B4886]",
-    delay: 0.4
-  }
-];
+import { FeaturesSection } from './FeaturesSection';
 
 export const HomeContent: FC = memo(() => (
   <section className="py-16 bg-white">
     <div className="container mx-auto px-4">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-        {features.map((feature, index) => (
-          <FeatureCard
-            key={index}
-            title={feature.title}
-            description={feature.description}
-            Icon={feature.IconComponent}
-            gradient={feature.gradient}
-            delay={feature.delay}
-          />
-        ))}
-      </div>
-
+      <FeaturesSection />
       <NoticeBoard />
       <HistorySection />
     </div>

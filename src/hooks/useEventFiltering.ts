@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import { Event } from '../components/events/types';
+import { Event } from '@/types/events';
 
 export const useEventFiltering = (staticEvents: Event[]) => {
   const [selectedYear, setSelectedYear] = useState<string>('all');

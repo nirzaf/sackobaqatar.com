@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { HeroContentProps } from '../types';
+import { HeroContentProps } from '@/types/components/home';
 
 export const HeroContent: FC<HeroContentProps> = ({ title, description }) => (
   <div className="relative container mx-auto px-4 sm:px-6 py-16 sm:py-24 md:py-32 text-center">

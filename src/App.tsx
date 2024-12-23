@@ -9,6 +9,7 @@ import Exco from './pages/Exco';
 import { Contact } from './pages/Contact';
 import { Events } from './pages/Events';
 import { NotFound } from './pages/NotFound';
+import { MembershipTerms } from './pages/MembershipTerms';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/exco" element={<Exco />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/membership-terms" element={<MembershipTerms />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
