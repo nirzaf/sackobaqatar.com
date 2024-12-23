@@ -110,6 +110,16 @@ const Button: React.FC = () => (
     - Use `React.memo` for functional components to prevent unnecessary re-renders.
     - Lazy-load components with `React.lazy()` and `Suspense`.  
     - Minimize re-renders by splitting state into smaller chunks and managing it in parent components when needed.
+    - Ensure that performance optimizations do not negatively impact the user experience or accessibility.
+
+---
+
+11. **Maintain Visual Appearance and Responsiveness**
+    - **Visual Consistency:** Refactoring should not alter the visual appearance of the page or its elements. Ensure that styles are preserved or updated to match the original design.
+    - **Responsive Design:** Maintain responsiveness across all devices (mobile, tablet, desktop, laptop, etc.). Test the refactored components on different screen sizes to ensure they adapt correctly.
+    - **Use TailwindCSS effectively:** When using TailwindCSS, ensure that the utility classes are applied correctly to maintain the original styling and responsiveness.
+    - **Avoid Inline Styles:** Do not use inline styles, as they can make it harder to maintain consistency and responsiveness. Use TailwindCSS classes or CSS modules instead.
+    - **Test Thoroughly:** After refactoring, test the components on different browsers and devices to ensure that the visual appearance and responsiveness are maintained.
 
 ---
 
@@ -150,4 +160,3 @@ const Dashboard = () => {
   ```
 - Each file is now a focused, reusable component.
 
-This approach ensures a cleaner, more scalable codebase while improving maintainability and readability.
