@@ -30,13 +30,16 @@ export const EventCard: FC<EventCardProps> = ({
       onClick={onClick}
     >
       {/* Event Image */}
-      <div className="aspect-w-16 aspect-h-9 bg-[#F8F6F9] relative overflow-hidden">
+      <div className="relative w-full h-64 bg-[#F8F6F9] overflow-hidden">
         {imageUrl ? (
-          <img
-            src={imageUrl}
-            alt={title}
-            className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-300"
-          />
+          <div className="absolute inset-0 w-full h-full">
+            <img
+              src={imageUrl}
+              alt={title}
+              className="absolute inset-0 w-full h-full object-cover object-center scale-110 transform group-hover:scale-125 transition-transform duration-300"
+              style={{ objectPosition: 'center center' }}
+            />
+          </div>
         ) : (
           <div className="flex items-center justify-center h-full bg-[#F8F6F9]">
             <CalendarIcon className="h-12 w-12 text-[#541D67]" />
