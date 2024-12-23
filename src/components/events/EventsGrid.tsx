@@ -52,23 +52,20 @@ export const EventsGrid: FC<EventsGridProps> = ({
                 className="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <div className="aspect-[16/9] overflow-hidden bg-[#F8F6F9]">
-                  <img
-                    src={event.imageUrl}
-                    alt={event.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute top-4 left-4 flex gap-2">
-                    <span className={`px-4 py-1.5 rounded-full text-xs font-medium
-                      ${event.status === 'upcoming' 
-                        ? 'bg-gradient-to-r from-[#541D67] to-[#B62D71] text-white' 
-                        : event.status === 'ongoing'
-                          ? 'bg-gradient-to-r from-[#9A78AB] to-[#B62D71] text-white'
-                          : 'bg-gradient-to-r from-[#B62D71] to-[#9A78AB] text-white'}`}
-                    >
-                      {event.status.charAt(0).toUpperCase() + event.status.slice(1)}
-                    </span>
+                  {event.images[0] ? (
+                    <img
+                      src={event.images[0].url}
+                      alt={event.images[0].title || event.name}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <Calendar className="w-12 h-12 text-[#9A78AB] opacity-50" />
+                    </div>
+                  )}
+                  <div className="absolute top-4 left-4">
                     <span className="px-4 py-1.5 rounded-full text-xs font-medium bg-white/90 text-[#541D67] backdrop-blur-sm">
-                      {event.category}
+                      {event.year}
                     </span>
                   </div>
                 </div>
@@ -80,12 +77,14 @@ export const EventsGrid: FC<EventsGridProps> = ({
                   </div>
                   
                   <h3 className="text-xl font-bold mb-3 text-[#541D67] group-hover:text-[#B62D71] transition-colors">
-                    {event.title}
+                    {event.name}
                   </h3>
                   
-                  <p className="text-[#5B4886]/80 text-sm line-clamp-2 mb-4">
-                    {event.description}
-                  </p>
+                  {event.description && (
+                    <p className="text-[#5B4886]/80 text-sm line-clamp-2 mb-4">
+                      {event.description}
+                    </p>
+                  )}
 
                   <button className="w-full px-6 py-2.5 bg-white text-[#541D67] rounded-full text-sm font-medium
                     border border-[#B1B3CE]/20 hover:bg-[#541D67] hover:text-white

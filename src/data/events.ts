@@ -271,27 +271,6 @@ export const events: Event[] = [
     description: "Historic celebration marking 100 years of SACKOBA, featuring traditional ceremonies and recognition of achievements"
   },
   {
-    id: "ozee_7s_2011",
-    year: "2011",
-    name: "OZEE 7s Tournament",
-    date: "2011-07-15",
-    images: [
-      {
-        url: "https://ik.imagekit.io/sackoba/events/2011/OZEE_7S_2011/Cricket_field_with_people_and_floodlights_2592_X_1944.JPG",
-        title: "Cricket Field Under Floodlights"
-      },
-      {
-        url: "https://ik.imagekit.io/sackoba/events/2011/OZEE_7S_2011/Cricket_Team_with_Lion_Shirts_and_Hats_2592_X_1944.JPG",
-        title: "Cricket Team in Lion Shirts"
-      },
-      {
-        url: "https://ik.imagekit.io/sackoba/events/2011/OZEE_7S_2011/Team_Huddle_Hugging_Before_Game_2592_X_1944.JPG",
-        title: "Team Huddle"
-      }
-    ],
-    description: "Exciting sports tournament featuring cricket and rugby matches, team celebrations, and community spirit"
-  },
-  {
     id: "feast_st_anthony_2011",
     year: "2011",
     name: "Feast of St. Anthony and College Day Celebration",

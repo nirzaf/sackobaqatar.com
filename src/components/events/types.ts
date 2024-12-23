@@ -1,13 +1,15 @@
+export interface EventImage {
+  url: string;
+  title: string;
+}
+
 export interface Event {
   id: string;
-  title: string;
-  description: string;
+  year: string;
+  name: string;
+  images: EventImage[];
   date: string;
-  category: string;
-  imageUrl: string;
-  status: 'upcoming' | 'ongoing' | 'past';
-  location: string;
-  attendees: number;
+  description?: string;
 }
 
 export interface HeroSectionProps {
@@ -36,7 +38,12 @@ export interface EventCardProps {
 
 export interface EventsGridProps {
   events: Event[];
-  selectedCategory: string;
   searchQuery: string;
   activeSection: string;
+}
+
+export interface YearFilterProps {
+  years: string[];
+  selectedYear: string;
+  onYearChange: (year: string) => void;
 }

@@ -8,48 +8,56 @@ import { Event } from './types';
 export const events: Event[] = [
   {
     id: '1',
-    title: 'Annual Cricket Tournament 2024',
+    year: '2024',
+    name: 'Annual Cricket Tournament 2024',
     date: '2024-03-15',
-    location: 'West Bay Cricket Ground, Doha',
-    attendees: 120,
-    imageUrl: cricketEvent,
-    category: 'Sports',
     description: 'Join us for our annual cricket tournament featuring teams from different batches. Exciting matches, great food, and wonderful company!',
-    status: 'upcoming',
+    images: [
+      {
+        url: cricketEvent,
+        title: 'Annual Cricket Tournament 2024'
+      }
+    ]
   },
   {
     id: '2',
-    title: 'Cultural Evening: Sri Lankan Night',
+    year: '2024',
+    name: 'Cultural Evening: Sri Lankan Night',
     date: '2024-04-05',
-    location: 'Antonian Community Center',
-    attendees: 200,
-    imageUrl: culturalEvent,
-    category: 'Cultural',
     description: 'Experience the rich cultural heritage of Sri Lanka with traditional music, dance performances, and authentic cuisine.',
-    status: 'upcoming',
+    images: [
+      {
+        url: culturalEvent,
+        title: 'Cultural Evening: Sri Lankan Night'
+      }
+    ]
   },
   {
     id: '3',
-    title: 'Family Day Out',
+    year: '2024',
+    name: 'Family Day Out',
     date: '2024-05-20',
-    location: 'Al Bidda Park',
-    attendees: 150,
-    imageUrl: familyEvent,
-    category: 'Social',
     description: 'A fun-filled day for Antonian families featuring games, activities, and a grand BBQ lunch.',
-    status: 'upcoming',
+    images: [
+      {
+        url: familyEvent,
+        title: 'Family Day Out'
+      }
+    ]
   },
   {
     id: '4',
-    title: 'Community Service Day',
+    year: '2024',
+    name: 'Community Service Day',
     date: '2024-06-10',
-    location: 'Various Locations, Doha',
-    attendees: 80,
-    imageUrl: communityEvent,
-    category: 'Community',
     description: 'Give back to the community through various service activities and charitable initiatives.',
-    status: 'upcoming',
-  },
+    images: [
+      {
+        url: communityEvent,
+        title: 'Community Service Day'
+      }
+    ]
+  }
 ];
 
 export const heroImage = eventHero;
