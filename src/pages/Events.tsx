@@ -188,7 +188,7 @@ export const Events: FC = () => {
               frameBorder="0"
               allowFullScreen={true}
               width="100%"
-              height="600"
+              height="1000"
               title="Embed code"
               className="w-full shadow-lg rounded-lg"
             />
