@@ -2,6 +2,7 @@ import { FC, memo } from 'react';
 import { motion } from 'framer-motion';
 import ImageGallery from '../shared/ImageGallery';
 import { Link } from 'react-router-dom';
+import { NoticeBoard } from './NoticeBoard';
 
 export const HomeContent: FC = memo(() => (
   <>
@@ -69,6 +70,8 @@ export const HomeContent: FC = memo(() => (
             <p className="text-white/90 leading-relaxed font-medium">Please fill the membership form and send the same to The Secretary via email / post.</p>
           </motion.div>
         </div>
+
+        <NoticeBoard />
 
         <div className="text-center mb-16">
           <motion.div
