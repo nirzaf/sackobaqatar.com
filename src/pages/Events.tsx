@@ -52,7 +52,7 @@ export const Events: FC = () => {
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 text-center text-white">
           <motion.h1 
-            className="text-4xl md:text-5xl font-bold mb-4"
+            className="text-3xl md:text-3xl text-white font-bold mb-4"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
