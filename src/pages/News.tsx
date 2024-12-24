@@ -1,5 +1,7 @@
 import { FC, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Masonry from 'react-masonry-css';
+import '../styles/masonry.css';
 
 interface NewsImage {
   url: string;
@@ -61,6 +63,15 @@ const newsImages: NewsImage[] = [
 
 const categories = ['All', ...Array.from(new Set(newsImages.map(img => img.category)))];
 
+const breakpointColumns = {
+  default: 4,
+  1536: 4,
+  1280: 3,
+  1024: 3,
+  768: 2,
+  640: 1
+};
+
 const NewsGallery: FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedImage, setSelectedImage] = useState<NewsImage | null>(null);
@@ -113,43 +124,46 @@ const NewsGallery: FC = () => {
           ))}
         </div>
 
-        {/* Image Grid */}
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          layout
+        {/* Masonry Grid */}
+        <Masonry
+          breakpointCols={breakpointColumns}
+          className="flex w-auto -ml-4"
+          columnClassName="pl-4 bg-clip-padding"
         >
-          <AnimatePresence>
-            {filteredImages.map((image) => (
-              <motion.div
-                key={image.url}
-                layout
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.5 }}
-                className="group relative cursor-pointer"
+          {filteredImages.map((image) => (
+            <motion.div
+              key={image.url}
+              layout
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.5 }}
+              className="mb-4 break-inside-avoid"
+            >
+              <div
+                className="group relative cursor-pointer overflow-hidden rounded-xl shadow-lg"
                 onClick={() => setSelectedImage(image)}
               >
-                <div className="aspect-w-16 aspect-h-12 rounded-xl overflow-hidden shadow-lg">
+                <div className="relative">
                   <img
                     src={image.url}
                     alt={image.title}
-                    className="object-cover w-full h-full transform transition-transform group-hover:scale-105"
+                    className="w-full h-auto transform transition-transform duration-300 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-0 left-0 right-0 p-6">
                       <h3 className="text-white text-xl font-bold mb-2">{image.title}</h3>
-                      <p className="text-white/90 text-sm">{image.description}</p>
+                      <p className="text-white/90 text-sm line-clamp-2">{image.description}</p>
                       <span className="inline-block mt-2 px-3 py-1 bg-white/20 rounded-full text-white text-xs">
                         {image.category}
                       </span>
                     </div>
                   </div>
                 </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+              </div>
+            </motion.div>
+          ))}
+        </Masonry>
       </div>
 
       {/* Modal */}

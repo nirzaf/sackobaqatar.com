@@ -1,0 +1,28 @@
+.masonry-grid {
+  display: flex;
+  width: auto;
+  margin-left: -16px; /* gutter size offset */
+}
+
+.masonry-grid_column {
+  padding-left: 16px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Optional: add animation for items */
+.masonry-grid_item {
+  margin-bottom: 16px;
+  transition: transform 0.2s ease;
+}
+
+.masonry-grid_item:hover {
+  transform: translateY(-2px);
+}
+
+/* Ensure images maintain aspect ratio */
+.masonry-grid_item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+}

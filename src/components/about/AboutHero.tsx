@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export const AboutHero: FC = () => (
   <section className="relative h-[60vh] flex flex-col items-center justify-center overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-r from-[#541D67] to-[#B62D71] opacity-90" />
+    <div className="absolute inset-0 bg-gradient-to-r from-[#0F0E40] to-[#B80F8A] opacity-90" />
     <div 
       className="absolute inset-0 opacity-20"
       style={{ 

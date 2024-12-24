@@ -10,7 +10,7 @@ export const ContentSection: FC<ContentSectionProps> = ({ title, children }) => 
       transition={{ delay: 0.4, duration: 0.5 }}
       className="prose prose-lg max-w-none mb-16"
     >
-      <h2 className="text-display-md text-primary-700 mb-6">{title}</h2>
+      <h2 className="text-display-md text-[#B80F8A] mb-6">{title}</h2>
       {children}
     </motion.section>
   );

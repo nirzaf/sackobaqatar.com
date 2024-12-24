@@ -22,6 +22,7 @@
     "react-feather": "^2.0.10",
     "react-icons": "^5.4.0",
     "react-lazy-load-image-component": "^1.6.3",
+    "react-masonry-css": "^1.0.16",
     "react-router-dom": "^7.0.2",
     "zustand": "^5.0.2"
   },
