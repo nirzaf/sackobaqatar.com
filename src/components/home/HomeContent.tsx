@@ -2,10 +2,11 @@ import { FC, memo } from 'react';
 import { NoticeBoard } from './NoticeBoard';
 import { HistorySection } from './HistorySection';
 import { FeaturesSection } from './FeaturesSection';
+import { CollegeDetailsSection } from './CollegeDetailsSection';
 
 /**
  * HomeContent component - Main content section for the home page
- * Contains feature cards, notice board, and history section
+ * Contains feature cards, notice board, history section, and college details
  * Implements responsive design with proper overflow handling
  */
 export const HomeContent: FC = memo(() => (
@@ -15,6 +16,7 @@ export const HomeContent: FC = memo(() => (
         <FeaturesSection />
         <NoticeBoard />
         <HistorySection />
+        <CollegeDetailsSection />
       </div>
     </div>
   </section>
