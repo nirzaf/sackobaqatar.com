@@ -1,8 +1,20 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { HiDownload } from 'react-icons/hi';
+import { useLocation } from 'react-router-dom';
 
 export const MembershipTerms: FC = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === '#membership-title') {
+      const element = document.getElementById('membership-title');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
+
   const terms = [
     "All Old Boys of St. Anthony's College Kandy, living in Qatar shall be eligible for the membership.",
     "All Teachers, past and present shall be eligible to become an Honorary Member of the SACKOBA Qatar.",
@@ -56,7 +68,10 @@ export const MembershipTerms: FC = () => {
           className="text-center mb-16"
           variants={itemVariants}
         >
-          <h1 className="text-3xl mt-12 md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#B62D71] via-[#cb67ec] to-[#5513f0] mb-4">
+          <h1 
+            id="membership-title"
+            className="text-3xl mt-12 md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#B62D71] via-[#cb67ec] to-[#5513f0] mb-4"
+          >
             Membership Terms
           </h1>
           <p className="text-lg text-white max-w-2xl mx-auto">

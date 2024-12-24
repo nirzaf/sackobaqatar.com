@@ -26,10 +26,9 @@ const features: Feature[] = [
     IconComponent: MembershipIcon,
     gradient: "bg-gradient-to-br from-[#9A78AB] to-[#5B4886]",
     delay: 0.4,
-    titleLink: "https://workdrive.zohoexternal.com/file/5s3n9011971058c1e465a90bbb872188356b6",
     link: {
-      text: "Download Membership Form",
-      url: "https://workdrive.zohoexternal.com/file/5s3n9011971058c1e465a90bbb872188356b6"
+      text: "View Membership Terms",
+      url: "/membership-terms"
     }
   }
 ];
@@ -74,7 +73,6 @@ export const FeaturesSection: FC = () => (
             gradient={feature.gradient}
             delay={feature.delay}
             link={feature.link}
-            titleLink={feature.titleLink}
           />
         </motion.div>
       ))}
@@ -85,7 +83,7 @@ export const FeaturesSection: FC = () => (
       variants={itemVariants}
     >
       <Link
-        to="/membership-terms"
+        to="/membership-terms#membership-title"
         className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white 
           transition-all duration-300 ease-in-out rounded-xl overflow-hidden
           bg-gradient-to-r from-[#B62D71] via-[#541D67] to-[#5B4886] 
@@ -101,7 +99,12 @@ export const FeaturesSection: FC = () => (
             viewBox="0 0 24 24" 
             stroke="currentColor"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M13 7l5 5m0 0l-5 5m5-5H6" 
+            />
           </svg>
         </span>
       </Link>

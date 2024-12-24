@@ -1,16 +1,6 @@
 import { FC } from 'react';
-import { Link } from 'react-router-dom';
 
 const navigation = {
-  main: [
-    { name: 'Home', href: '/' },
-    { name: 'About Us', href: '/about' },
-    { name: 'News', href: '/news' },
-    { name: 'Video Gallery', href: '/videos' },
-    { name: 'College History', href: '/history' },
-    { name: 'Exco', href: '/exco' },
-    { name: 'Contact', href: '/contact' },
-  ],
   social: [
     {
       name: 'Facebook',
@@ -32,16 +22,7 @@ export const Footer: FC = () => {
   return (
     <footer className="bg-white">
       <div className="container mx-auto overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
-        <nav className="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
-          {navigation.main.map((item) => (
-            <div key={item.name} className="px-5 py-2">
-              <Link to={item.href} className="text-base text-gray-500 hover:text-gray-900">
-                {item.name}
-              </Link>
-            </div>
-          ))}
-        </nav>
-        <div className="mt-8 flex justify-center space-x-6">
+        <div className="flex justify-center space-x-6">
           {navigation.social.map((item) => (
             <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500">
               <span className="sr-only">{item.name}</span>
