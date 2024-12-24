@@ -1,19 +1,11 @@
 import { FC, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { HiDownload } from 'react-icons/hi';
-import { useLocation } from 'react-router-dom';
 
 export const MembershipTerms: FC = () => {
-  const location = useLocation();
-
   useEffect(() => {
-    if (location.hash === '#membership-title') {
-      const element = document.getElementById('membership-title');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  }, [location]);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   const terms = [
     "All Old Boys of St. Anthony's College Kandy, living in Qatar shall be eligible for the membership.",
@@ -84,7 +76,7 @@ export const MembershipTerms: FC = () => {
             transition={{ delay: 0.3 }}
           >
             <a 
-              href="https://workdrive.zohoexternal.com/file/5s3n9011971058c1e465a90bbb872188356b6"
+              href="https://workdrive.zohoexternal.com/file/5s3n9011971058c1e465a90bbb872138356b6"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#B62D71] to-[#541D67] hover:from-[#B62D71]/90 hover:to-[#541D67]/90 text-white font-semibold rounded-lg transition-all shadow-lg hover:shadow-xl"

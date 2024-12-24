@@ -83,7 +83,7 @@ export const FeaturesSection: FC = () => (
       variants={itemVariants}
     >
       <Link
-        to="/membership-terms#membership-title"
+        to="/membership-terms"
         className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white 
           transition-all duration-300 ease-in-out rounded-xl overflow-hidden
           bg-gradient-to-r from-[#B62D71] via-[#541D67] to-[#5B4886] 
