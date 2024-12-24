@@ -10,10 +10,12 @@ import { Contact } from './pages/Contact';
 import { Events } from './pages/Events';
 import { NotFound } from './pages/NotFound';
 import { MembershipTerms } from './pages/MembershipTerms';
+import { ScrollToTop } from './components/shared/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />

@@ -1,12 +1,8 @@
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 import { motion } from 'framer-motion';
 import { HiDownload } from 'react-icons/hi';
 
 export const MembershipTerms: FC = () => {
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, []);
-
   const terms = [
     "All Old Boys of St. Anthony's College Kandy, living in Qatar shall be eligible for the membership.",
     "All Teachers, past and present shall be eligible to become an Honorary Member of the SACKOBA Qatar.",
