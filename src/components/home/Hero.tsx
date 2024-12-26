@@ -14,22 +14,14 @@ export const Hero: FC = memo(() => (
     
     <div className="container mx-auto px-4 relative z-10 text-center flex flex-col items-center">
       <motion.img 
-        src="https://ik.imagekit.io/sackoba/sack_badge_color_512X512.png?updatedAt=1734611412968"
+        src="https://ik.imagekit.io/sackoba/logos/sackoba-qatar-logo.png?updatedAt=1735206623574"
         alt="SACKOBA Logo"
-        className="w-24 h-24 md:w-32 md:h-32 lg:w-36 lg:h-36 mb-6 relative
-          filter brightness-110 contrast-110
-          drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]
-          animate-float"
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
+        className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 mb-6 relative
+          filter brightness-110 contrast-110"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ 
-          duration: 0.7,
-          type: "spring",
-          stiffness: 100,
-          damping: 10
-        }}
-        style={{
-          animation: 'float 6s ease-in-out infinite'
+          duration: 0.7
         }}
       />
       
