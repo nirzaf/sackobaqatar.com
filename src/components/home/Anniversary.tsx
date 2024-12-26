@@ -65,9 +65,9 @@ const EventCalendar = () => {
           <div className="mb-12 flex flex-col items-start">
             <div className="relative w-full">
               {/* Logos and Title Container */}
-              <div className="mb-6 flex items-center justify-between relative">
+              <div className="mb-6 flex flex-col sm:flex-row items-center justify-between relative gap-6 sm:gap-4">
                 {/* 15th Anniversary Logo */}
-                <div className="relative h-[150px] w-[200px] sm:h-[180px] sm:w-[240px] flex-shrink-0">
+                <div className="relative h-[120px] w-[160px] sm:h-[150px] sm:w-[200px] flex-shrink-0">
                   <img
                     src="https://res.cloudinary.com/ddpxtaue7/image/upload/v1735207379/SACKOBA__15_Annivesary_150_g4mmnl.png"
                     alt="SACKOBA 15 Years Anniversary"
@@ -76,17 +76,17 @@ const EventCalendar = () => {
                 </div>
 
                 {/* Main Title Group */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 text-center px-4">
-                  <h1 className="text-2xl font-extrabold tracking-tight text-purple-700 sm:text-3xl md:text-4xl">
+                <div className="sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2 text-center px-2 sm:px-4">
+                  <h1 className="text-xl font-extrabold tracking-tight text-purple-700 sm:text-2xl md:text-4xl">
                     SACKOBA - QATAR
                   </h1>
-                  <h2 className="mt-1 text-xl font-bold text-blue-600 sm:text-2xl md:text-3xl">
+                  <h2 className="mt-1 text-lg font-bold text-blue-600 sm:text-xl md:text-3xl">
                     15 YEARS ANNIVERSARY
                   </h2>
                 </div>
                 
                 {/* LUX DE COELO Logo */}
-                <div className="relative h-[100px] w-[100px] sm:h-[120px] sm:w-[120px] flex-shrink-0">
+                <div className="relative h-[120px] w-[120px] sm:h-[150px] sm:w-[130px] flex-shrink-0">
                   <img
                     src="https://ik.imagekit.io/sackoba/logos/sack_badge_color_512X512-270x270.png?updatedAt=1735203751175"
                     alt="LUX DE COELO"
