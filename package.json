@@ -12,6 +12,7 @@
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
+    "@supabase/supabase-js": "^2.47.10",
     "@types/react-lazy-load-image-component": "^1.6.4",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
