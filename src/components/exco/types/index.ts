@@ -11,18 +11,3 @@ export interface ExcoYear {
   absentees?: ExcoMember[];
   note?: string;
 }
-
-export interface NewsItem {
-  title: string;
-  date: string;
-  content: string;
-  link?: string;
-}
-
-export interface VideoItem {
-  title: string;
-  duration: string;
-  description: string;
-  url?: string;
-  thumbnail?: string;
-}

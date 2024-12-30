@@ -1,6 +1,6 @@
 export interface ExcoMember {
   name: string;
-  role: string;
+  position: string;
 }
 
 export interface ExcoMembers {
@@ -10,7 +10,11 @@ export interface ExcoMembers {
 
 export interface ExcoYear {
   year: string;
-  members: ExcoMembers;
+  image: string;
+  seatedMembers: ExcoMember[];
+  standingMembers: ExcoMember[];
+  absentees?: ExcoMember[];
+  note?: string;
 }
 
 export interface MemberCardProps {
