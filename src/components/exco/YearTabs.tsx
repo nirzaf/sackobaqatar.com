@@ -19,7 +19,7 @@ export const YearTabs: FC<YearTabsProps> = ({ years }) => {
                     as="button"
                     className={({ selected }) =>
                     clsx(
-                        'w-full rounded-lg py-2.5 text-sm font-medium leading-5',
+                        'w-full rounded-lg py-2.5 text-sm font-medium leading-5 relative',
                         'ring-white ring-opacity-60 ring-offset-2 ring-offset-primary-100 focus-visible:outline-none focus-visible:ring-2',
                         selected
                         ? 'bg-primary-600 text-white shadow hover:bg-primary-700'
@@ -28,7 +28,8 @@ export const YearTabs: FC<YearTabsProps> = ({ years }) => {
                     }
                     onClick={() => setSelectedTabIndex(index)}
                 >
-                    {year.year}
+                    <span className="relative z-10">Exco {year.year}</span>
+                    <div className="absolute inset-0 bg-black/30 rounded-lg"></div>
                 </Tab>
                 ))}
             </div>
@@ -36,8 +37,8 @@ export const YearTabs: FC<YearTabsProps> = ({ years }) => {
                 {years.map((year, index) => (
                     <div key={year.year} hidden={selectedTabIndex !== index}>
                         <div className="space-y-12">
-                            <MemberSection title="Seating Members" members={year.members.seating} />
-                            <MemberSection title="Standing Members" members={year.members.standing} />
+                            <MemberSection title="Seating Members" members={year.seatedMembers} />
+                            <MemberSection title="Standing Members" members={year.standingMembers} />
                         </div>
                     </div>
                 ))}
