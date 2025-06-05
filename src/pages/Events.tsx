@@ -72,7 +72,7 @@ export const Events: FC = () => {
                 : 'bg-white text-[#B62D71] border border-[#B62D71] hover:bg-[#F8F6F9]'
                 }`}
             >
-              Event Details
+              Main Events
             </button>
             <button
               onClick={() => setActiveTab('gallery')}
