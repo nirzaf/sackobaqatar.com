@@ -7,6 +7,7 @@ The SACKOBA Qatar Events & Activities page now features a comprehensive, fully-f
 ## ✨ New Features Added
 
 ### 🔍 **Advanced Search & Filtering**
+
 - **Text Search**: Search across event names, descriptions, locations, and image tags
 - **Category Filtering**: Filter by event types (Sports, Cultural, Religious, Social, Academic, Community)
 - **Year Filtering**: Filter events by specific years
@@ -14,12 +15,14 @@ The SACKOBA Qatar Events & Activities page now features a comprehensive, fully-f
 - **Real-time Results**: Instant filtering with result counts
 
 ### 🏷️ **Smart Categorization System**
+
 - **6 Event Categories**: Sports 🏆, Cultural 🎭, Religious 🙏, Social 🤝, Academic 🎓, Community 🏘️
 - **Color-coded Labels**: Visual category identification
 - **Auto-categorization**: Intelligent category suggestions based on keywords
 - **Category Statistics**: Track events by category
 
 ### 🖼️ **Image Optimization**
+
 - **Multiple Formats**: WebP and JPEG support for better compression
 - **Responsive Sizes**: 5 different sizes (thumbnail to xlarge)
 - **Lazy Loading**: Performance optimization for large galleries
@@ -27,6 +30,7 @@ The SACKOBA Qatar Events & Activities page now features a comprehensive, fully-f
 - **Compression**: Automated image compression for faster loading
 
 ### 📊 **Enhanced Metadata**
+
 - **Event Details**: Date, location, attendee count, descriptions
 - **Image Tags**: Searchable tags for better discovery
 - **Rich Descriptions**: Detailed event and image descriptions
@@ -75,6 +79,7 @@ src/
 ### Step 1: Prepare Images
 
 1. **Organize Images**: Place your event images in the following structure:
+
    ```
    public/images/event_images/
    ├── 2023/
@@ -95,6 +100,7 @@ src/
 ### Step 2: Update Image Data
 
 1. **Edit `src/data/eventImageData.ts`**:
+
    ```typescript
    {
      url: '/images/event_images/2023/AGM_2023_SACKOBA_Qatar/your_image.jpg',
@@ -129,10 +135,12 @@ To add a new event category:
 ## Current Event Categories
 
 ### 2023 Events
+
 - AGM 2023 SACKOBA Qatar (8 images)
 - Sinhala & Tamil New Year and Iftar Celebration 2023 (3 images)
 
 ### 2022 Events
+
 - College Day and Feast of St Anthony of Padua 2022 (6 images)
 - Aluth Avurudu Iftar Celebration 2022 (3 images)
 
@@ -141,22 +149,27 @@ To add a new event category:
 The following event folders are available in `src/assets/images/event_images/`:
 
 ### 2023
+
 - AGM_2023_SACKOBA_Qatar
 - SACKOBAQ_College_Day_Celebrations
 - Sinhala_&_Tamil_New_Year_and_Iftar_Celebration_2023_SACKOBA_Qatar
 
 ### 2022
+
 - Aluth_Avurudu_Iftar_Celebration_2022
 - College_Day_and_Feast_of_St_Anthony_of_Padua_2022
 
 ### 2020
+
 - Family_Activity_Day_2020
 - Old_Anandians_Bowling_Tournament
 
 ### 2018
+
 - Rayyan_Talons_Smash_2018
 
 ### 2017
+
 - Awurudu_Udawa_2017
 - College_Day_-_AGM___Annual_Iftar_-2017
 - Dark_horse_Cricket_Tournament_-_2017_Champions
@@ -166,12 +179,14 @@ The following event folders are available in `src/assets/images/event_images/`:
 - Silent_Night_2017
 
 ### 2016
+
 - Antonian_Festive_Celebration_-_2016
 - Green_Touch_Rugby_7s_and_Champions_Dinner_-_2016
 - Lions_Srilankan_Cricket_Tournament_-_2016
 - SACKOBA_Q_Big_Day_Out_2016
 
 ### 2015
+
 - Feast_of_St.Anthony_of_Padua_2015
 - IFTAR_2015
 - Lions_Cricket_7s_2015
@@ -179,9 +194,11 @@ The following event folders are available in `src/assets/images/event_images/`:
 - Special_General_Meeting_2015
 
 ### 2013
+
 - Trinity_Beach_Carnival_2013
 
 ### 2012
+
 - Boat_2012
 - COLLEGE_DAY_CELEBRATION_2012
 - Fuwairit_Annual_Beach_Trip_2012
