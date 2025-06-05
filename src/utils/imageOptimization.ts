@@ -21,13 +21,30 @@ export function getOptimizedImageUrl(
     lazy: _lazy = true
   } = options;
 
-  // For now, return the original URL
-  // In a production environment, this could integrate with services like:
-  // - Cloudinary
-  // - ImageKit
-  // - AWS CloudFront with image optimization
-  // - Next.js Image Optimization API
+  // Check if the URL is already an absolute URL (starts with http:// or https://)
+  if (originalUrl.startsWith('http://') || originalUrl.startsWith('https://')) {
+    return originalUrl;
+  }
+
+  // Check if we're in development or production
+  const isProduction = import.meta.env.PROD;
+
+  // Check if the URL is a relative path starting with '/images/'
+  if (originalUrl.startsWith('/images/')) {
+    if (isProduction) {
+      // For production, use ImageKit CDN for optimized delivery
+      const imageKitBaseUrl = 'https://ik.imagekit.io/fazrinphcc/sackobaqatar';
+      
+      // Remove the leading slash for ImageKit path
+      const imagePath = originalUrl.substring(1); // Remove the leading '/'
+      return `${imageKitBaseUrl}/${imagePath}`;
+    } else {
+      // In development, the public folder is served correctly
+      return originalUrl;
+    }
+  }
   
+  // Fallback to the original URL if it doesn't match our patterns
   return originalUrl;
 }
 
