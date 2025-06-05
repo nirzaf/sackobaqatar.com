@@ -112,6 +112,7 @@ export const eventImageData: YearGroup[] = [
         id: 'sinhala_tamil_new_year_iftar_2023',
         name: 'Sinhala & Tamil New Year and Iftar Celebration 2023',
         year: '2023',
+        category: 'Cultural',
         folderPath: 'src/assets/images/event_images/2023/Sinhala_&_Tamil_New_Year_and_Iftar_Celebration_2023_SACKOBA_Qatar',
         images: [
           {
@@ -175,6 +176,7 @@ export const eventImageData: YearGroup[] = [
         id: 'college_day_feast_st_anthony_2022',
         name: 'College Day and Feast of St Anthony of Padua 2022',
         year: '2022',
+        category: 'Religious',
         folderPath: 'src/assets/images/event_images/2022/College_Day_and_Feast_of_St_Anthony_of_Padua_2022',
         images: [
           {
@@ -223,6 +225,7 @@ export const eventImageData: YearGroup[] = [
         id: 'aluth_avurudu_iftar_2022',
         name: 'Aluth Avurudu Iftar Celebration 2022',
         year: '2022',
+        category: 'Cultural',
         folderPath: 'src/assets/images/event_images/2022/Aluth_Avurudu_Iftar_Celebration_2022',
         images: [
           {

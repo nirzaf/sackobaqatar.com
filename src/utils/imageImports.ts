@@ -20,7 +20,7 @@ export function createEventImageUrl(year: string, eventFolder: string, filename:
 }
 
 // Function to check if image exists (placeholder for now)
-export function imageExists(url: string): boolean {
+export function imageExists(/* url: string */): boolean {
   // In a real implementation, this would check if the image file exists
   // For now, we'll assume all images exist
   return true;
@@ -42,7 +42,7 @@ export function formatImageTitle(filename: string): string {
 }
 
 // Function to generate thumbnail URL (if needed)
-export function getThumbnailUrl(originalUrl: string, size: number = 300): string {
+export function getThumbnailUrl(originalUrl: string, /* size: number = 300 */): string {
   // For now, return the original URL
   // In a real implementation, this might generate thumbnail URLs
   return originalUrl;
