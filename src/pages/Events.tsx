@@ -133,28 +133,7 @@ export const Events: FC = () => {
         </div>
       )}
 
-      {/* Embedded Section */}
-      <section className="py-8 bg-white min-h-screen">
-        <div className="max-w-[1920px] mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="w-full"
-          >
-            <iframe
-              src="https://workdrive.zohoexternal.com/embed/m6rgwd6342763b5cc428aa3cb0b1f2b90e00c?toolbar=false&layout=grid&appearance=light&themecolor=green"
-              scrolling="no"
-              frameBorder="0"
-              allowFullScreen={true}
-              width="100%"
-              height="1000"
-              title="Embed code"
-              className="w-full shadow-lg rounded-lg"
-            />
-          </motion.div>
-        </div>
-      </section>
+
     </div>
   );
 };
