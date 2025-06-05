@@ -1,6 +1,17 @@
 import { FC } from 'react';
+import { Link } from 'react-router-dom';
 
 const navigation = {
+  main: [
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Events', href: '/events' },
+    { name: 'News', href: '/news' },
+    { name: 'Gallery', href: '/videos' },
+    { name: 'History', href: '/history' },
+    { name: 'Exco', href: '/exco' },
+    { name: 'Contact', href: '/contact' },
+  ],
   social: [
     {
       name: 'Facebook',
@@ -20,17 +31,33 @@ const navigation = {
 
 export const Footer: FC = () => {
   return (
-    <footer className="bg-white">
-      <div className="container mx-auto overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-center space-x-6">
+    <footer className="bg-primary-600">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        {/* Navigation Links */}
+        <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 mb-4">
+          {navigation.main.map((item) => (
+            <Link
+              key={item.name}
+              to={item.href}
+              className="text-primary-200 hover:text-white transition-colors duration-200 text-sm font-medium"
+            >
+              {item.name}
+            </Link>
+          ))}
+        </div>
+
+        {/* Social Links */}
+        <div className="flex justify-center space-x-6 mb-3">
           {navigation.social.map((item) => (
-            <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500">
+            <a key={item.name} href={item.href} className="text-primary-200 hover:text-white transition-colors duration-200">
               <span className="sr-only">{item.name}</span>
-              <item.icon className="h-6 w-6" aria-hidden="true" />
+              <item.icon className="h-5 w-5" aria-hidden="true" />
             </a>
           ))}
         </div>
-        <p className="mt-8 text-center text-base text-gray-400">
+
+        {/* Copyright - Center Aligned */}
+        <p className="text-center text-sm text-primary-100 w-full">
           &copy; {new Date().getFullYear()} SACKOBA Qatar. All rights reserved.
         </p>
       </div>
