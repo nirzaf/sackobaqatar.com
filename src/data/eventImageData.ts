@@ -32,8 +32,8 @@ interface YearGroup {
 export const eventImageData: YearGroup[] = [
   {
     year: '2023',
-    totalEvents: 2,
-    totalImages: 22,
+    totalEvents: 3,
+    totalImages: 32,
     events: [
       {
         id: 'agm_2023_sackoba_qatar',
@@ -170,6 +170,89 @@ export const eventImageData: YearGroup[] = [
             url: '/images/event_images/2023/Sinhala_&_Tamil_New_Year_and_Iftar_Celebration_2023_SACKOBA_Qatar/Women_cooking_at_Tamil_New_Year_celebration.jpg',
             title: 'Women Cooking at Tamil New Year Celebration',
             filename: 'Women_cooking_at_Tamil_New_Year_celebration.jpg'
+          }
+        ]
+      },
+      {
+        id: 'sackobaq_college_day_celebrations_2023',
+        name: 'SACKOBAQ College Day Celebrations 2023',
+        year: '2023',
+        date: '2023-06-13',
+        location: 'St Anthony\'s College, Sri Lanka',
+        description: 'Annual College Day celebrations at St Anthony\'s College with religious ceremonies, community service, and alumni gathering.',
+        category: 'Academic',
+        attendees: 200,
+        folderPath: 'src/assets/images/event_images/2023/SACKOBAQ_College_Day_Celebrations',
+        images: [
+          {
+            url: '/images/event_images/2023/SACKOBAQ_College_Day_Celebrations/Church_Service_Ceremony_at_St__Anthony_s_College.JPG',
+            title: 'Church Service Ceremony at St Anthony\'s College',
+            filename: 'Church_Service_Ceremony_at_St__Anthony_s_College.JPG',
+            description: 'Religious ceremony during College Day celebrations',
+            tags: ['church', 'ceremony', 'college day', 'religious']
+          },
+          {
+            url: '/images/event_images/2023/SACKOBAQ_College_Day_Celebrations/Priest_at_Altar_College_Day_Celebration_2023.JPG',
+            title: 'Priest at Altar - College Day Celebration 2023',
+            filename: 'Priest_at_Altar_College_Day_Celebration_2023.JPG',
+            description: 'Priest conducting service at altar during college day',
+            tags: ['priest', 'altar', 'college day', 'service']
+          },
+          {
+            url: '/images/event_images/2023/SACKOBAQ_College_Day_Celebrations/People_Praying_in_Church_during_Gathering.JPG',
+            title: 'People Praying in Church during Gathering',
+            filename: 'People_Praying_in_Church_during_Gathering.JPG',
+            description: 'Community members praying during church gathering',
+            tags: ['prayer', 'church', 'gathering', 'community']
+          },
+          {
+            url: '/images/event_images/2023/SACKOBAQ_College_Day_Celebrations/College_Alumni_Gathering_Hallway.JPG',
+            title: 'College Alumni Gathering in Hallway',
+            filename: 'College_Alumni_Gathering_Hallway.JPG',
+            description: 'Alumni gathering in college hallway',
+            tags: ['alumni', 'gathering', 'hallway', 'college']
+          },
+          {
+            url: '/images/event_images/2023/SACKOBAQ_College_Day_Celebrations/Men_distributing_food_bags_at_event.JPG',
+            title: 'Community Service - Food Distribution',
+            filename: 'Men_distributing_food_bags_at_event.JPG',
+            description: 'Men distributing food bags during community service',
+            tags: ['community service', 'food distribution', 'charity', 'service']
+          },
+          {
+            url: '/images/event_images/2023/SACKOBAQ_College_Day_Celebrations/Men_distributing_water_bottles_at_college_event.JPG',
+            title: 'Water Distribution at College Event',
+            filename: 'Men_distributing_water_bottles_at_college_event.JPG',
+            description: 'Volunteers distributing water bottles at college event',
+            tags: ['water distribution', 'volunteers', 'college event', 'service']
+          },
+          {
+            url: '/images/event_images/2023/SACKOBAQ_College_Day_Celebrations/Group_of_People_at_St_Anthony_s_College_Event.JPG',
+            title: 'Group at St Anthony\'s College Event',
+            filename: 'Group_of_People_at_St_Anthony_s_College_Event.JPG',
+            description: 'Group of people attending St Anthony\'s College event',
+            tags: ['group', 'college event', 'st anthony', 'attendees']
+          },
+          {
+            url: '/images/event_images/2023/SACKOBAQ_College_Day_Celebrations/People_receiving_communion_at_college_event.JPG',
+            title: 'Communion at College Event',
+            filename: 'People_receiving_communion_at_college_event.JPG',
+            description: 'People receiving communion during college event',
+            tags: ['communion', 'college event', 'religious', 'ceremony']
+          },
+          {
+            url: '/images/event_images/2023/SACKOBAQ_College_Day_Celebrations/Man_speaking_at_podium_in_church_setting.JPG',
+            title: 'Speaker at Church Podium',
+            filename: 'Man_speaking_at_podium_in_church_setting.JPG',
+            description: 'Speaker addressing gathering at church podium',
+            tags: ['speaker', 'podium', 'church', 'address']
+          },
+          {
+            url: '/images/event_images/2023/SACKOBAQ_College_Day_Celebrations/Priest_Incensing_Ceremony_During_College_Event.JPG',
+            title: 'Priest Incensing Ceremony',
+            filename: 'Priest_Incensing_Ceremony_During_College_Event.JPG',
+            description: 'Priest performing incensing ceremony during college event',
+            tags: ['priest', 'incense', 'ceremony', 'religious']
           }
         ]
       }
@@ -917,6 +1000,510 @@ export const eventImageData: YearGroup[] = [
             filename: 'big_day_out_4.jpg',
             description: 'Community picnic and outdoor dining',
             tags: ['picnic', 'outdoor dining', 'community', 'social']
+          }
+        ]
+      }
+    ]
+  },
+  {
+    year: '2015',
+    totalEvents: 5,
+    totalImages: 50,
+    events: [
+      {
+        id: 'feast_of_st_anthony_padua_2015',
+        name: 'Feast of St Anthony of Padua 2015',
+        year: '2015',
+        date: '2015-06-13',
+        location: 'Church and Community Center, Doha',
+        description: 'Annual celebration of the Feast of St Anthony of Padua with religious ceremonies, community gathering, and fellowship meal.',
+        category: 'Religious',
+        attendees: 120,
+        folderPath: 'src/assets/images/event_images/2015/Feast_of_St.Anthony_of_Padua_2015',
+        images: [
+          {
+            url: '/images/event_images/2015/Feast_of_St.Anthony_of_Padua_2015/Saint_Anthony_holding_child_statue_with_candles_680_X_1024.JPG',
+            title: 'Saint Anthony Statue with Candles',
+            filename: 'Saint_Anthony_holding_child_statue_with_candles_680_X_1024.JPG',
+            description: 'Beautiful statue of Saint Anthony holding child with candles',
+            tags: ['saint anthony', 'statue', 'candles', 'religious']
+          },
+          {
+            url: '/images/event_images/2015/Feast_of_St.Anthony_of_Padua_2015/Church_Service_with_Priest_and_Altar_Servers_1024_X_680.JPG',
+            title: 'Church Service with Priest and Altar Servers',
+            filename: 'Church_Service_with_Priest_and_Altar_Servers_1024_X_680.JPG',
+            description: 'Religious service with priest and altar servers',
+            tags: ['church', 'service', 'priest', 'altar servers']
+          },
+          {
+            url: '/images/event_images/2015/Feast_of_St.Anthony_of_Padua_2015/Church_Congregation_Attending_Service_1024_X_680.JPG',
+            title: 'Church Congregation Attending Service',
+            filename: 'Church_Congregation_Attending_Service_1024_X_680.JPG',
+            description: 'Congregation attending the religious service',
+            tags: ['congregation', 'service', 'church', 'worship']
+          },
+          {
+            url: '/images/event_images/2015/Feast_of_St.Anthony_of_Padua_2015/Church_Group_Photo_1024_X_680.JPG',
+            title: 'Church Group Photo',
+            filename: 'Church_Group_Photo_1024_X_680.JPG',
+            description: 'Group photo of church community members',
+            tags: ['group photo', 'church', 'community', 'members']
+          },
+          {
+            url: '/images/event_images/2015/Feast_of_St.Anthony_of_Padua_2015/Man_speaking_at_church_podium_680_X_1024.JPG',
+            title: 'Speaker at Church Podium',
+            filename: 'Man_speaking_at_church_podium_680_X_1024.JPG',
+            description: 'Community member speaking at church podium',
+            tags: ['speaker', 'podium', 'church', 'address']
+          },
+          {
+            url: '/images/event_images/2015/Feast_of_St.Anthony_of_Padua_2015/People_lined_up_for_food_and_water_1024_X_680.JPG',
+            title: 'Community Food Distribution',
+            filename: 'People_lined_up_for_food_and_water_1024_X_680.JPG',
+            description: 'Community members lined up for food distribution',
+            tags: ['food', 'distribution', 'community', 'service']
+          },
+          {
+            url: '/images/event_images/2015/Feast_of_St.Anthony_of_Padua_2015/Men_at_restaurant_table_eating_meal_1024_X_680.JPG',
+            title: 'Community Fellowship Meal',
+            filename: 'Men_at_restaurant_table_eating_meal_1024_X_680.JPG',
+            description: 'Community members enjoying fellowship meal',
+            tags: ['fellowship', 'meal', 'community', 'dining']
+          },
+          {
+            url: '/images/event_images/2015/Feast_of_St.Anthony_of_Padua_2015/Group_of_Men_in_Business_Attire_1024_X_680.JPG',
+            title: 'Community Leaders in Business Attire',
+            filename: 'Group_of_Men_in_Business_Attire_1024_X_680.JPG',
+            description: 'Community leaders in formal business attire',
+            tags: ['leaders', 'business attire', 'formal', 'community']
+          }
+        ]
+      },
+      {
+        id: 'iftar_2015',
+        name: 'IFTAR 2015',
+        year: '2015',
+        date: '2015-07-10',
+        location: 'Community Tent, Doha',
+        description: 'Community Iftar celebration with food distribution, family gathering, and breaking fast together during Ramadan.',
+        category: 'Religious',
+        attendees: 200,
+        folderPath: 'src/assets/images/event_images/2015/IFTAR_2015',
+        images: [
+          {
+            url: '/images/event_images/2015/IFTAR_2015/Large_Group_Photo_Under_Tent_Lighting_4928_X_3264.JPG',
+            title: 'Large Group Photo Under Tent',
+            filename: 'Large_Group_Photo_Under_Tent_Lighting_4928_X_3264.JPG',
+            description: 'Large group photo of Iftar participants under tent lighting',
+            tags: ['group photo', 'tent', 'iftar', 'community']
+          },
+          {
+            url: '/images/event_images/2015/IFTAR_2015/Large_Group_of_People_Posing_Indoors_4928_X_3264.JPG',
+            title: 'Large Group of People Posing',
+            filename: 'Large_Group_of_People_Posing_Indoors_4928_X_3264.JPG',
+            description: 'Large group of people posing for Iftar celebration',
+            tags: ['group photo', 'iftar', 'celebration', 'community']
+          },
+          {
+            url: '/images/event_images/2015/IFTAR_2015/Group_of_friends_eating_on_floor_with_boxes_4928_X_3264.JPG',
+            title: 'Friends Eating Together on Floor',
+            filename: 'Group_of_friends_eating_on_floor_with_boxes_4928_X_3264.JPG',
+            description: 'Group of friends eating together on floor during Iftar',
+            tags: ['friends', 'eating', 'floor', 'iftar']
+          },
+          {
+            url: '/images/event_images/2015/IFTAR_2015/Large_group_of_people_eating_in_a_tent_1024_X_680.jpg',
+            title: 'Community Eating in Tent',
+            filename: 'Large_group_of_people_eating_in_a_tent_1024_X_680.jpg',
+            description: 'Large group of people eating together in tent',
+            tags: ['community', 'eating', 'tent', 'iftar']
+          },
+          {
+            url: '/images/event_images/2015/IFTAR_2015/Group_of_people_and_children_in_tent_4928_X_3264.JPG',
+            title: 'Families with Children in Tent',
+            filename: 'Group_of_people_and_children_in_tent_4928_X_3264.JPG',
+            description: 'Families with children gathered in tent for Iftar',
+            tags: ['families', 'children', 'tent', 'iftar']
+          },
+          {
+            url: '/images/event_images/2015/IFTAR_2015/Crowd_of_people_receiving_handouts_indoors_4928_X_3264.JPG',
+            title: 'Food Distribution to Community',
+            filename: 'Crowd_of_people_receiving_handouts_indoors_4928_X_3264.JPG',
+            description: 'Crowd of people receiving food handouts',
+            tags: ['food distribution', 'community', 'charity', 'iftar']
+          },
+          {
+            url: '/images/event_images/2015/IFTAR_2015/People_Unloading_Boxes_from_Truck_1024_X_680.jpg',
+            title: 'Volunteers Unloading Food Supplies',
+            filename: 'People_Unloading_Boxes_from_Truck_1024_X_680.jpg',
+            description: 'Volunteers unloading food supply boxes from truck',
+            tags: ['volunteers', 'food supplies', 'truck', 'preparation']
+          },
+          {
+            url: '/images/event_images/2015/IFTAR_2015/Workers_bagging_food_donations_in_containers_1024_X_680.jpg',
+            title: 'Food Preparation and Packaging',
+            filename: 'Workers_bagging_food_donations_in_containers_1024_X_680.jpg',
+            description: 'Workers preparing and packaging food donations',
+            tags: ['food preparation', 'packaging', 'donations', 'volunteers']
+          }
+        ]
+      },
+      {
+        id: 'lions_cricket_7s_2015',
+        name: 'Lions Cricket 7s 2015',
+        year: '2015',
+        date: '2015-11-20',
+        location: 'Cricket Ground, Qatar',
+        description: 'Lions Cricket 7s tournament featuring competitive cricket matches and community participation.',
+        category: 'Sports',
+        attendees: 80,
+        folderPath: 'src/assets/images/event_images/2015/Lions_Cricket_7s_2015',
+        images: [
+          {
+            url: '/images/event_images/2015/Lions_Cricket_7s_2015/DSC_0455.JPG',
+            title: 'Cricket Tournament Opening',
+            filename: 'DSC_0455.JPG',
+            description: 'Opening ceremony of Lions Cricket 7s tournament',
+            tags: ['cricket', 'tournament', 'opening', 'sports']
+          },
+          {
+            url: '/images/event_images/2015/Lions_Cricket_7s_2015/DSC_0482.JPG',
+            title: 'Cricket Match Action',
+            filename: 'DSC_0482.JPG',
+            description: 'Action shots from cricket matches',
+            tags: ['cricket', 'action', 'match', 'sports']
+          },
+          {
+            url: '/images/event_images/2015/Lions_Cricket_7s_2015/DSC_0500.JPG',
+            title: 'Cricket Competition',
+            filename: 'DSC_0500.JPG',
+            description: 'Competitive cricket gameplay',
+            tags: ['cricket', 'competition', 'gameplay', 'sports']
+          },
+          {
+            url: '/images/event_images/2015/Lions_Cricket_7s_2015/Man_celebrating_victory_at_cricket_game_4928_X_3264.JPG',
+            title: 'Victory Celebration',
+            filename: 'Man_celebrating_victory_at_cricket_game_4928_X_3264.JPG',
+            description: 'Player celebrating victory at cricket game',
+            tags: ['victory', 'celebration', 'cricket', 'achievement']
+          },
+          {
+            url: '/images/event_images/2015/Lions_Cricket_7s_2015/Men_playing_ball_game_at_night_outside_4928_X_3264.JPG',
+            title: 'Night Cricket Game',
+            filename: 'Men_playing_ball_game_at_night_outside_4928_X_3264.JPG',
+            description: 'Men playing cricket game at night outdoors',
+            tags: ['night', 'cricket', 'outdoor', 'sports']
+          },
+          {
+            url: '/images/event_images/2015/Lions_Cricket_7s_2015/Three_men_outdoor_cricket_party_4928_X_3264.JPG',
+            title: 'Cricket Tournament Participants',
+            filename: 'Three_men_outdoor_cricket_party_4928_X_3264.JPG',
+            description: 'Three men at outdoor cricket tournament',
+            tags: ['participants', 'cricket', 'outdoor', 'tournament']
+          }
+        ]
+      },
+      {
+        id: 'lions_rugby_7s_2015',
+        name: 'Lions Rugby 7s 2015',
+        year: '2015',
+        date: '2015-12-04',
+        location: 'Rugby Field, Qatar',
+        description: 'Lions Rugby 7s tournament with competitive rugby matches, team participation, and community support.',
+        category: 'Sports',
+        attendees: 100,
+        folderPath: 'src/assets/images/event_images/2015/Lions_Rugby_7s_2015',
+        images: [
+          {
+            url: '/images/event_images/2015/Lions_Rugby_7s_2015/Rugby_players_running_with_ball_on_field_4928_X_3264.JPG',
+            title: 'Rugby Players Running with Ball',
+            filename: 'Rugby_players_running_with_ball_on_field_4928_X_3264.JPG',
+            description: 'Rugby players running with ball during match',
+            tags: ['rugby', 'players', 'running', 'ball']
+          },
+          {
+            url: '/images/event_images/2015/Lions_Rugby_7s_2015/Rugby_Team_Photo_at_Night_4928_X_3264.jpg',
+            title: 'Rugby Team Photo at Night',
+            filename: 'Rugby_Team_Photo_at_Night_4928_X_3264.jpg',
+            description: 'Team photo taken at night during rugby tournament',
+            tags: ['team photo', 'rugby', 'night', 'tournament']
+          },
+          {
+            url: '/images/event_images/2015/Lions_Rugby_7s_2015/Soccer_team_photo_SACK_OBA_QATAR_4928_X_3264.JPG',
+            title: 'SACKOBA Qatar Team Photo',
+            filename: 'Soccer_team_photo_SACK_OBA_QATAR_4928_X_3264.JPG',
+            description: 'SACKOBA Qatar team photo at rugby tournament',
+            tags: ['team photo', 'SACKOBA', 'Qatar', 'rugby']
+          },
+          {
+            url: '/images/event_images/2015/Lions_Rugby_7s_2015/Rugby_players_scrum_for_the_ball_on_field_4928_X_3264.jpg',
+            title: 'Rugby Scrum Action',
+            filename: 'Rugby_players_scrum_for_the_ball_on_field_4928_X_3264.jpg',
+            description: 'Rugby players in scrum formation competing for ball',
+            tags: ['rugby', 'scrum', 'action', 'competition']
+          },
+          {
+            url: '/images/event_images/2015/Lions_Rugby_7s_2015/Team_Huddle_with_Old_Anandians_Flag_in_Qatar_4928_X_3264.JPG',
+            title: 'Team Huddle with Old Anandians Flag',
+            filename: 'Team_Huddle_with_Old_Anandians_Flag_in_Qatar_4928_X_3264.JPG',
+            description: 'Team huddle with Old Anandians flag in Qatar',
+            tags: ['team huddle', 'flag', 'Old Anandians', 'Qatar']
+          },
+          {
+            url: '/images/event_images/2015/Lions_Rugby_7s_2015/Three_Men_Shaking_Hands_at_Night_Field_4928_X_3264.JPG',
+            title: 'Sportsmanship Handshake',
+            filename: 'Three_Men_Shaking_Hands_at_Night_Field_4928_X_3264.JPG',
+            description: 'Three men shaking hands showing sportsmanship',
+            tags: ['sportsmanship', 'handshake', 'rugby', 'respect']
+          }
+        ]
+      },
+      {
+        id: 'special_general_meeting_2015',
+        name: 'Special General Meeting 2015',
+        year: '2015',
+        date: '2015-09-15',
+        location: 'Restaurant, Doha',
+        description: 'Special General Meeting of SACKOBA Qatar with formal discussions, networking, and community fellowship.',
+        category: 'Academic',
+        attendees: 60,
+        folderPath: 'src/assets/images/event_images/2015/Special_General_Meeting_2015',
+        images: [
+          {
+            url: '/images/event_images/2015/Special_General_Meeting_2015/Group_of_Men_Posing_Indoors_2048_X_1356.jpg',
+            title: 'Group of Men Posing at Meeting',
+            filename: 'Group_of_Men_Posing_Indoors_2048_X_1356.jpg',
+            description: 'Group of men posing indoors at the meeting',
+            tags: ['group photo', 'meeting', 'indoor', 'formal']
+          },
+          {
+            url: '/images/event_images/2015/Special_General_Meeting_2015/Group_of_Men_at_Restaurant_Table_2048_X_1356.jpg',
+            title: 'Meeting at Restaurant Table',
+            filename: 'Group_of_Men_at_Restaurant_Table_2048_X_1356.jpg',
+            description: 'Group of men having meeting at restaurant table',
+            tags: ['meeting', 'restaurant', 'table', 'discussion']
+          },
+          {
+            url: '/images/event_images/2015/Special_General_Meeting_2015/Men_Chatting_Smiling_Meeting_2048_X_1356.jpg',
+            title: 'Networking and Fellowship',
+            filename: 'Men_Chatting_Smiling_Meeting_2048_X_1356.jpg',
+            description: 'Men chatting and smiling during meeting',
+            tags: ['networking', 'fellowship', 'chatting', 'meeting']
+          },
+          {
+            url: '/images/event_images/2015/Special_General_Meeting_2015/Buffet_Food_Line_with_Plates_and_Servers_1356_X_2048.jpg',
+            title: 'Buffet Food Service',
+            filename: 'Buffet_Food_Line_with_Plates_and_Servers_1356_X_2048.jpg',
+            description: 'Buffet food line with plates and servers',
+            tags: ['buffet', 'food', 'service', 'dining']
+          },
+          {
+            url: '/images/event_images/2015/Special_General_Meeting_2015/Three_Men_Smiling_Group_Photo_2048_X_1356.jpg',
+            title: 'Three Men Group Photo',
+            filename: 'Three_Men_Smiling_Group_Photo_2048_X_1356.jpg',
+            description: 'Three men smiling in group photo',
+            tags: ['group photo', 'smiling', 'three men', 'meeting']
+          },
+          {
+            url: '/images/event_images/2015/Special_General_Meeting_2015/People_at_a_restaurant_table_having_lunch_2048_X_1356.jpg',
+            title: 'Lunch Meeting',
+            filename: 'People_at_a_restaurant_table_having_lunch_2048_X_1356.jpg',
+            description: 'People having lunch meeting at restaurant table',
+            tags: ['lunch', 'meeting', 'restaurant', 'dining']
+          }
+        ]
+      }
+    ]
+  },
+  {
+    year: '2013',
+    totalEvents: 1,
+    totalImages: 12,
+    events: [
+      {
+        id: 'trinity_beach_carnival_2013',
+        name: 'Trinity Beach Carnival 2013',
+        year: '2013',
+        date: '2013-04-26',
+        location: 'Beach Resort, Qatar',
+        description: 'Trinity Beach Carnival featuring beach rugby, cricket, volleyball, and various beach sports with awards ceremony.',
+        category: 'Sports',
+        attendees: 150,
+        folderPath: 'src/assets/images/event_images/2013/Trinity_Beach_Carnival_2013',
+        images: [
+          {
+            url: '/images/event_images/2013/Trinity_Beach_Carnival_2013/Beach_Rugby_Kings_Award_Ceremony_2013_600_X_450.JPG',
+            title: 'Beach Rugby Kings Award Ceremony 2013',
+            filename: 'Beach_Rugby_Kings_Award_Ceremony_2013_600_X_450.JPG',
+            description: 'Award ceremony for Beach Rugby Kings tournament winners',
+            tags: ['beach rugby', 'awards', 'ceremony', 'winners']
+          },
+          {
+            url: '/images/event_images/2013/Trinity_Beach_Carnival_2013/Beach_Rugby_Game_On_Sandy_Field_600_X_450.jpg',
+            title: 'Beach Rugby Game on Sandy Field',
+            filename: 'Beach_Rugby_Game_On_Sandy_Field_600_X_450.jpg',
+            description: 'Competitive beach rugby game on sandy field',
+            tags: ['beach rugby', 'game', 'sand', 'competition']
+          },
+          {
+            url: '/images/event_images/2013/Trinity_Beach_Carnival_2013/Beach_Kabaddi_game_players_on_sand_600_X_450.jpg',
+            title: 'Beach Kabaddi Game',
+            filename: 'Beach_Kabaddi_game_players_on_sand_600_X_450.jpg',
+            description: 'Players competing in beach kabaddi on sand',
+            tags: ['kabaddi', 'beach', 'sand', 'traditional game']
+          },
+          {
+            url: '/images/event_images/2013/Trinity_Beach_Carnival_2013/Beach_Cricket_Players_Resting_Under_Tent_600_X_450.JPG',
+            title: 'Cricket Players Resting Under Tent',
+            filename: 'Beach_Cricket_Players_Resting_Under_Tent_600_X_450.JPG',
+            description: 'Cricket players taking rest under tent during beach carnival',
+            tags: ['cricket', 'players', 'tent', 'rest']
+          },
+          {
+            url: '/images/event_images/2013/Trinity_Beach_Carnival_2013/Beach_volleyball_spectators_under_tents_600_X_450.jpg',
+            title: 'Beach Volleyball Spectators',
+            filename: 'Beach_volleyball_spectators_under_tents_600_X_450.jpg',
+            description: 'Spectators watching beach volleyball under tents',
+            tags: ['volleyball', 'spectators', 'tents', 'beach']
+          },
+          {
+            url: '/images/event_images/2013/Trinity_Beach_Carnival_2013/Beach_rugby_team_photo_at_St_Regis_600_X_450.JPG',
+            title: 'Beach Rugby Team Photo at St Regis',
+            filename: 'Beach_rugby_team_photo_at_St_Regis_600_X_450.JPG',
+            description: 'Beach rugby team group photo at St Regis resort',
+            tags: ['team photo', 'beach rugby', 'St Regis', 'group']
+          },
+          {
+            url: '/images/event_images/2013/Trinity_Beach_Carnival_2013/Red_Bull_Event_Tent_Beach_Sand_600_X_377.jpg',
+            title: 'Red Bull Event Tent on Beach',
+            filename: 'Red_Bull_Event_Tent_Beach_Sand_600_X_377.jpg',
+            description: 'Red Bull sponsored event tent on beach sand',
+            tags: ['Red Bull', 'tent', 'beach', 'sponsor']
+          },
+          {
+            url: '/images/event_images/2013/Trinity_Beach_Carnival_2013/Trinity_Rugby_Jersey_with_Lion_Mascot_600_X_782.jpg',
+            title: 'Trinity Rugby Jersey with Lion Mascot',
+            filename: 'Trinity_Rugby_Jersey_with_Lion_Mascot_600_X_782.jpg',
+            description: 'Trinity rugby team jersey featuring lion mascot',
+            tags: ['jersey', 'trinity', 'lion', 'mascot']
+          },
+          {
+            url: '/images/event_images/2013/Trinity_Beach_Carnival_2013/Group_of_six_men_on_beach_600_X_450.JPG',
+            title: 'Group of Six Men on Beach',
+            filename: 'Group_of_six_men_on_beach_600_X_450.JPG',
+            description: 'Group of six men enjoying beach carnival',
+            tags: ['group photo', 'men', 'beach', 'carnival']
+          },
+          {
+            url: '/images/event_images/2013/Trinity_Beach_Carnival_2013/Team_in_Jerseys_on_Beach_600_X_450.jpg',
+            title: 'Team in Jerseys on Beach',
+            filename: 'Team_in_Jerseys_on_Beach_600_X_450.jpg',
+            description: 'Sports team wearing jerseys on beach',
+            tags: ['team', 'jerseys', 'beach', 'sports']
+          },
+          {
+            url: '/images/event_images/2013/Trinity_Beach_Carnival_2013/Rugby_team_wins_beach_rugby_kings_trophy_600_X_450.JPG',
+            title: 'Rugby Team Wins Beach Rugby Kings Trophy',
+            filename: 'Rugby_team_wins_beach_rugby_kings_trophy_600_X_450.JPG',
+            description: 'Rugby team celebrating victory with Beach Rugby Kings trophy',
+            tags: ['rugby', 'trophy', 'victory', 'champions']
+          },
+          {
+            url: '/images/event_images/2013/Trinity_Beach_Carnival_2013/Men_relaxing_under_beach_canopies_600_X_450.JPG',
+            title: 'Men Relaxing Under Beach Canopies',
+            filename: 'Men_relaxing_under_beach_canopies_600_X_450.JPG',
+            description: 'Men relaxing and socializing under beach canopies',
+            tags: ['relaxing', 'canopies', 'beach', 'socializing']
+          }
+        ]
+      }
+    ]
+  },
+  {
+    year: '2012',
+    totalEvents: 6,
+    totalImages: 60,
+    events: [
+      {
+        id: 'boat_2012',
+        name: 'Boat Trip 2012',
+        year: '2012',
+        date: '2012-05-18',
+        location: 'Qatar Waters',
+        description: 'Community boat trip with music, food, and fellowship on Qatar waters with city skyline views.',
+        category: 'Social',
+        attendees: 80,
+        folderPath: 'src/assets/images/event_images/2012/Boat_2012',
+        images: [
+          {
+            url: '/images/event_images/2012/Boat_2012/St__Anthonys_College_Old_Boys_Association_Qatar_2048_X_1536.jpg',
+            title: 'St Anthony\'s College Old Boys Association Qatar',
+            filename: 'St__Anthonys_College_Old_Boys_Association_Qatar_2048_X_1536.jpg',
+            description: 'Official group photo of St Anthony\'s College Old Boys Association Qatar',
+            tags: ['group photo', 'old boys', 'association', 'official']
+          },
+          {
+            url: '/images/event_images/2012/Boat_2012/Group_of_people_on_a_boat_by_sea_2048_X_1536.jpg',
+            title: 'Group of People on Boat by Sea',
+            filename: 'Group_of_people_on_a_boat_by_sea_2048_X_1536.jpg',
+            description: 'Community members enjoying boat trip by the sea',
+            tags: ['boat', 'sea', 'community', 'trip']
+          },
+          {
+            url: '/images/event_images/2012/Boat_2012/People_on_Boat_at_Dusk_with_City_Skyline_600_X_450.jpg',
+            title: 'Boat Trip at Dusk with City Skyline',
+            filename: 'People_on_Boat_at_Dusk_with_City_Skyline_600_X_450.jpg',
+            description: 'People on boat at dusk with beautiful city skyline view',
+            tags: ['boat', 'dusk', 'skyline', 'scenic']
+          },
+          {
+            url: '/images/event_images/2012/Boat_2012/Boat_party_with_guitar_and_Qatar_flag_600_X_450.jpg',
+            title: 'Boat Party with Guitar and Qatar Flag',
+            filename: 'Boat_party_with_guitar_and_Qatar_flag_600_X_450.jpg',
+            description: 'Boat party featuring music with guitar and Qatar flag',
+            tags: ['party', 'guitar', 'Qatar flag', 'music']
+          },
+          {
+            url: '/images/event_images/2012/Boat_2012/People_with_sparklers_on_boat_at_night_600_X_450.jpg',
+            title: 'Sparklers on Boat at Night',
+            filename: 'People_with_sparklers_on_boat_at_night_600_X_450.jpg',
+            description: 'People celebrating with sparklers on boat at night',
+            tags: ['sparklers', 'night', 'celebration', 'boat']
+          },
+          {
+            url: '/images/event_images/2012/Boat_2012/People_eating_on_a_boat_trip_600_X_450.jpg',
+            title: 'Dining on Boat Trip',
+            filename: 'People_eating_on_a_boat_trip_600_X_450.jpg',
+            description: 'Community members enjoying meal during boat trip',
+            tags: ['dining', 'boat trip', 'meal', 'community']
+          },
+          {
+            url: '/images/event_images/2012/Boat_2012/Three_Men_on_Boat_Overlooking_City_Skyline_600_X_450.jpg',
+            title: 'Three Men Overlooking City Skyline',
+            filename: 'Three_Men_on_Boat_Overlooking_City_Skyline_600_X_450.jpg',
+            description: 'Three men on boat enjoying city skyline view',
+            tags: ['three men', 'skyline', 'boat', 'view']
+          },
+          {
+            url: '/images/event_images/2012/Boat_2012/Man_speaking_into_microphone_at_party_600_X_338.jpg',
+            title: 'Speaker at Boat Party',
+            filename: 'Man_speaking_into_microphone_at_party_600_X_338.jpg',
+            description: 'Man speaking into microphone at boat party',
+            tags: ['speaker', 'microphone', 'party', 'address']
+          },
+          {
+            url: '/images/event_images/2012/Boat_2012/Kids_celebrating_with_sparklers_at_night_600_X_450.jpg',
+            title: 'Kids Celebrating with Sparklers',
+            filename: 'Kids_celebrating_with_sparklers_at_night_600_X_450.jpg',
+            description: 'Children celebrating with sparklers at night on boat',
+            tags: ['kids', 'sparklers', 'celebration', 'night']
+          },
+          {
+            url: '/images/event_images/2012/Boat_2012/Women_on_a_boat_trip_600_X_450.jpg',
+            title: 'Women on Boat Trip',
+            filename: 'Women_on_a_boat_trip_600_X_450.jpg',
+            description: 'Women enjoying the community boat trip',
+            tags: ['women', 'boat trip', 'community', 'enjoyment']
           }
         ]
       }

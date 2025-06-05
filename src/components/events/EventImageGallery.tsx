@@ -1,11 +1,11 @@
 import { FC, useState, useMemo, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDownIcon, PhotoIcon, ClockIcon, MapPinIcon, UserGroupIcon } from '@heroicons/react/24/outline';
-import { getEventImageData, EventCategory, YearGroup } from '../../data/eventImageData';
+import { getCompleteEventImageData, EventCategory, YearGroup } from '../../data/completeEventImageData';
 import { ImageModal } from './ImageModal';
 import { EventSearchAndFilter } from './EventSearchAndFilter';
 import { getOptimizedImageUrl, getImageSizes } from '../../utils/imageOptimization';
-import { getCategoryClasses, getCategoryDisplayName } from '../../utils/eventCategories';
+
 
 
 
@@ -25,7 +25,7 @@ export const EventImageGallery: FC<EventImageGalleryProps> = ({ selectedYear = '
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [filterYear, setFilterYear] = useState(selectedYear);
 
-  const eventData = useMemo(() => getEventImageData(), []);
+  const eventData = useMemo(() => getCompleteEventImageData(), []);
 
   // Get available categories and years for filters
   const availableCategories = useMemo(() => {

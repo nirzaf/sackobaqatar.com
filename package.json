@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "copy-images": "bash scripts/copy-event-images.sh",
     "optimize-images": "node scripts/optimize-images.js",
-    "setup-images": "npm run copy-images && npm run optimize-images"
+    "generate-event-data": "node scripts/generate-complete-event-data.js",
+    "setup-images": "npm run copy-images && npm run generate-event-data && npm run optimize-images"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",

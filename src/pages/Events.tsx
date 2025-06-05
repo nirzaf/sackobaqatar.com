@@ -6,7 +6,7 @@ import { EventsGrid } from '../components/events/EventsGrid';
 import { EventImageGallery } from '../components/events/EventImageGallery';
 import { events as staticEvents } from '../data/events';
 import { useEventFiltering } from '../hooks/useEventFiltering';
-import { getEventImageYears } from '../data/eventImageData';
+import { getCompleteEventImageYears } from '../data/completeEventImageData';
 
 export const Events: FC = () => {
   const [loading, setLoading] = useState(true);
@@ -20,8 +20,8 @@ export const Events: FC = () => {
     filteredEvents
   } = useEventFiltering(staticEvents);
 
-  // Get available years from image data for gallery
-  const galleryYears = useMemo(() => getEventImageYears(), []);
+  // Get available years from complete image data for gallery
+  const galleryYears = useMemo(() => getCompleteEventImageYears(), []);
   const allYears = useMemo(() => {
     const combined = [...new Set([...years, ...galleryYears])];
     return combined.sort((a, b) => parseInt(b) - parseInt(a));
