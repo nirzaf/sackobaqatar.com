@@ -4,7 +4,7 @@ import { ChevronDownIcon, PhotoIcon, ClockIcon, MapPinIcon, UserGroupIcon } from
 import { getCompleteEventImageData, EventCategory, YearGroup } from '../../data/completeEventImageData';
 import { ImageModal } from './ImageModal';
 import { EventSearchAndFilter } from './EventSearchAndFilter';
-// import { getOptimizedImageUrl, getImageSizes } from '../../utils/imageOptimization';
+import { getOptimizedImageUrl, generateResponsiveSrcSet, getImageSizes, createBlurPlaceholder } from '../../utils/imageOptimization';
 import './EventStyles.css';
 
 
@@ -265,55 +265,11 @@ export const EventImageGallery: FC<EventImageGalleryProps> = ({ selectedYear = '
                       {/* Preview images when collapsed */}
                       {!isExpanded && event.images.length > 0 && (
                         <div className="flex space-x-2 mt-3 overflow-hidden">
-                          {event.images.slice(0, 4).map((image, index) => {
-                            console.log(`🖼️ Rendering preview image ${index + 1}:`, image.url);
-                            return (
-                              <div
-                                key={image.filename}
-                                className="relative w-16 h-16 bg-gray-100 rounded-md overflow-hidden cursor-pointer hover:opacity-80 transition-opacity duration-200"
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  openImageModal(image.url, image.title, event.name, image.description);
-                                }}
-                              >
-                                <img
-                                  src={image.url}
-                                  alt={image.title}
-                                  className="w-full h-full object-cover"
-                                  style={{
-                                    backgroundColor: '#f3f4f6',
-                                    border: '1px solid #d1d5db',
-                                    minHeight: '64px',
-                                    minWidth: '64px'
-                                  }}
-                                  loading="eager"
-                                  onLoad={() => {
-                                    console.log('✅ Preview image loaded successfully:', image.url);
-                                  }}
-                                  onError={(e) => {
-                                    const target = e.target as HTMLImageElement;
-                                    console.error('❌ Preview image failed to load:', image.url);
-                                    console.error('❌ Error details:', e);
-                                    target.style.backgroundColor = '#fee2e2';
-                                    target.style.border = '2px solid #dc2626';
-                                    target.style.color = '#dc2626';
-                                    target.style.fontSize = '10px';
-                                    target.style.display = 'flex';
-                                    target.style.alignItems = 'center';
-                                    target.style.justifyContent = 'center';
-                                    target.textContent = 'Failed to load';
-                                  }}
-                                />
-                                {index === 3 && event.images.length > 4 && (
-                                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                                    <span className="text-white text-xs font-bold">
-                                      +{event.images.length - 4}
-                                    </span>
-                                  </div>
-                                )}
-                              </div>
-                            );
-                          })}
+                          {/* Only show a static preview count or icon, not actual images */}
+                          <div className="flex items-center text-gray-400 text-xs">
+                            <PhotoIcon className="h-5 w-5 mr-1" />
+                            {event.images.length} photo{event.images.length !== 1 ? 's' : ''}
+                          </div>
                         </div>
                       )}
                     </div>
@@ -335,7 +291,9 @@ export const EventImageGallery: FC<EventImageGalleryProps> = ({ selectedYear = '
                       >
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                           {event.images.map((image, index) => {
-                            console.log(`🖼️ Rendering gallery image ${index + 1}:`, image.url);
+                            const optimizedUrl = getOptimizedImageUrl(image.url, getImageSizes('gallery'));
+                            const srcSet = generateResponsiveSrcSet(image.url);
+                            const blurDataUrl = createBlurPlaceholder(200, 200);
                             return (
                               <motion.div
                                 key={image.filename}
@@ -346,22 +304,22 @@ export const EventImageGallery: FC<EventImageGalleryProps> = ({ selectedYear = '
                                 onClick={() => openImageModal(image.url, image.title, event.name, image.description)}
                               >
                                 <img
-                                  src={image.url}
+                                  src={optimizedUrl}
+                                  srcSet={srcSet}
+                                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 200px"
                                   alt={image.title}
                                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                                   style={{
-                                    backgroundColor: '#f3f4f6',
+                                    background: `url(${blurDataUrl}) center center / cover no-repeat`,
                                     border: '1px solid #d1d5db',
-                                    minHeight: '200px'
+                                    minHeight: '200px',
+                                    transition: 'filter 0.3s',
+                                    filter: 'blur(8px)',
                                   }}
-                                  loading="eager"
-                                  onLoad={() => {
-                                    console.log('✅ Gallery image loaded successfully:', image.url);
-                                  }}
+                                  loading="lazy"
+                                  onLoad={e => { e.currentTarget.style.filter = 'none'; }}
                                   onError={(e) => {
                                     const target = e.target as HTMLImageElement;
-                                    console.error('❌ Gallery image failed to load:', image.url);
-                                    console.error('❌ Error details:', e);
                                     target.style.backgroundColor = '#fee2e2';
                                     target.style.border = '2px solid #dc2626';
                                     target.style.color = '#dc2626';
