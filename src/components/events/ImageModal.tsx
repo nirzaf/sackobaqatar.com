@@ -8,6 +8,7 @@ interface ImageModalProps {
   imageUrl: string;
   imageTitle: string;
   eventName: string;
+  description?: string;
 }
 
 export const ImageModal: FC<ImageModalProps> = ({
@@ -15,7 +16,8 @@ export const ImageModal: FC<ImageModalProps> = ({
   onClose,
   imageUrl,
   imageTitle,
-  eventName
+  eventName,
+  description
 }) => {
   // Handle escape key press
   useEffect(() => {
@@ -77,6 +79,11 @@ export const ImageModal: FC<ImageModalProps> = ({
                 <p className="text-sm text-gray-600 truncate">
                   {eventName}
                 </p>
+                {description && (
+                  <p className="text-sm text-gray-500 truncate mt-1">
+                    {description}
+                  </p>
+                )}
               </div>
               
               <div className="flex items-center space-x-2 ml-4">
