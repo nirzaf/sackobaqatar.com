@@ -24,5 +24,11 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     emptyOutDir: true,
-  }
+  },
+  server: {
+    fs: {
+      strict: false
+    }
+  },
+  publicDir: 'public'
 })

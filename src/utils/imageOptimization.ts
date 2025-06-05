@@ -10,7 +10,7 @@ interface ImageOptimizationOptions {
 
 // Function to generate optimized image URL
 export function getOptimizedImageUrl(
-  originalUrl: string, 
+  originalUrl: string,
   options: ImageOptimizationOptions = {}
 ): string {
   const {
@@ -26,24 +26,13 @@ export function getOptimizedImageUrl(
     return originalUrl;
   }
 
-  // Check if we're in development or production
-  const isProduction = import.meta.env.PROD;
-
-  // Check if the URL is a relative path starting with '/images/'
+  // For now, always serve images from the public directory
+  // This ensures images work both in development and production
+  // TODO: Implement ImageKit CDN integration when ready
   if (originalUrl.startsWith('/images/')) {
-    if (isProduction) {
-      // For production, use ImageKit CDN for optimized delivery
-      const imageKitBaseUrl = 'https://ik.imagekit.io/fazrinphcc/sackobaqatar';
-      
-      // Remove the leading slash for ImageKit path
-      const imagePath = originalUrl.substring(1); // Remove the leading '/'
-      return `${imageKitBaseUrl}/${imagePath}`;
-    } else {
-      // In development, the public folder is served correctly
-      return originalUrl;
-    }
+    return originalUrl;
   }
-  
+
   // Fallback to the original URL if it doesn't match our patterns
   return originalUrl;
 }
