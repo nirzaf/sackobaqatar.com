@@ -3,11 +3,14 @@ import { motion } from 'framer-motion';
 import { EventsHero } from '../components/events/EventsHero';
 import { YearFilter } from '../components/events/YearFilter';
 import { EventsGrid } from '../components/events/EventsGrid';
+import { EventImageGallery } from '../components/events/EventImageGallery';
 import { events as staticEvents } from '../data/events';
 import { useEventFiltering } from '../hooks/useEventFiltering';
+import { getEventImageYears } from '../data/eventImageData';
 
 export const Events: FC = () => {
   const [loading, setLoading] = useState(true);
+  const [activeTab, setActiveTab] = useState<'events' | 'gallery'>('events');
 
   // Use custom hook for event filtering logic
   const {
@@ -16,6 +19,13 @@ export const Events: FC = () => {
     setSelectedYear,
     filteredEvents
   } = useEventFiltering(staticEvents);
+
+  // Get available years from image data for gallery
+  const galleryYears = useMemo(() => getEventImageYears(), []);
+  const allYears = useMemo(() => {
+    const combined = [...new Set([...years, ...galleryYears])];
+    return combined.sort((a, b) => parseInt(b) - parseInt(a));
+  }, [years, galleryYears]);
 
   // Set loading state
   useEffect(() => {
@@ -40,12 +50,65 @@ export const Events: FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       <EventsHero />
+
+      {/* Tab Navigation */}
+      <div className="bg-white border-b border-gray-200 sticky top-0 z-10">
+        <div className="container mx-auto px-6">
+          <div className="flex space-x-8">
+            <button
+              onClick={() => setActiveTab('events')}
+              className={`py-4 px-2 border-b-2 font-medium text-sm transition-colors duration-200 ${
+                activeTab === 'events'
+                  ? 'border-[#B62D71] text-[#B62D71]'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+              }`}
+            >
+              Event Cards
+            </button>
+            <button
+              onClick={() => setActiveTab('gallery')}
+              className={`py-4 px-2 border-b-2 font-medium text-sm transition-colors duration-200 ${
+                activeTab === 'gallery'
+                  ? 'border-[#B62D71] text-[#B62D71]'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+              }`}
+            >
+              Image Gallery
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Year Filter */}
       <YearFilter
-        years={years}
+        years={activeTab === 'events' ? years : allYears}
         selectedYear={selectedYear}
         onYearChange={setSelectedYear}
       />
-      <EventsGrid {...gridProps} />
+
+      {/* Content based on active tab */}
+      {activeTab === 'events' ? (
+        <EventsGrid {...gridProps} />
+      ) : (
+        <div className="container mx-auto px-6 py-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="mb-8 text-center">
+              <h2 className="text-3xl font-bold text-[#541D67] mb-4">
+                Event Image Gallery
+              </h2>
+              <p className="text-[#5B4886] max-w-2xl mx-auto">
+                Browse through our collection of event photos organized by year and category.
+                Click on any image to view it in full size.
+              </p>
+            </div>
+            <EventImageGallery selectedYear={selectedYear} />
+          </motion.div>
+        </div>
+      )}
 
       {/* Embedded Section */}
       <section className="py-8 bg-white min-h-screen">
