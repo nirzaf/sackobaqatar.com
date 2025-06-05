@@ -205,17 +205,17 @@ export const EventImageGallery: FC<EventImageGalleryProps> = ({ selectedYear = '
               const isExpanded = expandedEvents.has(event.id);
 
               return (
-                <div key={event.id} className="event-container p-6" style={{ backgroundColor: 'white', color: '#333', borderRadius: '0.5rem', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
+                <div key={event.id} className="event-container p-4 sm:p-6" style={{ backgroundColor: 'white', color: '#333', borderRadius: '0.5rem', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
                   <button
                     onClick={() => toggleEventExpansion(event.id)}
                     className="w-full flex items-center justify-between text-left hover:bg-gray-50 -m-2 p-2 rounded-lg transition-colors duration-200"
                   >
                     <div className="flex-1">
-                      <div className="flex items-center space-x-2 mb-2">
-                        <h3 className="event-title" style={{ color: '#541D67', fontWeight: 600 }}>
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-2 mb-2 space-y-2 sm:space-y-0">
+                        <h3 className="event-title text-lg sm:text-xl" style={{ color: '#541D67', fontWeight: 600 }}>
                           {event.name}
                         </h3>
-                        <span className={`px-2 py-1 text-xs font-medium rounded-full ${event.category === 'Sports' ? 'bg-green-100 text-green-800' :
+                        <span className={`px-2 py-1 text-xs font-medium rounded-full self-start sm:self-auto ${event.category === 'Sports' ? 'bg-green-100 text-green-800' :
                           event.category === 'Cultural' ? 'bg-purple-100 text-purple-800' :
                             event.category === 'Religious' ? 'bg-blue-100 text-blue-800' :
                               event.category === 'Social' ? 'bg-yellow-100 text-yellow-800' :
@@ -226,22 +226,22 @@ export const EventImageGallery: FC<EventImageGalleryProps> = ({ selectedYear = '
                         </span>
                       </div>
 
-                      <div className="flex items-center space-x-4 text-sm text-gray-600 mb-1">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 text-sm text-gray-600 mb-1 space-y-1 sm:space-y-0">
                         {event.date && (
                           <div className="flex items-center space-x-1">
-                            <ClockIcon className="h-4 w-4 text-gray-600" />
+                            <ClockIcon className="h-4 w-4 text-gray-600 flex-shrink-0" />
                             <span style={{ color: '#4B5563' }}>{new Date(event.date).toLocaleDateString()}</span>
                           </div>
                         )}
                         {event.location && (
                           <div className="flex items-center space-x-1">
-                            <MapPinIcon className="h-4 w-4 text-gray-600" />
-                            <span style={{ color: '#4B5563' }}>{event.location}</span>
+                            <MapPinIcon className="h-4 w-4 text-gray-600 flex-shrink-0" />
+                            <span style={{ color: '#4B5563' }} className="truncate">{event.location}</span>
                           </div>
                         )}
                         {event.attendees && (
                           <div className="flex items-center space-x-1">
-                            <UserGroupIcon className="h-4 w-4 text-gray-600" />
+                            <UserGroupIcon className="h-4 w-4 text-gray-600 flex-shrink-0" />
                             <span style={{ color: '#4B5563' }}>{event.attendees} attendees</span>
                           </div>
                         )}
@@ -289,7 +289,7 @@ export const EventImageGallery: FC<EventImageGalleryProps> = ({ selectedYear = '
                         transition={{ duration: 0.3 }}
                         className="mt-4 overflow-hidden"
                       >
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                        <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4">
                           {event.images.map((image, index) => {
                             const optimizedUrl = getOptimizedImageUrl(image.url, getImageSizes('gallery'));
                             const srcSet = generateResponsiveSrcSet(image.url);
@@ -300,19 +300,19 @@ export const EventImageGallery: FC<EventImageGalleryProps> = ({ selectedYear = '
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.3, delay: index * 0.1 }}
-                                className="group relative aspect-square bg-gray-100 rounded-lg overflow-hidden cursor-pointer hover:shadow-lg transition-all duration-300"
+                                className="group relative aspect-square bg-gray-100 rounded-lg overflow-hidden cursor-pointer hover:shadow-lg transition-all duration-300 h-full"
                                 onClick={() => openImageModal(image.url, image.title, event.name, image.description)}
                               >
                                 <img
                                   src={optimizedUrl}
                                   srcSet={srcSet}
-                                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 200px"
+                                  sizes="(max-width: 480px) 100vw, (max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
                                   alt={image.title}
                                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                                   style={{
                                     background: `url(${blurDataUrl}) center center / cover no-repeat`,
                                     border: '1px solid #d1d5db',
-                                    minHeight: '200px',
+                                    aspectRatio: '1',
                                     transition: 'filter 0.3s',
                                     filter: 'blur(8px)',
                                   }}
@@ -323,16 +323,18 @@ export const EventImageGallery: FC<EventImageGalleryProps> = ({ selectedYear = '
                                     target.style.backgroundColor = '#fee2e2';
                                     target.style.border = '2px solid #dc2626';
                                     target.style.color = '#dc2626';
-                                    target.style.fontSize = '14px';
+                                    target.style.fontSize = '12px';
                                     target.style.display = 'flex';
                                     target.style.alignItems = 'center';
                                     target.style.justifyContent = 'center';
+                                    target.style.textAlign = 'center';
+                                    target.style.padding = '8px';
                                     target.textContent = 'Image failed to load';
                                   }}
                                 />
                                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-                                <div className="event-image-overlay absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: 'linear-gradient(to top, rgba(255,255,255,0.95), transparent)' }}>
-                                  <p className="event-image-text text-xs font-semibold truncate" style={{ color: '#111827' }}>
+                                <div className="event-image-overlay absolute bottom-0 left-0 right-0 p-2 sm:p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: 'linear-gradient(to top, rgba(255,255,255,0.95), transparent)' }}>
+                                  <p className="event-image-text text-xs sm:text-sm font-semibold truncate" style={{ color: '#111827' }}>
                                     {image.title}
                                   </p>
                                   {image.description && (
@@ -341,11 +343,11 @@ export const EventImageGallery: FC<EventImageGalleryProps> = ({ selectedYear = '
                                     </p>
                                   )}
                                   {image.tags && image.tags.length > 0 && (
-                                    <div className="flex flex-wrap gap-1 mt-2">
-                                      {image.tags.slice(0, 3).map((tag, tagIndex) => (
+                                    <div className="flex flex-wrap gap-1 mt-1 sm:mt-2">
+                                      {image.tags.slice(0, 2).map((tag, tagIndex) => (
                                         <span
                                           key={tagIndex}
-                                          className="event-tag text-xs px-2 py-1 rounded-full" style={{ backgroundColor: '#F3F4F6', color: '#4B5563', border: '1px solid #E5E7EB' }}
+                                          className="event-tag text-xs px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-full" style={{ backgroundColor: '#F3F4F6', color: '#4B5563', border: '1px solid #E5E7EB' }}
                                         >
                                           {tag}
                                         </span>
