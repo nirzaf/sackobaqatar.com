@@ -57,20 +57,20 @@ export const Events: FC = () => {
           <div className="flex space-x-8">
             <button
               onClick={() => setActiveTab('events')}
-              className={`py-4 px-2 border-b-2 font-medium text-sm transition-colors duration-200 ${
+              className={`py-4 px-6 rounded-lg font-medium text-sm transition-colors duration-200 ${
                 activeTab === 'events'
-                  ? 'border-[#B62D71] text-[#B62D71]'
-                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                  ? 'bg-[#541D67] text-white shadow-md'
+                  : 'bg-white text-[#541D67] border border-[#541D67] hover:bg-[#F8F6F9]'
               }`}
             >
               Event Cards
             </button>
             <button
               onClick={() => setActiveTab('gallery')}
-              className={`py-4 px-2 border-b-2 font-medium text-sm transition-colors duration-200 ${
+              className={`py-4 px-6 rounded-lg font-medium text-sm transition-colors duration-200 ${
                 activeTab === 'gallery'
-                  ? 'border-[#B62D71] text-[#B62D71]'
-                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                  ? 'bg-[#B62D71] text-white shadow-md'
+                  : 'bg-white text-[#B62D71] border border-[#B62D71] hover:bg-[#F8F6F9]'
               }`}
             >
               Image Gallery
