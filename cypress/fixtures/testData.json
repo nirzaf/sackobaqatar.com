@@ -1,0 +1,280 @@
+{
+  "users": {
+    "prospectiveStudent": {
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "phone": "+974 5555 1234",
+      "message": "I am interested in learning more about SACKOBA Qatar and how to join the association.",
+      "subject": "Membership Inquiry"
+    },
+    "alumni": {
+      "name": "Michael Smith",
+      "email": "michael.smith@example.com",
+      "phone": "+974 5555 5678",
+      "graduationYear": "1995",
+      "studentId": "SAC1995001",
+      "message": "I would like to reconnect with my batch mates and participate in upcoming events.",
+      "subject": "Alumni Reconnection"
+    },
+    "currentStudent": {
+      "name": "Sarah Johnson",
+      "email": "sarah.johnson@example.com",
+      "phone": "+974 5555 9012",
+      "currentYear": "A/L",
+      "message": "I am currently studying at St. Anthony's College and interested in future alumni activities.",
+      "subject": "Current Student Inquiry"
+    },
+    "parent": {
+      "name": "Robert Wilson",
+      "email": "robert.wilson@example.com",
+      "phone": "+974 5555 3456",
+      "childName": "David Wilson",
+      "childYear": "Grade 10",
+      "message": "I would like to know more about the alumni association for my son's future.",
+      "subject": "Parent Inquiry"
+    }
+  },
+  "newsletter": {
+    "validEmail": "newsletter@example.com",
+    "invalidEmails": [
+      "invalid-email",
+      "@example.com",
+      "test@",
+      "test..test@example.com"
+    ]
+  },
+  "search": {
+    "validQueries": [
+      "cricket",
+      "annual dinner",
+      "AGM",
+      "cultural",
+      "sports",
+      "2023",
+      "Qatar"
+    ],
+    "invalidQueries": [
+      "",
+      "   ",
+      "xyz123nonexistent"
+    ]
+  },
+  "events": {
+    "categories": [
+      "Sports",
+      "Cultural",
+      "Religious",
+      "Social",
+      "Academic",
+      "Community"
+    ],
+    "years": [
+      "2024",
+      "2023",
+      "2022",
+      "2021",
+      "2020"
+    ],
+    "sampleEvents": [
+      {
+        "name": "Annual Cricket Tournament",
+        "year": 2023,
+        "category": "Sports",
+        "description": "Annual cricket tournament featuring teams from different batches"
+      },
+      {
+        "name": "Cultural Night",
+        "year": 2023,
+        "category": "Cultural",
+        "description": "Traditional cultural performances and celebrations"
+      }
+    ]
+  },
+  "navigation": {
+    "mainMenuItems": [
+      "Home",
+      "About",
+      "Events",
+      "News",
+      "Video Gallery",
+      "Contact"
+    ],
+    "footerLinks": [
+      "Membership Terms",
+      "College History",
+      "Executive Committee"
+    ]
+  },
+  "social": {
+    "platforms": [
+      {
+        "name": "Facebook",
+        "url": "https://facebook.com/sackobaqatar",
+        "icon": "facebook"
+      },
+      {
+        "name": "Instagram",
+        "url": "https://instagram.com/sackobaqatar",
+        "icon": "instagram"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://youtube.com/sackobaqatar",
+        "icon": "youtube"
+      }
+    ]
+  },
+  "performance": {
+    "thresholds": {
+      "pageLoadTime": 3000,
+      "firstContentfulPaint": 1500,
+      "largestContentfulPaint": 2500,
+      "cumulativeLayoutShift": 0.1,
+      "firstInputDelay": 100
+    },
+    "imageOptimization": {
+      "maxFileSize": 500000,
+      "supportedFormats": [
+        "webp",
+        "jpg",
+        "jpeg",
+        "png"
+      ],
+      "requiredAttributes": [
+        "alt",
+        "width",
+        "height"
+      ]
+    }
+  },
+  "accessibility": {
+    "colorContrast": {
+      "minimumRatio": 4.5,
+      "largeTextRatio": 3.0
+    },
+    "keyboardNavigation": {
+      "focusableElements": [
+        "button",
+        "a",
+        "input",
+        "select",
+        "textarea",
+        "[tabindex]"
+      ]
+    },
+    "ariaLabels": {
+      "required": [
+        "navigation",
+        "main",
+        "banner",
+        "contentinfo",
+        "complementary"
+      ]
+    }
+  },
+  "responsive": {
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "width": 375,
+        "height": 667
+      },
+      {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      {
+        "name": "desktop",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "name": "large-desktop",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "touchTargets": {
+      "minimumSize": 44
+    }
+  },
+  "forms": {
+    "validation": {
+      "email": {
+        "valid": [
+          "test@example.com",
+          "user.name@domain.co.uk",
+          "test+tag@example.org"
+        ],
+        "invalid": [
+          "invalid-email",
+          "@example.com",
+          "test@",
+          "test..test@example.com",
+          "test@.com"
+        ]
+      },
+      "phone": {
+        "valid": [
+          "+974 5555 1234",
+          "+974-5555-1234",
+          "97455551234",
+          "5555 1234"
+        ],
+        "invalid": [
+          "123",
+          "invalid-phone",
+          "+123",
+          "12345678901234567890"
+        ]
+      },
+      "required": {
+        "messages": [
+          "This field is required",
+          "Please fill out this field",
+          "Required field"
+        ]
+      }
+    }
+  },
+  "media": {
+    "images": {
+      "testImages": [
+        "test-image-1.jpg",
+        "test-image-2.png",
+        "test-image-3.webp"
+      ],
+      "altTextExamples": [
+        "Students participating in cricket tournament",
+        "Cultural performance at annual dinner",
+        "Executive committee members at AGM"
+      ]
+    },
+    "videos": {
+      "youtubeIds": [
+        "dQw4w9WgXcQ",
+        "jNQXAC9IVRw",
+        "9bZkp7q19f0"
+      ]
+    }
+  },
+  "api": {
+    "endpoints": {
+      "contact": "/api/contact",
+      "newsletter": "/api/newsletter",
+      "events": "/api/events",
+      "news": "/api/news"
+    },
+    "responses": {
+      "success": {
+        "status": 200,
+        "message": "Success"
+      },
+      "error": {
+        "status": 400,
+        "message": "Bad Request"
+      }
+    }
+  }
+}
