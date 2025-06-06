@@ -10,81 +10,85 @@
 // https://on.cypress.io/custom-commands
 // ***********************************************
 
-declare global {
-  namespace Cypress {
-    interface Chainable {
-      /**
-       * Custom command to navigate to a specific page
-       * @example cy.navigateTo('about')
-       */
-      navigateTo(page: string): Chainable<void>;
+declare module 'cypress' {
+  interface Chainable {
+    /**
+     * Custom command to navigate to a specific page
+     * @example cy.navigateTo('about')
+     */
+    navigateTo(page: string): Chainable<void>;
 
-      /**
-       * Custom command to check if navigation is working
-       * @example cy.checkNavigation()
-       */
-      checkNavigation(): Chainable<void>;
+    /**
+     * Custom command to check if navigation is working
+     * @example cy.checkNavigation()
+     */
+    checkNavigation(): Chainable<void>;
 
-      /**
-       * Custom command to wait for page load
-       * @example cy.waitForPageLoad()
-       */
-      waitForPageLoad(): Chainable<void>;
+    /**
+     * Custom command to wait for page load
+     * @example cy.waitForPageLoad()
+     */
+    waitForPageLoad(): Chainable<void>;
 
-      /**
-       * Custom command to check responsive design
-       * @example cy.checkResponsive()
-       */
-      checkResponsive(): Chainable<void>;
+    /**
+     * Custom command to check responsive design
+     * @example cy.checkResponsive()
+     */
+    checkResponsive(): Chainable<void>;
 
-      /**
-       * Custom command to test image loading
-       * @example cy.checkImageLoading()
-       */
-      checkImageLoading(): Chainable<void>;
+    /**
+     * Custom command to test image loading
+     * @example cy.checkImageLoading()
+     */
+    checkImageLoading(): Chainable<void>;
 
-      /**
-       * Custom command to test accessibility
-       * @example cy.checkAccessibility()
-       */
-      checkAccessibility(): Chainable<void>;
+    /**
+     * Custom command to test accessibility
+     * @example cy.checkAccessibility()
+     */
+    checkAccessibility(): Chainable<void>;
 
-      /**
-       * Custom command to test event gallery functionality
-       * @example cy.testEventGallery()
-       */
-      testEventGallery(): Chainable<void>;
+    /**
+     * Custom command to test event gallery functionality
+     * @example cy.testEventGallery()
+     */
+    testEventGallery(): Chainable<void>;
 
-      /**
-       * Custom command to check accessibility violations using axe-core
-       * @example cy.checkA11y()
-       */
-      checkA11y(context?: string, options?: any): Chainable<void>;
+    /**
+     * Custom command to check accessibility violations using axe-core
+     * @example cy.checkA11y()
+     */
+    checkA11y(context?: string, options?: unknown): Chainable<void>;
 
-      /**
-       * Custom command to fill contact form with test data
-       * @example cy.fillContactForm(data)
-       */
-      fillContactForm(data: ContactFormData): Chainable<void>;
+    /**
+     * Custom command to fill contact form with test data
+     * @example cy.fillContactForm(data)
+     */
+    fillContactForm(data: ContactFormData): Chainable<void>;
 
-      /**
-       * Custom command to verify image loading and accessibility
-       * @example cy.verifyImage('[data-testid="hero-image"]')
-       */
-      verifyImage(selector: string): Chainable<void>;
+    /**
+     * Custom command to verify image loading and accessibility
+     * @example cy.verifyImage('[data-testid="hero-image"]')
+     */
+    verifyImage(selector: string): Chainable<void>;
 
-      /**
-       * Custom command to check page performance metrics
-       * @example cy.checkPerformance()
-       */
-      checkPerformance(): Chainable<void>;
+    /**
+     * Custom command to check page performance metrics
+     * @example cy.checkPerformance()
+     */
+    checkPerformance(): Chainable<void>;
 
-      /**
-       * Custom command to verify form validation
-       * @example cy.checkFormValidation('[data-testid="contact-form"]')
-       */
-      checkFormValidation(formSelector: string): Chainable<void>;
+    /**
+     * Custom command to verify form validation
+     * @example cy.checkFormValidation('[data-testid="contact-form"]')
+     */
+    checkFormValidation(formSelector: string): Chainable<void>;
 
+    /**
+     * Custom command to test keyboard navigation
+     * @example cy.testKeyboardNavigation('[data-testid="main-nav"]')
+     */
+    testKeyboardNavigation(startElement: string): Chainable<void>;
       /**
        * Custom command to test keyboard navigation
        * @example cy.testKeyboardNavigation('[data-testid="main-nav"]')

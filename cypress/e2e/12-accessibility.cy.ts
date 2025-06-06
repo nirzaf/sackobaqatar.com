@@ -86,9 +86,10 @@ describe('Accessibility Tests', () => {
           for (let i = 1; i < tabOrder.length; i++) {
             const current = tabOrder[i];
             const previous = tabOrder[i - 1];
-            expect(current.top >= previous.top ||
-              (current.top === previous.top && current.left >= previous.left))
-              .to.be.true;
+            assert.isTrue(
+              current.top >= previous.top ||
+              (current.top === previous.top && current.left >= previous.left)
+            );
           }
         });
     });
