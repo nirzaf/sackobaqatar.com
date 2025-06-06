@@ -161,7 +161,7 @@ describe('Performance Tests', () => {
       cy.get('script[src]').each($script => {
         const hasAsync = $script.attr('async') !== undefined;
         const hasDefer = $script.attr('defer') !== undefined;
-        expect(hasAsync || hasDefer).to.be.true;
+        assert.isTrue(hasAsync || hasDefer, 'Scripts should have async or defer attribute');
       });
     });
 
@@ -187,7 +187,7 @@ describe('Performance Tests', () => {
       cy.visit('/');
       cy.window().then((win) => {
         // Check that unused code is not present
-        expect(win.unusedFunction).to.be.undefined;
+        assert.isUndefined(win.unusedFunction, 'Unused functions should not be present in bundle');
       });
     });
   });
@@ -268,7 +268,7 @@ describe('Performance Tests', () => {
     it('should implement service worker for caching', () => {
       cy.visit('/');
       cy.window().then((win) => {
-        expect(win.navigator.serviceWorker).to.exist;
+        assert.exists(win.navigator.serviceWorker, 'Service worker should be registered');
       });
     });
 
@@ -391,7 +391,9 @@ describe('Performance Tests', () => {
       cy.get('img').each($img => {
         const src = $img.attr('src');
         if (src) {
-          expect(src).to.include('mobile') || expect($img.attr('srcset')).to.exist;
+          const hasMobileInSrc = src.includes('mobile');
+          const hasSrcSet = $img.attr('srcset') !== undefined;
+          assert.isTrue(hasMobileInSrc || hasSrcSet, 'Images should have mobile-specific src or srcset');
         }
       });
     });
@@ -416,7 +418,8 @@ describe('Performance Tests', () => {
       cy.visit('/');
       cy.window().then((win) => {
         // Check if performance monitoring is set up
-        expect(win.gtag || win.dataLayer || win.analytics).to.exist;
+        const hasAnalytics = win.gtag !== undefined || win.dataLayer !== undefined || win.analytics !== undefined;
+        assert.isTrue(hasAnalytics, 'Performance monitoring should be set up');
       });
     });
 
@@ -424,8 +427,8 @@ describe('Performance Tests', () => {
       cy.visit('/');
       cy.window().then((win) => {
         const navigationTiming = win.performance.getEntriesByType('navigation')[0];
-        expect(navigationTiming).to.exist;
-        expect(navigationTiming.loadEventEnd).to.be.greaterThan(0);
+        assert.exists(navigationTiming, 'Navigation timing should exist');
+        assert.isAbove(navigationTiming.loadEventEnd, 0, 'Load event should have completed');
       });
     });
 

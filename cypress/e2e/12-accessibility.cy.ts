@@ -25,7 +25,7 @@ describe('Accessibility Tests', () => {
       it(`should pass accessibility audit on ${page.name} page`, () => {
         cy.visit(page.url);
         cy.waitForPageLoad();
-        cy.checkA11y(null, {
+        cy.checkA11y(undefined, {
           rules: {
             'color-contrast': { enabled: true },
             'keyboard-navigation': { enabled: true },
@@ -39,14 +39,14 @@ describe('Accessibility Tests', () => {
 
     it('should have no critical accessibility violations', () => {
       cy.visit('/');
-      cy.checkA11y(null, {
+      cy.checkA11y(undefined, {
         includedImpacts: ['critical', 'serious']
       });
     });
 
     it('should pass Level AA compliance', () => {
       cy.visit('/');
-      cy.checkA11y(null, {
+      cy.checkA11y(undefined, {
         tags: ['wcag2a', 'wcag2aa']
       });
     });
@@ -75,9 +75,17 @@ describe('Accessibility Tests', () => {
 
     it('should have logical tab order', () => {
       cy.visit('/');
-      const tabOrder = [];
+      
+      // Define interface for tab order elements
+      interface TabElement {
+        element: HTMLElement;
+        top: number;
+        left: number;
+      }
+      
+      const tabOrder: TabElement[] = [];
       cy.get('a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])')
-        .each($el => {
+        .each(($el) => {
           const rect = $el[0].getBoundingClientRect();
           tabOrder.push({ element: $el[0], top: rect.top, left: rect.left });
         })
@@ -240,7 +248,7 @@ describe('Accessibility Tests', () => {
   describe('Color Contrast', () => {
     it('should meet WCAG AA contrast requirements', () => {
       cy.visit('/');
-      cy.checkA11y(null, {
+      cy.checkA11y(undefined, {
         rules: {
           'color-contrast': { enabled: true }
         }
@@ -417,9 +425,9 @@ describe('Accessibility Tests', () => {
         const ariaLabel = $link.attr('aria-label');
         const title = $link.attr('title');
 
-        expect(linkText || ariaLabel || title).to.not.be.empty;
-        expect(linkText).to.not.equal('click here');
-        expect(linkText).to.not.equal('read more');
+        assert.isNotEmpty(linkText || ariaLabel || title, 'Link should have text, aria-label, or title');
+        assert.notEqual(linkText, 'click here', 'Link text should not be generic "click here"');
+        assert.notEqual(linkText, 'read more', 'Link text should not be generic "read more"');
       });
     });
   });

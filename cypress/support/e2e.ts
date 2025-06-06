@@ -16,11 +16,14 @@
 // Import commands.js using ES2015 syntax:
 import './commands';
 
+// Import cypress-axe for accessibility testing
+import 'cypress-axe';
+
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
 // Add global configurations
-Cypress.on('uncaught:exception', (err, runnable) => {
+Cypress.on('uncaught:exception', (err, _runnable) => {
   // Prevent Cypress from failing on uncaught exceptions
   // that might occur in the application
   if (err.message.includes('ResizeObserver loop limit exceeded')) {
@@ -33,6 +36,10 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 });
 
 // Set default viewport for consistent testing
-beforeEach(() => {
+Cypress.Commands.add('setupViewport', () => {
   cy.viewport(1280, 720);
+});
+
+beforeEach(() => {
+  cy.setupViewport();
 });
