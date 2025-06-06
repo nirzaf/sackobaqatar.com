@@ -2,9 +2,7 @@ import { FC } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { format } from 'date-fns';
 import { Calendar } from 'react-feather';
-import { EventsGridProps as EventsGridComponentProps } from '@/types/components/events';
-
-interface EventsGridProps extends EventsGridComponentProps {}
+import { EventsGridProps } from '@/types/components/events';
 
 export const EventsGrid: FC<EventsGridProps> = ({
   events,

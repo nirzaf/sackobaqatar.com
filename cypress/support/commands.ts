@@ -42,8 +42,10 @@ interface PerformanceResourceEntryWithProps extends PerformanceEntry {
 
 // Augment the Cypress namespace to include custom commands
 declare global {
-  namespace Cypress {
-    interface Chainable<Subject = any> {
+  // Using interface merging instead of namespace
+  interface Cypress {
+    // Using a more specific type instead of any
+    interface Chainable<Subject = Element> {
       /**
        * Custom command to navigate to a specific page
        * @example cy.navigateTo('about')
@@ -359,11 +361,11 @@ Cypress.Commands.add('testEventGallery', () => {
 type ViolationsCallback = (violations: Array<{id: string; description: string}>) => void;
 
 // Enhanced accessibility checking with axe-core
-Cypress.Commands.add('checkA11y', (context?: string, options?: any) => {
+Cypress.Commands.add('checkA11y', (context?: string, options?: Record<string, unknown>) => {
   cy.injectAxe();
   
   // Use the cy.axe() command from cypress-axe library
-  // @ts-ignore - Using axe command from cypress-axe
+  // @ts-expect-error - Using axe command from cypress-axe
   cy.axe(context, options).then((results) => {
     if (results.violations.length > 0) {
       cy.task('log', `Accessibility violations found: ${results.violations.length}`);
@@ -414,7 +416,10 @@ Cypress.Commands.add('verifyImage', (selector: string) => {
   cy.get(selector).then(($img) => {
     const alt = $img.attr('alt');
     expect(alt).to.not.be.empty;
-    expect(alt).to.have.length.greaterThan(2);
+    // Fix unused expression by using proper assertion
+    if (alt) {
+      expect(alt.length).to.be.greaterThan(2);
+    }
   });
 });
 
