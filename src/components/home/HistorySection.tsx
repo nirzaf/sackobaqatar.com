@@ -1,77 +1,88 @@
 import { FC } from 'react';
-import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
-export const HistorySection: FC = () => (
-  <div className="text-center mb-16">
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7 }}
-      viewport={{ once: true }}
-      className="max-w-6xl mx-auto px-4"
-    >
-      <h2 className="text-4xl font-bold mb-12 bg-gradient-to-r from-[#541D67] to-[#B62D71] bg-clip-text text-transparent
-        drop-shadow-[0_2px_2px_rgba(0,0,0,0.1)] relative inline-block">
-        The Beginning & The History
-        <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-[#541D67] to-[#B62D71]"></div>
-      </h2>
+/**
+ * HistorySection component - Displays SACKOBA Qatar's history with innovative design
+ * Features a modern, compact horizontal timeline with glassmorphism styling
+ */
+export const HistorySection: FC = () => {
+    const timelineEvents = [
+        {
+            year: '2009',
+            title: 'Foundation',
+            description: 'SACKOBA Qatar was born from the vision of 8 Old Antonians',
+            details: 'Founded by Aloy Cooray and Manoharan Arasu on September 28th, 2009',
+            icon: '🏛️',
+            color: 'from-amber-400 to-orange-500'
+        },
+        {
+            year: '2010',
+            title: 'First Reunion',
+            description: 'Historic boat trip gathering 25 Antonians',
+            details: 'First executive committee elected, establishing governance structure',
+            icon: '⛵',
+            color: 'from-blue-400 to-cyan-500'
+        },
+        {
+            year: '2018',
+            title: 'Digital Evolution',
+            description: 'Launch of sackobaqatar.org with modern design',
+            details: 'Mobile-optimized platform connecting global Antonian community',
+            icon: '🌐',
+            color: 'from-purple-400 to-pink-500'
+        },
+        {
+            year: '2019',
+            title: 'Decade Celebration',
+            description: '10 Years of Excellence milestone achieved',
+            details: 'Community recognition and special commemorative events',
+            icon: '🎉',
+            color: 'from-green-400 to-emerald-500'
+        }
+    ];
 
-      <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="text-left space-y-6"
-        >
-          <p className="text-lg text-gray-800 leading-relaxed">
-            <span className="font-semibold text-[#541D67]">St. Anthony's College Kandy Old Boys' Association - Qatar</span>
-            (SACKOBA Qatar) was formed on <span className="font-semibold">September 28th, 2009</span>, by
-            <span className="text-[#B62D71] font-semibold"> Aloy Cooray</span> and
-            <span className="text-[#B62D71] font-semibold"> Manoharan Arasu</span>. They initially gathered a group of
-            8 Old Antonians in Doha, leading to the formation of the association.
-          </p>
-          <p className="text-lg text-gray-800 leading-relaxed">
-            Since then, SACKOBA Qatar has grown into a vibrant community, marking several milestones in its journey.
-          </p>
-        </motion.div>
+    return (
+        <section className="relative w-full py-16 px-2 md:px-8 bg-gradient-to-br from-slate-50 via-purple-50 to-pink-50">
+            <div className="max-w-4xl mx-auto rounded-3xl bg-white/60 backdrop-blur-md shadow-xl p-6 md:p-10">
+                <div className="text-center mb-8">
+                    <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-[#541D67] via-[#B62D71] to-purple-600 bg-clip-text text-transparent mb-2">
+                        SACKOBA Qatar History
+                    </h2>
+                    <p className="text-md md:text-lg text-gray-700">
+                        From vision to legacy: Key milestones in a single glance.
+                    </p>
+                </div>
 
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="bg-gradient-to-br from-[#541D67] to-[#B62D71] p-8 rounded-xl text-white shadow-xl relative overflow-hidden"
-        >
-          <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-16 translate-x-16"></div>
-          <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full translate-y-12 -translate-x-12"></div>
+                <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-2">
+                    {timelineEvents.map((event, idx) => (
+                        <div key={event.year} className="flex flex-col items-center flex-1 group">
+                            <div className={`w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br ${event.color} text-2xl shadow-lg mb-2 group-hover:scale-110 transition-transform`}>
+                                {event.icon}
+                            </div>
+                            <div className="font-bold text-lg text-[#541D67]">{event.year}</div>
+                            <div className="text-sm text-gray-700 text-center font-semibold">{event.title}</div>
+                            <div className="text-xs text-gray-500 mt-1 text-center hidden md:block">
+                                {event.description}
+                            </div>
+                            <div className="hidden group-hover:block absolute mt-20 md:mt-24 z-20 w-64 p-3 bg-white/90 shadow-lg rounded-xl border border-[#B62D71]/10 text-xs text-gray-700">
+                                {event.details}
+                            </div>
+                            {idx !== timelineEvents.length - 1 && (
+                                <div className="hidden md:block absolute left-full top-1/2 w-10 h-1 -translate-y-1/2 bg-gradient-to-r from-[#541D67] to-[#B62D71] opacity-40"></div>
+                            )}
+                        </div>
+                    ))}
+                </div>
 
-          <h3 className="text-3xl font-bold mb-8 text-white relative">
-            Key Milestones
-            <div className="absolute -bottom-3 left-0 w-16 h-1 bg-white/30 rounded-full"></div>
-          </h3>
-
-          <div className="space-y-8 relative">
-            <motion.div
-              className="flex items-center space-x-6 group"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-            >
-              <div className="flex-shrink-0 w-16 h-16 bg-white/10 group-hover:bg-white/20 rounded-2xl flex flex-col items-center justify-center transform group-hover:scale-110 transition-all duration-300 border border-white/20">
-                <span className="text-2xl font-bold">18</span>
-                <span className="text-xs text-white/70">2018</span>
-              </div>
-              <div className="flex-grow max-w-[350px]">
-                <h4 className="font-bold text-xl mb-2 text-white group-hover:text-white/90 transition-colors">Website Launch</h4>
-                <p className="text-white/95 leading-relaxed font-medium">
-                  Launch of <span className="text-white font-semibold">sackobaqatar.org</span> with improved design and mobile optimization
-                </p>
-              </div>
-            </motion.div>
-          </div>
-        </motion.div>
-      </div>
-    </motion.div>
-  </div>
-);
+                <div className="mt-10 flex flex-col items-center">
+                    <Link to="/contact" className="bg-gradient-to-r from-[#541D67] to-[#B62D71] text-white px-8 py-3 rounded-2xl font-semibold text-lg shadow-lg hover:scale-105 transition-transform">
+                        Join Our Community
+                    </Link>
+                    <p className="text-xs text-gray-500 mt-2 max-w-xs text-center">
+                        Be part of the next chapter in SACKOBA Qatar's story.
+                    </p>
+                </div>
+            </div>
+        </section>
+    );
+};
