@@ -117,14 +117,14 @@ const EventCalendar = () => {
           </div>
 
           {/* Content Container */}
-          <div className="relative p-6 sm:p-8 lg:p-12">
+          <div className="relative p-4 sm:p-6 md:p-8 lg:p-12">
             {/* Enhanced Header Section */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="mb-16 text-center"
+              className="mb-8 sm:mb-12 lg:mb-16 text-center"
             >
               {/* Logos and Title Container */}
               <div className="mb-8 flex flex-col lg:flex-row items-center justify-between gap-8">
@@ -134,7 +134,7 @@ const EventCalendar = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
                   viewport={{ once: true }}
-                  className="relative h-[120px] w-[160px] lg:h-[150px] lg:w-[200px] flex-shrink-0"
+                  className="relative h-[90px] w-[120px] sm:h-[120px] sm:w-[160px] lg:h-[150px] lg:w-[200px] flex-shrink-0"
                 >
                   <img
                     src="https://res.cloudinary.com/ddpxtaue7/image/upload/v1735207379/SACKOBA__15_Annivesary_150_g4mmnl.png"
@@ -151,10 +151,10 @@ const EventCalendar = () => {
                   viewport={{ once: true }}
                   className="text-center flex-1"
                 >
-                  <h1 className="text-2xl lg:text-4xl xl:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary-700 to-primary-600 bg-clip-text text-transparent mb-2">
+                  <h1 className="text-xl sm:text-2xl lg:text-4xl xl:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary-700 to-primary-600 bg-clip-text text-transparent mb-2">
                     SACKOBA - QATAR
                   </h1>
-                  <h2 className="text-lg lg:text-2xl xl:text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
+                  <h2 className="text-base sm:text-lg lg:text-2xl xl:text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
                     15 YEARS ANNIVERSARY
                   </h2>
                 </motion.div>
@@ -165,7 +165,7 @@ const EventCalendar = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
                   viewport={{ once: true }}
-                  className="relative h-[120px] w-[120px] lg:h-[150px] lg:w-[130px] flex-shrink-0"
+                  className="relative h-[90px] w-[90px] sm:h-[120px] sm:w-[120px] lg:h-[150px] lg:w-[130px] flex-shrink-0"
                 >
                   <img
                     src="https://ik.imagekit.io/sackoba/logos/sack_badge_color_512X512-270x270.png?updatedAt=1735203751175"
@@ -183,10 +183,10 @@ const EventCalendar = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <h3 className="text-2xl lg:text-3xl xl:text-4xl font-medium tracking-[0.2em] text-primary-600 mb-4">
+                <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-medium tracking-[0.2em] text-primary-600 mb-4">
                   EVENT CALENDAR
                 </h3>
-                <div className="text-4xl lg:text-6xl xl:text-7xl font-bold bg-gradient-to-r from-blue-700 to-blue-600 bg-clip-text text-transparent">
+                <div className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold bg-gradient-to-r from-blue-700 to-blue-600 bg-clip-text text-transparent">
                   2025
                 </div>
                 <div className="mt-4 w-24 h-1 bg-gradient-to-r from-primary-600 to-blue-600 mx-auto rounded-full" />
@@ -207,7 +207,7 @@ const EventCalendar = () => {
                   onMouseLeave={() => setHoveredEvent(null)}
                   onClick={() => setSelectedEvent(selectedEvent === index ? null : index)}
                 >
-                  <div className={`relative flex items-center gap-4 lg:gap-6 p-4 lg:p-6 rounded-2xl border-2 transition-all duration-300 cursor-pointer
+                  <div className={`relative flex flex-col xs:flex-row items-start xs:items-center gap-3 xs:gap-4 lg:gap-6 p-3 xs:p-4 lg:p-6 rounded-2xl border-2 transition-all duration-300 cursor-pointer
                     ${selectedEvent === index
                       ? 'border-primary-300 bg-primary-50 shadow-lg transform scale-[1.02]'
                       : hoveredEvent === index
@@ -216,36 +216,36 @@ const EventCalendar = () => {
                     }`}
                   >
                     {/* Enhanced Date Box */}
-                    <div className={`flex min-w-[120px] lg:min-w-[140px] items-center justify-center rounded-xl p-4 text-white shadow-lg transition-all duration-300 bg-gradient-to-r ${getCategoryColor(event.category)}
+                    <div className={`flex w-full xs:w-auto xs:min-w-[100px] lg:min-w-[140px] items-center justify-start xs:justify-center rounded-xl p-3 xs:p-4 text-white shadow-lg transition-all duration-300 bg-gradient-to-r ${getCategoryColor(event.category)} mb-3 xs:mb-0
                       ${hoveredEvent === index ? 'transform scale-105' : ''}`}
                     >
                       <div className="text-center">
-                        <div className="text-sm lg:text-base font-medium opacity-90">{event.date}</div>
-                        <div className="text-2xl lg:text-3xl font-bold">{event.day}</div>
+                        <div className="text-xs xs:text-sm lg:text-base font-medium opacity-90">{event.date}</div>
+                        <div className="text-xl xs:text-2xl lg:text-3xl font-bold">{event.day}</div>
                       </div>
                     </div>
 
                     {/* Event Content */}
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-3 mb-2">
+                      <div className="flex flex-col xs:flex-row items-center xs:items-center gap-2 xs:gap-3 mb-2">
                         {event.icon && (
-                          <span className="text-2xl lg:text-3xl">{event.icon}</span>
+                          <span className="text-xl xs:text-2xl lg:text-3xl mb-1 xs:mb-0 mx-auto xs:mx-0">{event.icon}</span>
                         )}
-                        <h4 className="text-lg lg:text-xl xl:text-2xl font-bold text-gray-800 group-hover:text-primary-700 transition-colors">
+                        <h4 className="text-base xs:text-lg lg:text-xl xl:text-2xl font-bold text-gray-800 group-hover:text-primary-700 transition-colors">
                           {event.title}
                         </h4>
                       </div>
 
                       {/* Description - Always visible on larger screens, toggleable on mobile */}
-                      <div className={`text-gray-600 text-sm lg:text-base transition-all duration-300 overflow-hidden
+                      <div className={`text-gray-600 text-xs xs:text-sm lg:text-base transition-all duration-300 overflow-hidden
                         ${selectedEvent === index ? 'max-h-20 opacity-100' : 'lg:max-h-20 lg:opacity-100 max-h-0 opacity-0'}`}
                       >
                         {event.description}
                       </div>
                     </div>
 
-                    {/* Interactive Arrow */}
-                    <div className={`flex-shrink-0 transition-all duration-300 ${hoveredEvent === index ? 'transform translate-x-2' : ''}`}>
+                    {/* Interactive Arrow - Hidden on mobile */}
+                    <div className={`hidden xs:block flex-shrink-0 transition-all duration-300 ${hoveredEvent === index ? 'transform translate-x-2' : ''}`}>
                       <svg className="w-6 h-6 lg:w-8 lg:h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
