@@ -3,10 +3,11 @@ import { NoticeBoard } from './NoticeBoard';
 import { HistorySection } from './HistorySection';
 import { FeaturesSection } from './FeaturesSection';
 import { CollegeDetailsSection } from './CollegeDetailsSection';
+import { ExcoPreview } from './ExcoPreview';
 
 /**
  * HomeContent component - Main content section for the home page
- * Contains feature cards, notice board, history section, and college details
+ * Contains feature cards, notice board, history section, college details, and Exco preview
  * Implements responsive design with proper overflow handling
  */
 export const HomeContent: FC = memo(() => (
@@ -17,6 +18,7 @@ export const HomeContent: FC = memo(() => (
         <NoticeBoard />
         <HistorySection />
         <CollegeDetailsSection />
+        <ExcoPreview />
       </div>
     </div>
   </section>
