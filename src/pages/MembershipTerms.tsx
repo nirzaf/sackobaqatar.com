@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { motion } from 'framer-motion';
 import { HiDownload } from 'react-icons/hi';
+import MembershipForm from '../components/membership/MembershipForm';
 
 export const MembershipTerms: FC = () => {
   const terms = [
@@ -118,15 +119,7 @@ export const MembershipTerms: FC = () => {
               Online Membership Application
             </h2>
             <div className="w-full">
-              <div className="relative pb-4 h-[800px] w-full overflow-hidden rounded-xl">
-                <iframe 
-                  src="https://baserow.io/form/FUBrYfOYKqz_ZJsAzgjd9TLub9X3M5kxlHsjIO-IVtQ" 
-                  className="absolute top-0 left-0 w-full h-full border-0 rounded-xl"
-                  title="SACKOBA Qatar Membership Application Form"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
+              <MembershipForm />
             </div>
           </div>
         </motion.div>
