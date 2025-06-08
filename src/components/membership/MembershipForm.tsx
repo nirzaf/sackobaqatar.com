@@ -99,13 +99,13 @@ export const MembershipForm: FC = () => {
         </div>
 
         <div>
-          <label htmlFor="field_4551459" className="block text-white mb-2">Email *</label>
+          <label htmlFor="field_4551373" className="block text-white mb-2">Email *</label>
           <input
             type="email"
-            id="field_4551459"
-            name="field_4551459"
+            id="field_4551373"
+            name="field_4551373"
             required
-            value={formData.field_4551459 || ''}
+            value={formData.field_4551373 || ''}
             onChange={handleChange}
             className="w-full p-3 rounded-lg bg-white/10 border border-[#B62D71]/30 text-white focus:outline-none focus:ring-2 focus:ring-[#B62D71]/50"
           />
@@ -114,13 +114,13 @@ export const MembershipForm: FC = () => {
 
       <motion.div className="grid md:grid-cols-2 gap-6" variants={itemVariants}>
         <div>
-          <label htmlFor="field_4551458" className="block text-white mb-2">Mobile Number *</label>
+          <label htmlFor="field_4551371" className="block text-white mb-2">Mobile Number *</label>
           <input
             type="tel"
-            id="field_4551458"
-            name="field_4551458"
+            id="field_4551371"
+            name="field_4551371"
             required
-            value={formData.field_4551458 || ''}
+            value={formData.field_4551371 || ''}
             onChange={handleChange}
             className="w-full p-3 rounded-lg bg-white/10 border border-[#B62D71]/30 text-white focus:outline-none focus:ring-2 focus:ring-[#B62D71]/50"
           />

@@ -20,8 +20,8 @@ export interface MembershipFormData {
   field_4551464?: string; // Date of Birth
   field_4551470?: string; // Extra Curricular Activities
   field_4551472?: string; // Proposed By
-  field_4551458?: string; // Mobile Number
-  field_4551459?: string; // Email
+  field_4551371?: string; // Mobile Number
+  field_4551373?: string; // Email
   field_4551460?: string; // Marital Status
 }
 
