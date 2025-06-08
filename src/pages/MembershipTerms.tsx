@@ -72,11 +72,9 @@ export const MembershipTerms: FC = () => {
             transition={{ delay: 0.3 }}
           >
             <a 
-              href="https://workdrive.zohoexternal.com/file/5s3n9011971058c1e465a90bbb872138356b6"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/New-Sackoba-Membership.pdf"
+              download="SACKOBA-Qatar-Membership-Form.pdf"
               className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#B62D71] to-[#541D67] hover:from-[#B62D71]/90 hover:to-[#541D67]/90 text-white font-semibold rounded-lg transition-all shadow-lg hover:shadow-xl"
-              download
             >
               <HiDownload className="w-5 h-5" />
               Download Membership Form
