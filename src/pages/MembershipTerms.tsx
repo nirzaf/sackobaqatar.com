@@ -108,33 +108,62 @@ export const MembershipTerms: FC = () => {
           </div>
         </motion.div>
 
-        {/* Bank Details Section */}
+        {/* Online Membership Form Section */}
         <motion.div 
-          className="bg-gradient-to-br from-[#B62D71]/5 via-[#541D67]/10 to-[#5B4886]/15 backdrop-blur-lg rounded-2xl p-8 shadow-xl border border-[#B62D71]/20"
-          variants={itemVariants}
+          className="grid gap-8 mb-16"
+          variants={containerVariants}
         >
-          <h2 className="text-2xl font-bold text-white mb-8 pb-4 border-b border-[#B62D71]/20">
-            Account Details of {bankDetails.bank} Account 
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="space-y-4">
-              <div className="bg-gradient-to-r from-[#B62D71]/10 to-[#541D67]/10 rounded-xl p-4 border border-[#B62D71]/10 hover:border-[#B62D71]/30 transition-colors">
-                <p className="text-sm text-white/80 mb-1">Branch</p>
-                <p className="text-lg text-white">{bankDetails.branch}</p>
-              </div>
-              <div className="bg-gradient-to-r from-[#B62D71]/10 to-[#541D67]/10 rounded-xl p-4 border border-[#B62D71]/10 hover:border-[#B62D71]/30 transition-colors">
-                <p className="text-sm text-white/80 mb-1">Account Name</p>
-                <p className="text-lg text-white">{bankDetails.accountName}</p>
+          <div className="bg-gradient-to-br from-[#B62D71]/5 via-[#541D67]/10 to-[#5B4886]/15 backdrop-blur-lg rounded-2xl p-8 shadow-xl border border-[#B62D71]/20">
+            <h2 className="text-2xl font-bold text-white mb-8 pb-4 border-b border-[#B62D71]/20">
+              Online Membership Application
+            </h2>
+            <div className="w-full">
+              <div className="relative pb-4 h-[800px] w-full overflow-hidden rounded-xl">
+                <iframe 
+                  src="https://baserow.io/form/FUBrYfOYKqz_ZJsAzgjd9TLub9X3M5kxlHsjIO-IVtQ" 
+                  className="absolute top-0 left-0 w-full h-full border-0 rounded-xl"
+                  title="SACKOBA Qatar Membership Application Form"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
               </div>
             </div>
-            <div className="space-y-4">
-              <div className="bg-gradient-to-r from-[#B62D71]/10 to-[#541D67]/10 rounded-xl p-4 border border-[#B62D71]/10 hover:border-[#B62D71]/30 transition-colors">
-                <p className="text-sm text-white/80 mb-1">Account Number</p>
-                <p className="text-lg text-white font-mono">{bankDetails.accountNumber}</p>
+          </div>
+        </motion.div>
+
+        {/* Bank Details Section */}
+        <motion.div 
+          className="grid gap-8"
+          variants={containerVariants}
+        >
+          <div className="bg-gradient-to-br from-[#B62D71]/5 via-[#541D67]/10 to-[#5B4886]/15 backdrop-blur-lg rounded-2xl p-8 shadow-xl border border-[#B62D71]/20">
+            <h2 className="text-2xl font-bold text-white mb-8 pb-4 border-b border-[#B62D71]/20">
+              Bank Details
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8 text-white">
+              <div className="space-y-4">
+                <motion.div variants={itemVariants} className="bg-gradient-to-r from-[#B62D71]/10 to-[#541D67]/10 rounded-xl p-4 border border-[#B62D71]/10 hover:border-[#B62D71]/30 transition-colors">
+                  <p className="text-sm text-white/80 mb-1">Bank</p>
+                  <p className="text-lg text-white">{bankDetails.bank}</p>
+                </motion.div>
+                <motion.div variants={itemVariants} className="bg-gradient-to-r from-[#B62D71]/10 to-[#541D67]/10 rounded-xl p-4 border border-[#B62D71]/10 hover:border-[#B62D71]/30 transition-colors">
+                  <p className="text-sm text-white/80 mb-1">Branch</p>
+                  <p className="text-lg text-white">{bankDetails.branch}</p>
+                </motion.div>
+                <motion.div variants={itemVariants} className="bg-gradient-to-r from-[#B62D71]/10 to-[#541D67]/10 rounded-xl p-4 border border-[#B62D71]/10 hover:border-[#B62D71]/30 transition-colors">
+                  <p className="text-sm text-white/80 mb-1">Account Name</p>
+                  <p className="text-lg text-white">{bankDetails.accountName}</p>
+                </motion.div>
               </div>
-              <div className="bg-gradient-to-r from-[#B62D71]/10 to-[#541D67]/10 rounded-xl p-4 border border-[#B62D71]/10 hover:border-[#B62D71]/30 transition-colors">
-                <p className="text-sm text-white/80 mb-1">IBAN</p>
-                <p className="text-lg text-white font-mono break-all">{bankDetails.iban}</p>
+              <div className="space-y-4">
+                <motion.div variants={itemVariants} className="bg-gradient-to-r from-[#B62D71]/10 to-[#541D67]/10 rounded-xl p-4 border border-[#B62D71]/10 hover:border-[#B62D71]/30 transition-colors">
+                  <p className="text-sm text-white/80 mb-1">Account Number</p>
+                  <p className="text-lg text-white font-mono">{bankDetails.accountNumber}</p>
+                </motion.div>
+                <motion.div variants={itemVariants} className="bg-gradient-to-r from-[#B62D71]/10 to-[#541D67]/10 rounded-xl p-4 border border-[#B62D71]/10 hover:border-[#B62D71]/30 transition-colors">
+                  <p className="text-sm text-white/80 mb-1">IBAN</p>
+                  <p className="text-lg text-white font-mono break-all">{bankDetails.iban}</p>
+                </motion.div>
               </div>
             </div>
           </div>
