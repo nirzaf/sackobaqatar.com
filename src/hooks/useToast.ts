@@ -13,7 +13,7 @@ interface ToastStore {
   removeToast: (id: string) => void;
 }
 
-export const useToast = create<ToastStore>((set) => ({
+export const useToast = create<ToastStore>()((set) => ({
   toasts: [],
   addToast: (message, type) => {
     const id = Math.random().toString(36).substring(7);
