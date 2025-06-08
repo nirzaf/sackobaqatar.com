@@ -56,7 +56,7 @@ export const Navbar: FC = () => {
         className="container mx-auto px-6 lg:px-8"
         aria-label="Global"
       >
-        <div className="flex items-center justify-between py-4">
+        <div className="flex items-center justify-between py-2">
           {/* Enhanced Logo Section */}
           <motion.div 
             className="flex"
@@ -72,12 +72,12 @@ export const Navbar: FC = () => {
                   <ReactCountryFlag 
                     countryCode="QA" 
                     svg 
-                    style={{ width: '2.2em', height: '2.2em' }} 
+                    style={{ width: '1.8em', height: '1.8em' }} 
                     title="Qatar" 
                     className="drop-shadow-lg"
                   />
                 </motion.div>
-                <span className="text-2xl font-extrabold tracking-wider text-white drop-shadow-lg
+                <span className="text-xl font-extrabold tracking-wider text-white drop-shadow-lg
                   group-hover:text-white/90 transition-colors duration-300">
                   SACKOBA
                 </span>
@@ -91,7 +91,7 @@ export const Navbar: FC = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-[#541D67]/70 backdrop-blur-xl rounded-full px-8 py-3 flex gap-x-8 
+              className="bg-[#541D67]/70 backdrop-blur-xl rounded-full px-6 py-2 flex gap-x-6 
                 shadow-[0_8px_32px_rgba(0,0,0,0.3)] border border-[#9A78AB]/30
                 hover:shadow-[0_12px_40px_rgba(0,0,0,0.4)] transition-shadow duration-300"
             >
@@ -106,9 +106,9 @@ export const Navbar: FC = () => {
                   >
                     <Link
                       to={item.href}
-                      className={`relative text-sm font-semibold py-2 px-3 rounded-lg transition-all duration-300 group ${
+                      className={`relative text-sm font-semibold py-1.5 px-3 rounded-lg transition-all duration-300 group ${
                         isActive
-                          ? 'text-white bg-fandango-400/30 drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]'
+                          ? 'text-white bg-fandango-400/15 drop-shadow-[0_0_6px_rgba(255,255,255,0.4)]'
                           : 'text-columbiaBlue-500/90 hover:text-white hover:bg-egyptianBlue-400/20 hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]'
                       }`}
                     >
@@ -116,8 +116,8 @@ export const Navbar: FC = () => {
                       {isActive && (
                         <motion.div
                           layoutId="navbar-indicator"
-                          className="absolute inset-0 bg-white/15 rounded-lg
-                            shadow-[0_0_20px_rgba(255,255,255,0.3)]"
+                          className="absolute inset-0 bg-white/10 rounded-lg
+                            shadow-[0_0_10px_rgba(255,255,255,0.2)]"
                           transition={{
                             type: "spring",
                             stiffness: 500,
@@ -179,7 +179,7 @@ export const Navbar: FC = () => {
               />
               <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto 
                   bg-gradient-to-br from-egyptianBlue-600 via-fandango-500 to-egyptianBlue-400 
-                  px-6 py-6 sm:max-w-sm shadow-2xl backdrop-blur-xl">
+                  px-6 py-4 sm:max-w-sm shadow-2xl backdrop-blur-xl">
                 <motion.div
                   initial={{ x: "100%" }}
                   animate={{ x: 0 }}
@@ -192,7 +192,7 @@ export const Navbar: FC = () => {
                   className="h-full"
                 >
                 {/* Mobile Menu Header */}
-                <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center justify-between mb-4">
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -207,11 +207,11 @@ export const Navbar: FC = () => {
                         <ReactCountryFlag 
                           countryCode="QA" 
                           svg 
-                          style={{ width: '2.2em', height: '2.2em' }} 
+                          style={{ width: '1.8em', height: '1.8em' }} 
                           title="Qatar" 
                           className="drop-shadow-lg"
                         />
-                        <span className="text-2xl font-extrabold tracking-wider text-white drop-shadow-lg
+                        <span className="text-xl font-extrabold tracking-wider text-white drop-shadow-lg
                           group-hover:text-white/90 transition-colors duration-300">
                           SACKOBA
                         </span>
@@ -259,7 +259,7 @@ export const Navbar: FC = () => {
                             className={`group relative block rounded-xl px-4 py-4 text-lg font-semibold 
                               transition-all duration-300 overflow-hidden ${
                               isActive
-                                ? 'text-white bg-white/20 shadow-[0_8px_32px_rgba(255,255,255,0.1)]'
+                                ? 'text-white bg-white/10 shadow-[0_4px_16px_rgba(255,255,255,0.05)]'
                                 : 'text-white/80 hover:text-white hover:bg-white/10'
                             }`}
                             onClick={() => setMobileMenuOpen(false)}
@@ -285,8 +285,8 @@ export const Navbar: FC = () => {
                             {isActive && (
                               <motion.div
                                 layoutId="mobile-indicator"
-                                className="absolute left-0 top-0 bottom-0 w-1 bg-white rounded-r-full
-                                  shadow-[0_0_20px_rgba(255,255,255,0.5)]"
+                                className="absolute left-0 top-0 bottom-0 w-0.5 bg-white/70 rounded-r-full
+                                  shadow-[0_0_10px_rgba(255,255,255,0.3)]"
                                 transition={{
                                   type: "spring",
                                   stiffness: 500,
