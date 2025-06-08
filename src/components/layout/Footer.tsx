@@ -16,7 +16,7 @@ const navigation = {
     {
       name: 'Facebook',
       href: '#',
-      icon: (props: any) => (
+      icon: (props: React.SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"

@@ -13,14 +13,6 @@ export function getOptimizedImageUrl(
   originalUrl: string,
   options: ImageOptimizationOptions = {}
 ): string {
-  const {
-    width: _width = 800,
-    height: _height = 600,
-    quality: _quality = 85,
-    format: _format = 'webp',
-    lazy: _lazy = true
-  } = options;
-
   // Check if the URL is already an absolute URL (starts with http:// or https://)
   if (originalUrl.startsWith('http://') || originalUrl.startsWith('https://')) {
     return originalUrl;
