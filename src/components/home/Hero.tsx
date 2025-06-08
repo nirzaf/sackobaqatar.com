@@ -1,7 +1,6 @@
 import { FC, memo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ChevronDownIcon } from '@heroicons/react/24/outline';
 
 /**
  * Enhanced Hero component with improved animations, visual effects, and modern design
@@ -173,26 +172,6 @@ export const Hero: FC = memo(() => (
       </motion.div>
     </div>
 
-    {/* Scroll indicator */}
-    <motion.div
-      className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/70"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 1.5 }}
-    >
-      <motion.div
-        animate={{ y: [0, 8, 0] }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-        className="flex flex-col items-center justify-center cursor-pointer hover:text-white transition-colors duration-300 text-center"
-        onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
-      >
-        <span className="text-sm font-medium mb-2 tracking-wider text-center">SCROLL</span>
-        <ChevronDownIcon className="w-5 h-5 mx-auto" />
-      </motion.div>
-    </motion.div>
+    {/* Scroll indicator removed */}
   </section>
 ));
