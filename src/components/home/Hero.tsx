@@ -135,7 +135,7 @@ export const Hero: FC = memo(() => (
 
       {/* Enhanced CTA buttons with improved hover effects - Mobile optimized */}
       <motion.div
-        className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-16 px-4 mt-2 sm:mt-0"
+        className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 mb-8 sm:mb-16 px-4 mt-2 sm:mt-0 w-full max-w-2xl mx-auto"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.3 }}
@@ -147,11 +147,11 @@ export const Hero: FC = memo(() => (
         >
           <Link
             to="/about"
-            className="group relative inline-block px-6 sm:px-8 md:px-10 py-3 sm:py-4 bg-white text-primary-700 font-bold rounded-full transition-all duration-300 
-            shadow-xl hover:shadow-2xl text-base sm:text-lg overflow-hidden w-full sm:w-auto text-center"
+            className="group relative inline-flex items-center justify-center px-8 sm:px-10 py-4 bg-white text-primary-700 font-bold rounded-full transition-all duration-300
+            shadow-xl hover:shadow-2xl text-base sm:text-lg overflow-hidden w-full min-w-[180px] text-center"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-700 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
-            <span className="relative z-10">Explore Our Community</span>
+            <span className="relative z-10">Explore</span>
           </Link>
         </motion.div>
 
@@ -162,8 +162,8 @@ export const Hero: FC = memo(() => (
         >
           <Link
             to="/events"
-            className="group relative inline-block px-6 sm:px-8 py-3 border-2 border-white/80 text-white font-semibold rounded-full transition-all duration-300
-            hover:bg-white hover:text-primary-700 shadow-lg hover:shadow-xl backdrop-blur-sm w-full sm:w-auto text-center"
+            className="group relative inline-flex items-center justify-center px-8 sm:px-10 py-4 border-2 border-white/80 text-white font-bold rounded-full transition-all duration-300
+            hover:bg-white/10 hover:border-white shadow-lg hover:shadow-xl backdrop-blur-sm w-full min-w-[180px] text-center"
           >
             <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
             <span className="relative z-10">View Events</span>
