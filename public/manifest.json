@@ -1,0 +1,21 @@
+{
+  "name": "SACKOBA Qatar - St. Anthony's College Kandy Old Boys Association",
+  "short_name": "SACKOBA Qatar",
+  "description": "Join the vibrant community of St. Anthony's College Kandy alumni in Qatar. Discover events, networking opportunities, and stay connected with fellow Antonians.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#B62D71",
+  "icons": [
+    {
+      "src": "https://ik.imagekit.io/fazrinphcc/sackobaqatar/St_Anthony's_College_Logo2.png?updatedAt=1733601334917",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://ik.imagekit.io/fazrinphcc/sackobaqatar/St_Anthony's_College_Logo2.png?updatedAt=1733601334917",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
