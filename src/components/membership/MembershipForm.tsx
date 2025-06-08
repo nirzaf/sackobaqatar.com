@@ -85,26 +85,27 @@ export const MembershipForm: FC = () => {
 
       <motion.div className="grid md:grid-cols-2 gap-6" variants={itemVariants}>
         <div>
-          <label htmlFor="field_4551270" className="block text-white mb-2">Full Name *</label>
+          <label htmlFor="field_4551278" className="block text-white mb-2">Full Name *</label>
           <input
             type="text"
-            id="field_4551270"
-            name="field_4551270"
+            id="field_4551278"
+            name="field_4551278"
             required
-            value={formData.field_4551270 || ''}
+            placeholder="Enter your full name"
+            value={formData.field_4551278 || ''}
             onChange={handleChange}
             className="w-full p-3 rounded-lg bg-white/10 border border-[#B62D71]/30 text-white focus:outline-none focus:ring-2 focus:ring-[#B62D71]/50"
           />
         </div>
 
         <div>
-          <label htmlFor="field_4551373" className="block text-white mb-2">Email *</label>
+          <label htmlFor="field_4551459" className="block text-white mb-2">Email *</label>
           <input
             type="email"
-            id="field_4551373"
-            name="field_4551373"
+            id="field_4551459"
+            name="field_4551459"
             required
-            value={formData.field_4551373 || ''}
+            value={formData.field_4551459 || ''}
             onChange={handleChange}
             className="w-full p-3 rounded-lg bg-white/10 border border-[#B62D71]/30 text-white focus:outline-none focus:ring-2 focus:ring-[#B62D71]/50"
           />
@@ -113,25 +114,25 @@ export const MembershipForm: FC = () => {
 
       <motion.div className="grid md:grid-cols-2 gap-6" variants={itemVariants}>
         <div>
-          <label htmlFor="field_4551371" className="block text-white mb-2">Mobile Number *</label>
+          <label htmlFor="field_4551458" className="block text-white mb-2">Mobile Number *</label>
           <input
             type="tel"
-            id="field_4551371"
-            name="field_4551371"
+            id="field_4551458"
+            name="field_4551458"
             required
-            value={formData.field_4551371 || ''}
+            value={formData.field_4551458 || ''}
             onChange={handleChange}
             className="w-full p-3 rounded-lg bg-white/10 border border-[#B62D71]/30 text-white focus:outline-none focus:ring-2 focus:ring-[#B62D71]/50"
           />
         </div>
 
         <div>
-          <label htmlFor="field_4551277" className="block text-white mb-2">Marital Status *</label>
+          <label htmlFor="field_4551460" className="block text-white mb-2">Marital Status *</label>
           <select
-            id="field_4551277"
-            name="field_4551277"
+            id="field_4551460"
+            name="field_4551460"
             required
-            value={formData.field_4551277 || ''}
+            value={formData.field_4551460 || ''}
             onChange={handleChange}
             className="w-full p-3 rounded-lg bg-white/10 border border-[#B62D71]/30 text-white focus:outline-none focus:ring-2 focus:ring-[#B62D71]/50"
           >
@@ -149,7 +150,21 @@ export const MembershipForm: FC = () => {
           id="field_4551367"
           name="field_4551367"
           required
+          placeholder="Enter your current address in Qatar"
           value={formData.field_4551367 || ''}
+          onChange={handleChange}
+          rows={3}
+          className="w-full p-3 rounded-lg bg-white/10 border border-[#B62D71]/30 text-white focus:outline-none focus:ring-2 focus:ring-[#B62D71]/50"
+        />
+      </motion.div>
+
+      <motion.div variants={itemVariants}>
+        <label htmlFor="field_4551375" className="block text-white mb-2">Address in Sri Lanka</label>
+        <textarea
+          id="field_4551375"
+          name="field_4551375"
+          placeholder="Enter your address in Sri Lanka"
+          value={formData.field_4551375 || ''}
           onChange={handleChange}
           rows={3}
           className="w-full p-3 rounded-lg bg-white/10 border border-[#B62D71]/30 text-white focus:outline-none focus:ring-2 focus:ring-[#B62D71]/50"
@@ -158,12 +173,27 @@ export const MembershipForm: FC = () => {
 
       <motion.div className="grid md:grid-cols-2 gap-6" variants={itemVariants}>
         <div>
+          <label htmlFor="field_4551455" className="block text-white mb-2">Years in Qatar *</label>
+          <input
+            type="text"
+            id="field_4551455"
+            name="field_4551455"
+            required
+            placeholder="How many years have you been in Qatar?"
+            value={formData.field_4551455 || ''}
+            onChange={handleChange}
+            className="w-full p-3 rounded-lg bg-white/10 border border-[#B62D71]/30 text-white focus:outline-none focus:ring-2 focus:ring-[#B62D71]/50"
+          />
+        </div>
+
+        <div>
           <label htmlFor="field_4551450" className="block text-white mb-2">Occupation *</label>
           <input
             type="text"
             id="field_4551450"
             name="field_4551450"
             required
+            placeholder="Your current occupation"
             value={formData.field_4551450 || ''}
             onChange={handleChange}
             className="w-full p-3 rounded-lg bg-white/10 border border-[#B62D71]/30 text-white focus:outline-none focus:ring-2 focus:ring-[#B62D71]/50"
@@ -255,12 +285,12 @@ export const MembershipForm: FC = () => {
 
       <motion.div className="grid md:grid-cols-2 gap-6" variants={itemVariants}>
         <div>
-          <label htmlFor="field_4551480" className="block text-white mb-2">Membership Type *</label>
+          <label htmlFor="field_4551456" className="block text-white mb-2">Membership Type *</label>
           <select
-            id="field_4551480"
-            name="field_4551480"
+            id="field_4551456"
+            name="field_4551456"
             required
-            value={formData.field_4551480 || ''}
+            value={formData.field_4551456 || ''}
             onChange={handleChange}
             className="w-full p-3 rounded-lg bg-white/10 border border-[#B62D71]/30 text-white focus:outline-none focus:ring-2 focus:ring-[#B62D71]/50"
           >

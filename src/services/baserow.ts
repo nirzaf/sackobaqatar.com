@@ -8,24 +8,21 @@ const BASE_URL = 'https://api.baserow.io';
 const TABLE_ID = '566812';
 
 export interface MembershipFormData {
-  field_4551270?: string; // Full Name
+  field_4551278?: string; // Full Name
   field_4551367?: string; // Address in Qatar
-  field_4551371?: string; // Mobile Number
-  field_4551373?: string; // Email
-  field_4551275?: string; // Address in SriLanka
-  field_4551277?: number | string; // Marital Status
-  field_4551279?: number | string; // Family in Qatar?
-  field_4551440?: string; // QBA Membership Number
+  field_4551375?: string; // Address in Sri Lanka
   field_4551450?: string; // Occupation
   field_4551452?: string; // Organization
   field_4551455?: string; // Years in Qatar
   field_4551456?: string; // School Period
   field_4551461?: string; // School Period To
   field_4551463?: string; // Admission Number
-  field_4551464?: string; // Date Of Birth
+  field_4551464?: string; // Date of Birth
   field_4551470?: string; // Extra Curricular Activities
-  field_4551472?: string; // Proposedby
-  field_4551480?: number | string; // MembershipType
+  field_4551472?: string; // Proposed By
+  field_4551458?: string; // Mobile Number
+  field_4551459?: string; // Email
+  field_4551460?: string; // Marital Status
 }
 
 export interface FormSubmission {
