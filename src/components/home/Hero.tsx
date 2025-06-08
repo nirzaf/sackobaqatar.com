@@ -187,11 +187,11 @@ export const Hero: FC = memo(() => (
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="flex flex-col items-center cursor-pointer hover:text-white transition-colors duration-300"
+        className="flex flex-col items-center justify-center cursor-pointer hover:text-white transition-colors duration-300 text-center"
         onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
       >
-        <span className="text-sm font-medium mb-2 tracking-wider">SCROLL</span>
-        <ChevronDownIcon className="w-5 h-5" />
+        <span className="text-sm font-medium mb-2 tracking-wider text-center">SCROLL</span>
+        <ChevronDownIcon className="w-5 h-5 mx-auto" />
       </motion.div>
     </motion.div>
   </section>
