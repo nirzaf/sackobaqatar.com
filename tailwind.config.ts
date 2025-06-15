@@ -10,6 +10,9 @@ const config: Config = {
       screens: {
         'xs': '475px',
       },
+      fontFamily: {
+        'lato': ['Lato', 'sans-serif'],
+      },
       colors: {
         red: {
           DEFAULT: '#FF0000',
