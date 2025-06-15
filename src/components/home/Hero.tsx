@@ -89,7 +89,7 @@ export const Hero: FC = memo(() => (
 
       {/* Enhanced typography with staggered animations - Mobile optimized */}
       <motion.h1
-        className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-white mb-4 sm:mb-6 font-['UnifrakturMaguntia'] tracking-wide flex flex-col hero-text px-2"
+        className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal text-white mb-4 sm:mb-6 font-['Cinzel'] tracking-wider flex flex-col hero-text px-2"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
