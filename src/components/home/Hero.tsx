@@ -64,7 +64,7 @@ export const Hero: FC = memo(() => (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center min-h-screen justify-center pt-safe-top">
       {/* Enhanced logo with glow effect - Mobile optimized */}
       <motion.div
-        className="relative mb-6 sm:mb-8 mt-4 sm:mt-0"
+        className="relative mb-6 sm:mb-8 mt-4 sm:mt-0 flex justify-center"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{
@@ -76,9 +76,7 @@ export const Hero: FC = memo(() => (
         <motion.img
           src="https://ik.imagekit.io/sackoba/logos/sackoba-qatar-logo.png?updatedAt=1735206623574"
           alt="SACKOBA Logo"
-          className="w-24 h-24 xs:w-28 xs:h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 relative
-            filter brightness-110 contrast-110 drop-shadow-2xl mx-auto
-            max-w-none flex-shrink-0"
+          className="w-1/3 h-auto max-w-[150px] sm:max-w-[180px] md:max-w-[200px] lg:max-w-[240px] relative filter brightness-110 contrast-110 drop-shadow-2xl mx-auto"
           animate={{
             y: [0, -5, 0]
           }}
@@ -92,7 +90,7 @@ export const Hero: FC = memo(() => (
 
       {/* Enhanced typography with staggered animations - Mobile optimized */}
       <motion.h1
-        className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-white mb-4 sm:mb-6 font-['UnifrakturMaguntia'] tracking-wide flex flex-col hero-text px-2"
+        className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-white mb-4 sm:mb-6 font-lato tracking-wide flex flex-col hero-text px-2"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
