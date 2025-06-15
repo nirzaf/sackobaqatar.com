@@ -24,10 +24,36 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     emptyOutDir: true,
+    chunkSizeWarningLimit: 600,
+    rollupOptions: {
+      output: {
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('scheduler') || id.includes('prop-types')) {
+              return 'react-vendor';
+            }
+            if (id.includes('react-router') || id.includes('react-router-dom') || id.includes('@remix-run')) {
+              return 'router-vendor';
+            }
+            return 'vendor';
+          }
+          if (id.includes('/pages/')) {
+            return 'pages';
+          }
+          if (id.includes('/components/')) {
+            return 'components';
+          }
+        }
+      }
+    }
   },
   server: {
     fs: {
       strict: false
+    },
+    hmr: {
+      protocol: 'ws',
+      host: 'localhost'
     }
   },
   publicDir: 'public'

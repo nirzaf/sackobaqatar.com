@@ -48,15 +48,15 @@ export const Navbar: FC = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed w-full z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-gradient-to-r from-fandango-500 via-egyptianBlue-600 to-egyptianBlue-500 shadow-xl backdrop-blur-md'
-          : 'bg-gradient-to-r from-fandango-500/90 via-egyptianBlue-600/80 to-egyptianBlue-500/90 backdrop-blur-lg'
+          ? 'bg-gradient-to-r from-[#B62D71] via-[#541D67] to-[#5B4886] shadow-xl backdrop-blur-md'
+          : 'bg-gradient-to-r from-[#B62D71]/90 via-[#541D67]/90 to-[#5B4886]/90 backdrop-blur-lg'
       }`}
     >
       <nav
         className="container mx-auto px-6 lg:px-8"
         aria-label="Global"
       >
-        <div className="flex items-center justify-between py-2">
+        <div className="flex items-center justify-between py-4">
           {/* Enhanced Logo Section */}
           <motion.div 
             className="flex"
@@ -72,12 +72,12 @@ export const Navbar: FC = () => {
                   <ReactCountryFlag 
                     countryCode="QA" 
                     svg 
-                    style={{ width: '1.8em', height: '1.8em' }} 
+                    style={{ width: '2.2em', height: '2.2em' }} 
                     title="Qatar" 
                     className="drop-shadow-lg"
                   />
                 </motion.div>
-                <span className="text-xl font-extrabold tracking-wider text-white drop-shadow-lg
+                <span className="text-2xl font-extrabold tracking-wider text-white drop-shadow-lg
                   group-hover:text-white/90 transition-colors duration-300">
                   SACKOBA
                 </span>
@@ -91,7 +91,7 @@ export const Navbar: FC = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-[#541D67]/70 backdrop-blur-xl rounded-full px-6 py-2 flex gap-x-6 
+              className="bg-[#541D67]/70 backdrop-blur-xl rounded-full px-8 py-3 flex gap-x-8 
                 shadow-[0_8px_32px_rgba(0,0,0,0.3)] border border-[#9A78AB]/30
                 hover:shadow-[0_12px_40px_rgba(0,0,0,0.4)] transition-shadow duration-300"
             >
@@ -106,18 +106,18 @@ export const Navbar: FC = () => {
                   >
                     <Link
                       to={item.href}
-                      className={`relative text-sm font-semibold py-1.5 px-3 rounded-lg transition-all duration-300 group ${
+                      className={`relative text-sm font-semibold py-2 px-3 rounded-lg transition-all duration-300 group ${
                         isActive
-                          ? 'text-white bg-fandango-400/15 drop-shadow-[0_0_6px_rgba(255,255,255,0.4)]'
-                          : 'text-columbiaBlue-500/90 hover:text-white hover:bg-egyptianBlue-400/20 hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]'
+                          ? 'text-white bg-white/10 drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]'
+                          : 'text-white/90 hover:text-white hover:bg-white/5 hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]'
                       }`}
                     >
                       <span className="relative z-10">{item.name}</span>
                       {isActive && (
                         <motion.div
                           layoutId="navbar-indicator"
-                          className="absolute inset-0 bg-white/10 rounded-lg
-                            shadow-[0_0_10px_rgba(255,255,255,0.2)]"
+                          className="absolute inset-0 bg-white/15 rounded-lg
+                            shadow-[0_0_20px_rgba(255,255,255,0.3)]"
                           transition={{
                             type: "spring",
                             stiffness: 500,
@@ -177,22 +177,20 @@ export const Navbar: FC = () => {
                 transition={{ duration: 0.3 }}
                 className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm" 
               />
-              <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto 
-                  bg-gradient-to-br from-egyptianBlue-600 via-fandango-500 to-egyptianBlue-400 
-                  px-6 py-4 sm:max-w-sm shadow-2xl backdrop-blur-xl">
-                <motion.div
-                  initial={{ x: "100%" }}
-                  animate={{ x: 0 }}
-                  exit={{ x: "100%" }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 300,
-                    damping: 30
-                  }}
-                  className="h-full"
-                >
+              <Dialog.Panel 
+                as={motion.div}
+                initial={{ x: "100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100%" }}
+                className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto 
+                  bg-gradient-to-br from-[#541D67] via-[#B62D71] to-[#5B4886] 
+                  px-6 py-6 sm:max-w-sm shadow-2xl backdrop-blur-xl"
+                style={{
+                  transition: "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+                }}
+              >
                 {/* Mobile Menu Header */}
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-8">
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -207,11 +205,11 @@ export const Navbar: FC = () => {
                         <ReactCountryFlag 
                           countryCode="QA" 
                           svg 
-                          style={{ width: '1.8em', height: '1.8em' }} 
+                          style={{ width: '2.2em', height: '2.2em' }} 
                           title="Qatar" 
                           className="drop-shadow-lg"
                         />
-                        <span className="text-xl font-extrabold tracking-wider text-white drop-shadow-lg
+                        <span className="text-2xl font-extrabold tracking-wider text-white drop-shadow-lg
                           group-hover:text-white/90 transition-colors duration-300">
                           SACKOBA
                         </span>
@@ -226,8 +224,8 @@ export const Navbar: FC = () => {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     type="button"
-                    className="relative rounded-full p-3 text-white bg-fandango-400/30 backdrop-blur-sm
-                      hover:bg-egyptianBlue-400/30 transition-all duration-300 group"
+                    className="relative rounded-full p-3 text-white bg-white/10 backdrop-blur-sm
+                      hover:bg-white/20 transition-all duration-300 group"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     <span className="sr-only">Close menu</span>
@@ -259,7 +257,7 @@ export const Navbar: FC = () => {
                             className={`group relative block rounded-xl px-4 py-4 text-lg font-semibold 
                               transition-all duration-300 overflow-hidden ${
                               isActive
-                                ? 'text-white bg-white/10 shadow-[0_4px_16px_rgba(255,255,255,0.05)]'
+                                ? 'text-white bg-white/20 shadow-[0_8px_32px_rgba(255,255,255,0.1)]'
                                 : 'text-white/80 hover:text-white hover:bg-white/10'
                             }`}
                             onClick={() => setMobileMenuOpen(false)}
@@ -285,8 +283,8 @@ export const Navbar: FC = () => {
                             {isActive && (
                               <motion.div
                                 layoutId="mobile-indicator"
-                                className="absolute left-0 top-0 bottom-0 w-0.5 bg-white/70 rounded-r-full
-                                  shadow-[0_0_10px_rgba(255,255,255,0.3)]"
+                                className="absolute left-0 top-0 bottom-0 w-1 bg-white rounded-r-full
+                                  shadow-[0_0_20px_rgba(255,255,255,0.5)]"
                                 transition={{
                                   type: "spring",
                                   stiffness: 500,
@@ -311,7 +309,6 @@ export const Navbar: FC = () => {
                   <p className="text-center text-white/60 text-sm">
                     Building connections since 2009
                   </p>
-                </motion.div>
                 </motion.div>
               </Dialog.Panel>
             </Dialog>

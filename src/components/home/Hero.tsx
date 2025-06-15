@@ -1,18 +1,15 @@
 import { FC, memo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
 
 /**
  * Enhanced Hero component with improved animations, visual effects, and modern design
  * Features parallax-like effects, floating elements, and smooth scroll indicator
  */
 export const Hero: FC = memo(() => (
-  <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden">
-    {/* Background image with blur effect */}
-    <div 
-      className="absolute inset-0 bg-cover bg-center bg-no-repeat blur-[2px] scale-105"
-      style={{ backgroundImage: 'url("https://ik.imagekit.io/sackoba/MainBuildingWithGround.jpg?updatedAt=1734610625018")' }}
-    />
+  <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat"
+    style={{ backgroundImage: 'url("https://ik.imagekit.io/sackoba/MainBuildingWithGround.jpg?updatedAt=1734610625018")' }}>
 
     {/* Enhanced layered overlays for depth */}
     <div className="absolute inset-0 bg-black/30" />
@@ -125,7 +122,7 @@ export const Hero: FC = memo(() => (
       </motion.p>
 
       <motion.p
-        className="hidden sm:block text-sm sm:text-base md:text-lg text-white/85 max-w-2xl mx-auto mb-8 sm:mb-10 hero-text leading-relaxed px-4"
+        className="text-sm sm:text-base md:text-lg text-white/85 max-w-2xl mx-auto mb-8 sm:mb-10 hero-text leading-relaxed px-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.1 }}
@@ -135,7 +132,7 @@ export const Hero: FC = memo(() => (
 
       {/* Enhanced CTA buttons with improved hover effects - Mobile optimized */}
       <motion.div
-        className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 mb-8 sm:mb-16 px-4 mt-2 sm:mt-0 w-full max-w-2xl mx-auto"
+        className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 md:gap-6 mb-12 sm:mb-16 px-4"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.3 }}
@@ -147,11 +144,11 @@ export const Hero: FC = memo(() => (
         >
           <Link
             to="/about"
-            className="group relative inline-flex items-center justify-center px-8 sm:px-10 py-4 bg-white text-primary-700 font-bold rounded-full transition-all duration-300
-            shadow-xl hover:shadow-2xl text-base sm:text-lg overflow-hidden w-full min-w-[180px] text-center"
+            className="group relative inline-block px-6 sm:px-8 md:px-10 py-3 sm:py-4 bg-white text-primary-700 font-bold rounded-full transition-all duration-300 
+            shadow-xl hover:shadow-2xl text-base sm:text-lg overflow-hidden w-full sm:w-auto text-center"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-700 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
-            <span className="relative z-10">Explore</span>
+            <span className="relative z-10">Explore Our Community</span>
           </Link>
         </motion.div>
 
@@ -162,8 +159,8 @@ export const Hero: FC = memo(() => (
         >
           <Link
             to="/events"
-            className="group relative inline-flex items-center justify-center px-8 sm:px-10 py-4 border-2 border-white/80 text-white font-bold rounded-full transition-all duration-300
-            hover:bg-white/10 hover:border-white shadow-lg hover:shadow-xl backdrop-blur-sm w-full min-w-[180px] text-center"
+            className="group relative inline-block px-6 sm:px-8 py-3 border-2 border-white/80 text-white font-semibold rounded-full transition-all duration-300
+            hover:bg-white hover:text-primary-700 shadow-lg hover:shadow-xl backdrop-blur-sm w-full sm:w-auto text-center"
           >
             <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
             <span className="relative z-10">View Events</span>
@@ -172,6 +169,26 @@ export const Hero: FC = memo(() => (
       </motion.div>
     </div>
 
-    {/* Scroll indicator removed */}
+    {/* Scroll indicator */}
+    <motion.div
+      className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/70"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 1.5 }}
+    >
+      <motion.div
+        animate={{ y: [0, 8, 0] }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+        className="flex flex-col items-center cursor-pointer hover:text-white transition-colors duration-300"
+        onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+      >
+        <span className="text-sm font-medium mb-2 tracking-wider">SCROLL</span>
+        <ChevronDownIcon className="w-5 h-5" />
+      </motion.div>
+    </motion.div>
   </section>
 ));
