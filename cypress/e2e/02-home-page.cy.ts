@@ -35,7 +35,7 @@ describe('Home Page', () => {
 
     it('should have working call-to-action buttons', () => {
       cy.get('section').first().within(() => {
-        cy.contains('Explore Our Community').should('be.visible').click();
+        cy.contains('Explore').should('be.visible').click();
         cy.url().should('include', '/about');
       });
 

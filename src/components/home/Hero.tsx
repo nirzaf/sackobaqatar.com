@@ -98,7 +98,7 @@ export const Hero: FC = memo(() => (
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="drop-shadow-lg leading-tight"
+          className="drop-shadow-lg leading-tight hidden xs:block"
         >
           St. Anthony's College
         </motion.span>
@@ -106,14 +106,14 @@ export const Hero: FC = memo(() => (
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="drop-shadow-lg leading-tight"
+          className="drop-shadow-lg leading-tight hidden xs:block"
         >
           Old Boys' Association - Qatar
         </motion.span>
       </motion.h1>
 
       <motion.p
-        className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 max-w-3xl mx-auto mb-2 sm:mb-3 hero-text font-medium drop-shadow-md px-4"
+        className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 max-w-3xl mx-auto mb-2 sm:mb-3 hero-text font-medium drop-shadow-md px-4 hidden sm:block"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.9 }}
@@ -122,7 +122,7 @@ export const Hero: FC = memo(() => (
       </motion.p>
 
       <motion.p
-        className="text-sm sm:text-base md:text-lg text-white/85 max-w-2xl mx-auto mb-8 sm:mb-10 hero-text leading-relaxed px-4"
+        className="text-sm sm:text-base md:text-lg text-white/85 max-w-2xl mx-auto mb-8 sm:mb-10 hero-text leading-relaxed px-4 hidden md:block"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.1 }}
@@ -132,7 +132,7 @@ export const Hero: FC = memo(() => (
 
       {/* Enhanced CTA buttons with improved hover effects - Mobile optimized */}
       <motion.div
-        className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 md:gap-6 mb-12 sm:mb-16 px-4"
+        className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 md:gap-6 mb-12 sm:mb-16 px-4 hidden lg:flex"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.3 }}
@@ -148,7 +148,7 @@ export const Hero: FC = memo(() => (
             shadow-xl hover:shadow-2xl text-base sm:text-lg overflow-hidden w-full sm:w-auto text-center"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-700 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
-            <span className="relative z-10">Explore Our Community</span>
+            <span className="relative z-10">Explore</span>
           </Link>
         </motion.div>
 
