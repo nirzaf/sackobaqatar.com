@@ -8,7 +8,7 @@ import { SparklesIcon, AcademicCapIcon } from '@heroicons/react/24/outline';
  * and innovative asymmetrical layout with advanced animations
  */
 export const Hero: FC = memo(() => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [, setMousePosition] = useState({ x: 0, y: 0 });
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 300], [0, 100]);
   const y2 = useTransform(scrollY, [0, 300], [0, -100]);
@@ -28,94 +28,40 @@ export const Hero: FC = memo(() => {
 
   return (
     <section className="relative h-[85vh] overflow-hidden bg-gradient-to-br from-[#0F0E40] via-[#586992] to-[#7CA9CF]">
-      {/* Dynamic Geometric Background */}
+      {/* Static Background */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Animated geometric shapes with theme colors */}
-        <motion.div
+        {/* Static geometric shapes with theme colors */}
+        <div
           className="absolute -top-20 -left-20 w-96 h-96 rounded-full opacity-20"
           style={{
             background: `linear-gradient(135deg, #B80F8A 0%, #90072A 100%)`,
-            transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`,
-          }}
-          animate={{
-            scale: [1, 1.1, 1],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
           }}
         />
-        
-        <motion.div
+
+        <div
           className="absolute top-1/4 right-0 w-80 h-80 opacity-15"
           style={{
             background: `linear-gradient(45deg, #89C3EA 0%, #7CA9CF 100%)`,
             clipPath: 'polygon(0% 0%, 100% 0%, 85% 100%, 0% 85%)',
-            transform: `translate(${mousePosition.x * -0.03}px, ${mousePosition.y * 0.01}px)`,
-          }}
-          animate={{
-            y: [0, -30, 0],
-            rotate: [0, 5, 0],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut"
           }}
         />
 
-        <motion.div
+        <div
           className="absolute bottom-0 left-1/3 w-72 h-72 opacity-25"
           style={{
             background: `conic-gradient(from 0deg, #B80F8A, #586992, #89C3EA, #B80F8A)`,
             clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)',
-            transform: `translate(${mousePosition.x * 0.01}px, ${mousePosition.y * -0.02}px)`,
-          }}
-          animate={{
-            rotate: [0, 360],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "linear"
           }}
         />
-
-        {/* Floating particles */}
-        {[...Array(12)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 rounded-full"
-            style={{
-              background: ['#B80F8A', '#89C3EA', '#7CA9CF', '#586992'][i % 4],
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -100, 0],
-              opacity: [0, 1, 0],
-              scale: [0, 1, 0],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-              ease: "easeInOut"
-            }}
-          />
-        ))}
       </div>
 
       {/* Main Content Grid */}
-      <motion.div 
+      <motion.div
         className="relative z-10 h-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pt-28 sm:pt-32 lg:pt-24"
         style={{ opacity }}
       >
         {/* Left Content Section */}
-        <motion.div 
+        <motion.div
           className="lg:col-span-7 text-left space-y-6 lg:space-y-8"
           style={{ y: y1 }}
         >
@@ -137,7 +83,7 @@ export const Hero: FC = memo(() => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
           >
-            <motion.span 
+            <motion.span
               className="block bg-gradient-to-r from-white via-[#89C3EA] to-white bg-clip-text text-transparent"
               animate={{
                 backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
@@ -150,7 +96,7 @@ export const Hero: FC = memo(() => {
             >
               SACKOBA
             </motion.span>
-            <motion.span 
+            <motion.span
               className="block text-[#B80F8A] font-light"
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -182,7 +128,7 @@ export const Hero: FC = memo(() => {
           >
             <motion.div
               whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.98 }}
+              whileTap={{ scale: 0.95 }}
             >
               <Link
                 to="/about"
@@ -196,7 +142,7 @@ export const Hero: FC = memo(() => {
 
             <motion.div
               whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.98 }}
+              whileTap={{ scale: 0.95 }}
             >
               <Link
                 to="/events"
@@ -210,7 +156,7 @@ export const Hero: FC = memo(() => {
         </motion.div>
 
         {/* Right Content Section - Logo */}
-        <motion.div 
+        <motion.div
           className="lg:col-span-5 flex justify-center lg:justify-end items-center"
           style={{ y: y2 }}
         >
@@ -222,14 +168,14 @@ export const Hero: FC = memo(() => {
           >
             {/* Glow effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#B80F8A] via-[#89C3EA] to-[#7CA9CF] rounded-full blur-3xl opacity-30 scale-150" />
-            
+
             {/* Rotating ring */}
             <motion.div
               className="absolute inset-0 border-4 border-dashed border-[#89C3EA]/50 rounded-full scale-125"
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             />
-            
+
             {/* Logo */}
             <motion.img
               src="https://ik.imagekit.io/sackoba/logos/sackoba-qatar-logo.png?updatedAt=1735206623574"
