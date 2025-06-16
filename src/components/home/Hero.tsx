@@ -70,10 +70,10 @@ export const Hero: FC = memo(() => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/30 backdrop-blur-md border border-white/30 shadow-lg"
           >
-            <SparklesIcon className="w-4 h-4 text-[#89C3EA]" />
-            <span className="text-white/90 text-sm font-medium">Since 2009</span>
+            <SparklesIcon className="w-4 h-4 text-[#89C3EA] drop-shadow-sm" />
+            <span className="text-white text-sm font-medium drop-shadow-sm">Since 2009</span>
           </motion.div>
 
           {/* Main Heading */}
@@ -82,6 +82,7 @@ export const Hero: FC = memo(() => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
+            style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.7), 0 0 20px rgba(0,0,0,0.5)' }}
           >
             <motion.span
               className="block bg-gradient-to-r from-white via-[#89C3EA] to-white bg-clip-text text-transparent"
@@ -93,6 +94,7 @@ export const Hero: FC = memo(() => {
                 repeat: Infinity,
                 ease: "linear"
               }}
+              style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}
             >
               SACKOBA
             </motion.span>
@@ -101,6 +103,7 @@ export const Hero: FC = memo(() => {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
+              style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 15px rgba(184,15,138,0.3)' }}
             >
               Qatar
             </motion.span>
@@ -108,13 +111,14 @@ export const Hero: FC = memo(() => {
 
           {/* Subtitle */}
           <motion.p
-            className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-2xl leading-relaxed"
+            className="text-lg sm:text-xl md:text-2xl text-white max-w-2xl leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
+            style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}
           >
             St. Anthony's College Old Boys' Association
-            <span className="block text-[#89C3EA] font-medium mt-2">
+            <span className="block text-white font-medium mt-2" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8), 0 0 10px rgba(137,195,234,0.3)' }}>
               Uniting Antonians Across Qatar
             </span>
           </motion.p>
@@ -235,8 +239,8 @@ export const Hero: FC = memo(() => {
         </motion.div>
       </motion.div>
 
-      {/* Background overlay for mobile readability */}
-      <div className="absolute inset-0 bg-black/20 lg:bg-transparent" />
+      {/* Enhanced background overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-black/30 lg:from-black/30 lg:via-black/10 lg:to-black/20" />
     </section>
   );
 });
