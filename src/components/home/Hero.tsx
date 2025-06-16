@@ -162,7 +162,7 @@ export const Hero: FC = memo(() => {
 
         {/* Right Content Section - Logo */}
         <motion.div
-          className="lg:col-span-5 flex justify-center lg:justify-end items-center"
+          className="hidden lg:flex lg:col-span-5 justify-center lg:justify-end items-center"
           style={{ y: y2 }}
         >
           <motion.div
