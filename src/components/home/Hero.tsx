@@ -1,4 +1,4 @@
-import React, { FC, memo, useState, useEffect } from 'react';
+import { FC, memo, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { SparklesIcon, AcademicCapIcon } from '@heroicons/react/24/outline';
