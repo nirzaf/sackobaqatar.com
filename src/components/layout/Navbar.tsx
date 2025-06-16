@@ -42,7 +42,7 @@ export const Navbar: FC = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
       className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 shadow-sm' : 'bg-white/90'
+        isScrolled ? 'bg-gradient-to-r from-[#586992]/95 to-[#B80F8A]/95 shadow-lg' : 'bg-gradient-to-r from-[#586992]/90 to-[#B80F8A]/90 backdrop-blur-sm'
       }`}
     >
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -50,7 +50,7 @@ export const Navbar: FC = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center">
-              <span className="text-sm font-bold text-gray-900">SACKOBA</span>
+              <span className="text-sm font-bold text-white drop-shadow-md">SACKOBA</span>
             </Link>
           </div>
 
@@ -60,10 +60,10 @@ export const Navbar: FC = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`px-2.5 py-1.5 text-xs font-medium rounded transition-colors ${
+                className={`px-2.5 py-1.5 text-xs font-medium rounded transition-all duration-200 ${
                   location.pathname === item.href
-                    ? 'text-primary-600 bg-primary-50'
-                    : 'text-gray-600 hover:text-primary-600 hover:bg-gray-50'
+                    ? 'text-white bg-white/20 shadow-md backdrop-blur-sm'
+                    : 'text-white/90 hover:text-white hover:bg-white/10 hover:shadow-sm'
                 }`}
               >
                 {item.name}
@@ -75,7 +75,7 @@ export const Navbar: FC = () => {
           <div className="md:hidden">
             <button
               type="button"
-              className="inline-flex items-center justify-center p-1 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none"
+              className="inline-flex items-center justify-center p-1 rounded-md text-white hover:bg-white/10 focus:outline-none transition-colors duration-200"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               <span className="sr-only">Open main menu</span>
@@ -97,17 +97,17 @@ export const Navbar: FC = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-white border-t border-gray-100 overflow-hidden"
+            className="md:hidden bg-gradient-to-r from-[#586992] to-[#B80F8A] border-t border-white/20 overflow-hidden"
           >
             <div className="px-2 py-1 space-y-0.5">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`block px-3 py-2 text-sm font-medium rounded ${
+                  className={`block px-3 py-2 text-sm font-medium rounded transition-all duration-200 ${
                     location.pathname === item.href
-                      ? 'bg-primary-50 text-primary-600'
-                      : 'text-gray-700 hover:bg-gray-50 hover:text-primary-600'
+                      ? 'bg-white/20 text-white shadow-md backdrop-blur-sm'
+                      : 'text-white/90 hover:bg-white/10 hover:text-white hover:shadow-sm'
                   }`}
                 >
                   {item.name}

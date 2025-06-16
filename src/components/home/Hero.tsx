@@ -150,10 +150,11 @@ export const Hero: FC = memo(() => {
             >
               <Link
                 to="/events"
-                className="group relative inline-flex items-center gap-3 px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-2xl transition-all duration-300 hover:bg-white/10 backdrop-blur-sm"
+                className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#B80F8A] to-[#90072A] text-white font-semibold rounded-2xl transition-all duration-300 shadow-xl hover:shadow-2xl overflow-hidden"
               >
-                <SparklesIcon className="w-5 h-5" />
-                <span>View Events</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#90072A] to-[#B80F8A] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <SparklesIcon className="w-5 h-5 relative z-10" />
+                <span className="relative z-10">View Events</span>
               </Link>
             </motion.div>
           </motion.div>
