@@ -9,10 +9,15 @@ import { SparklesIcon, AcademicCapIcon } from '@heroicons/react/24/outline';
  */
 export const Hero: FC = memo(() => {
   const [, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isMobile, setIsMobile] = useState(false);
   const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 300], [0, 100]);
-  const y2 = useTransform(scrollY, [0, 300], [0, -100]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+
+  // Enhanced mobile-optimized parallax
+  const parallaxMultiplier = isMobile ? 0.6 : 1;
+  const y1 = useTransform(scrollY, [0, 500], [0, 100 * parallaxMultiplier]);
+  const y2 = useTransform(scrollY, [0, 500], [0, -100 * parallaxMultiplier]);
+  const opacity = useTransform(scrollY, [0, 400], [1, 0]);
+  const bgParallax = useTransform(scrollY, [0, 600], [0, isMobile ? 80 : 150]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -22,38 +27,51 @@ export const Hero: FC = memo(() => {
       });
     };
 
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+
     window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
     <section className="relative min-h-screen lg:h-[85vh] bg-gradient-to-br from-[#0F0E40] via-[#586992] to-[#7CA9CF]">
-      {/* Static Background */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Static geometric shapes with theme colors */}
-        <div
+      {/* Enhanced Parallax Background */}
+      <motion.div
+        className="absolute inset-0 overflow-hidden"
+        style={{ y: bgParallax }}
+      >
+        {/* Parallax geometric shapes with theme colors */}
+        <motion.div
           className="absolute -top-20 -left-20 w-96 h-96 rounded-full opacity-20"
           style={{
             background: `linear-gradient(135deg, #B80F8A 0%, #90072A 100%)`,
+            y: useTransform(scrollY, [0, 500], [0, isMobile ? 30 : 60]),
           }}
         />
 
-        <div
+        <motion.div
           className="absolute top-1/4 right-0 w-80 h-80 opacity-15"
           style={{
             background: `linear-gradient(45deg, #89C3EA 0%, #7CA9CF 100%)`,
             clipPath: 'polygon(0% 0%, 100% 0%, 85% 100%, 0% 85%)',
+            y: useTransform(scrollY, [0, 500], [0, isMobile ? -25 : -50]),
           }}
         />
 
-        <div
+        <motion.div
           className="absolute bottom-0 left-1/3 w-72 h-72 opacity-25"
           style={{
             background: `conic-gradient(from 0deg, #B80F8A, #586992, #89C3EA, #B80F8A)`,
             clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)',
+            y: useTransform(scrollY, [0, 500], [0, isMobile ? 40 : 80]),
           }}
         />
-      </div>
+      </motion.div>
 
       {/* Main Content Grid */}
       <motion.div

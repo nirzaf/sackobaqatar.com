@@ -4,6 +4,7 @@ import { TimelineEvent } from '../components/about/TimelineEvent';
 import { ContentSection } from '../components/about/ContentSection';
 import { InitiativeCard } from '../components/about/InitiativeCard';
 import { PageMeta } from '../components/shared/PageMeta';
+import { ParallaxContentSection } from '../components/about/ParallaxContentSection';
 
 export const About: FC = () => {
   return (
@@ -24,8 +25,9 @@ export const About: FC = () => {
       
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
-          <ContentSection title="Our Journey">
-            <div className="space-y-8">
+          <ParallaxContentSection>
+            <ContentSection title="Our Journey">
+              <div className="space-y-8">
               <TimelineEvent
                 year="2009"
                 title="Formation of SACKOBA Qatar"
@@ -79,10 +81,12 @@ export const About: FC = () => {
                 title="Growth & Impact"
                 content="Membership has grown to 81 members, including honorary memberships for past teachers. The association launched the 'Building Future' scholarship scheme and actively participates in Sri Lankan community events in Qatar."
               />
-            </div>
-          </ContentSection>
+              </div>
+            </ContentSection>
+          </ParallaxContentSection>
 
-          <ContentSection title="Our Initiatives">
+          <ParallaxContentSection>
+            <ContentSection title="Our Initiatives">
             <div className="grid md:grid-cols-2 gap-8">
               <InitiativeCard
                 title="Education Support"
@@ -94,9 +98,11 @@ export const About: FC = () => {
                 content="We actively participate in and contribute to events benefiting the Sri Lankan community in Qatar, fostering strong bonds and supporting our community abroad."
               />
             </div>
-          </ContentSection>
+            </ContentSection>
+          </ParallaxContentSection>
 
-          <ContentSection title="Our Mission">
+          <ParallaxContentSection>
+            <ContentSection title="Our Mission">
             <div className="grid md:grid-cols-2 gap-8">
               <InitiativeCard
                 title="Community Building"
@@ -108,7 +114,8 @@ export const About: FC = () => {
                 content="Our association continues to grow, introducing new membership formats and organizing events that bring together Antonians from all walks of life in Qatar."
               />
             </div>
-          </ContentSection>
+            </ContentSection>
+          </ParallaxContentSection>
         </div>
       </div>
     </div>
