@@ -3,10 +3,23 @@ import { AboutHero } from '../components/about/AboutHero';
 import { TimelineEvent } from '../components/about/TimelineEvent';
 import { ContentSection } from '../components/about/ContentSection';
 import { InitiativeCard } from '../components/about/InitiativeCard';
+import { PageMeta } from '../components/shared/PageMeta';
 
 export const About: FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      <PageMeta
+        title="About SACKOBA Qatar | Journey & Initiatives"
+        description="Learn about SACKOBA Qatar’s history, mission, and initiatives supporting community and scholarships."
+        canonical="https://sackobaqatar.com/about"
+        ogImage="https://sackobaqatar.com/images/og/about.jpg"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'AboutPage',
+          'url': 'https://sackobaqatar.com/about',
+          'name': 'About SACKOBA Qatar'
+        }}
+      />
       <AboutHero />
       
       <div className="container mx-auto px-4 py-16">

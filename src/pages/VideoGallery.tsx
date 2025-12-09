@@ -2,6 +2,7 @@ import { FC, useState } from 'react';
 import { motion } from 'framer-motion';
 import ImageGallerySection from '../components/video-gallery/ImageGallerySection';
 import { Video } from '../components/video-gallery/types';
+import { PageMeta } from '../components/shared/PageMeta';
 
 const videos: Video[] = [
   {
@@ -45,6 +46,18 @@ export const VideoGallery: FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      <PageMeta
+        title="SACKOBA Qatar Media Gallery | Photos & Videos"
+        description="Explore photo and video highlights from SACKOBA Qatar events and community activities."
+        canonical="https://sackobaqatar.com/gallery"
+        ogImage="https://sackobaqatar.com/images/og/gallery.jpg"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'CollectionPage',
+          'name': 'Media Gallery',
+          'url': 'https://sackobaqatar.com/gallery'
+        }}
+      />
       {/* Hero Section */}
       <section className="relative h-[40vh] flex items-center justify-center bg-gradient-to-r from-[#541D67] to-[#B62D71]">
         <div className="absolute inset-0 bg-black/30" />

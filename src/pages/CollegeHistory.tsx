@@ -2,6 +2,7 @@ import { FC, useState } from 'react';
 import { motion } from 'framer-motion';
 import HistoryAccordion from '../components/college-history/HistoryAccordion';
 import { HistoryPeriod } from '../types/collegeHistoryTypes'; // Import the type
+import { PageMeta } from '../components/shared/PageMeta';
 
 const historyData: HistoryPeriod[] = [
   {
@@ -184,6 +185,18 @@ const CollegeHistory: FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      <PageMeta
+        title="College History | St. Anthony's College Kandy"
+        description="Explore the rich heritage and notable milestones of St. Anthony's College Kandy."
+        canonical="https://sackobaqatar.com/history"
+        ogImage="https://sackobaqatar.com/images/og/history.jpg"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'College History',
+          'url': 'https://sackobaqatar.com/history'
+        }}
+      />
       {/* Hero Section */}
       <div className="relative h-[40vh] flex items-center justify-center bg-gradient-to-r from-[#541D67] to-[#B62D71]">
         <div className="absolute inset-0 bg-black/30" />
