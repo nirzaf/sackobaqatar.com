@@ -2,6 +2,7 @@ import { FC, ErrorInfo, Component } from 'react';
 import type { ExcoYear } from '../components/exco/types';
 import { ExcoCard } from '../components/exco/ExcoCard';
 import { ExcoHero } from '../components/exco/ExcoHero';
+import { PageMeta } from '../components/shared/PageMeta';
 
 /**
  * Error Boundary component to handle runtime errors
@@ -306,6 +307,18 @@ const Exco: FC = () => {
   return (
     <ErrorBoundary>
       <div className="min-h-screen bg-gray-100">
+        <PageMeta
+          title="Executive Committee | SACKOBA Qatar"
+          description="Meet the Executive Committee of SACKOBA Qatar across recent years."
+          canonical="https://sackobaqatar.com/exco"
+          ogImage="https://sackobaqatar.com/images/og/exco.jpg"
+          jsonLd={{
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            'name': 'Executive Committee',
+            'url': 'https://sackobaqatar.com/exco'
+          }}
+        />
         <ExcoHero />
         
         <main className="container mx-auto px-4 py-2">

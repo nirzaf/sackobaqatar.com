@@ -2,6 +2,7 @@ import { FC, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Masonry from 'react-masonry-css';
 import '../styles/masonry.css';
+import { PageMeta } from '../components/shared/PageMeta';
 
 interface NewsImage {
   url: string;
@@ -76,6 +77,18 @@ const NewsGallery: FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      <PageMeta
+        title="SACKOBA Qatar News & Highlights"
+        description="Latest updates, achievements, and event highlights from SACKOBA Qatar."
+        canonical="https://sackobaqatar.com/news"
+        ogImage="https://sackobaqatar.com/images/og/news.jpg"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'CollectionPage',
+          'name': 'News',
+          'url': 'https://sackobaqatar.com/news'
+        }}
+      />
       {/* Hero Section */}
       <section className="relative h-[40vh] flex items-center justify-center bg-gradient-to-r from-[#541D67] to-[#B62D71]">
         <div className="absolute inset-0 bg-black/30" />

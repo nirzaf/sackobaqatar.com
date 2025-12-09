@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bun remove:*)",
+      "Bash(bun add:*)",
+      "Bash(del postcss.config.cjs)",
+      "Bash(del tailwind.config.ts)",
+      "Bash(bun run build:*)",
+      "Bash(timeout 10 bun run dev:*)",
+      "Bash(git restore:*)",
+      "Bash(git checkout:*)",
+      "Bash(yes:*)",
+      "Bash(bunx:*)",
+      "Bash(bun install:*)",
+      "Bash(timeout 8 bun run dev:*)",
+      "Bash(NODE_OPTIONS=\"--max-old-space-size=4096\" bun run build:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

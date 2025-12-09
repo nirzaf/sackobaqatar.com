@@ -1,17 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-xs: 475px;
+  --color-primary-50: #F0F0F6;
+  --color-primary-100: #E1E1EC;
+  --color-primary-200: #D1D2E3;
+  --color-primary-300: #C2C3DA;
+  --color-primary-400: #B2B3D0;
+  --color-primary-500: #A1247E;
+  --color-primary-600: #821D65;
+  --color-primary-700: #61164C;
+}
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
-  
+
   body {
     @apply bg-slate-900 text-gray-200;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  /* Prevent horizontal scroll on mobile */
+  * {
+    max-width: 100%;
   }
 
   h1, h2, h3, h4, h5, h6 {
