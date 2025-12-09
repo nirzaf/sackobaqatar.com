@@ -8,7 +8,7 @@ import { ParallaxContentSection } from '../components/about/ParallaxContentSecti
 
 export const About: FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0A0A2A] via-[#0F0E40] to-[#0B0A1D] text-slate-100">
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       <PageMeta
         title="About SACKOBA Qatar | Journey & Initiatives"
         description="Learn about SACKOBA Qatar’s history, mission, and initiatives supporting community and scholarships."
