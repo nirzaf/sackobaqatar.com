@@ -27,7 +27,7 @@ export const Hero: FC = memo(() => {
   }, []);
 
   return (
-    <section className="relative h-[85vh] overflow-hidden bg-gradient-to-br from-[#0F0E40] via-[#586992] to-[#7CA9CF]">
+    <section className="relative min-h-screen lg:h-[85vh] bg-gradient-to-br from-[#0F0E40] via-[#586992] to-[#7CA9CF]">
       {/* Static Background */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Static geometric shapes with theme colors */}
@@ -57,7 +57,7 @@ export const Hero: FC = memo(() => {
 
       {/* Main Content Grid */}
       <motion.div
-        className="relative z-10 h-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pt-28 sm:pt-32 lg:pt-24"
+        className="relative z-10 h-auto lg:h-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pt-24 sm:pt-28 lg:pt-24 pb-16 md:pb-20"
         style={{ opacity }}
       >
         {/* Left Content Section */}
