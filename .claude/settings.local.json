@@ -12,7 +12,8 @@
       "Bash(yes:*)",
       "Bash(bunx:*)",
       "Bash(bun install:*)",
-      "Bash(timeout 8 bun run dev:*)"
+      "Bash(timeout 8 bun run dev:*)",
+      "Bash(NODE_OPTIONS=\"--max-old-space-size=4096\" bun run build:*)"
     ],
     "deny": [],
     "ask": []

@@ -22,10 +22,10 @@ export const AboutHero: FC = () => {
   }, []);
 
   return (
-    <section className="relative h-[60vh] md:h-[70vh] flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative h-[60vh] md:h-[70vh] flex flex-col items-center justify-center overflow-hidden w-full">
       {/* Gradient Background with Parallax */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-[#0F0E40] to-[#B80F8A] opacity-90"
+        className="absolute inset-0 bg-gradient-to-r from-[#0F0E40] to-[#B80F8A] opacity-90 w-full"
         style={{ y: useTransform(scrollY, [0, 500], [0, isMobile ? 40 : 80]) }}
       />
 

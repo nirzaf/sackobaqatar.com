@@ -39,10 +39,10 @@ export const Hero: FC = memo(() => {
   }, []);
 
   return (
-    <section className="relative min-h-screen lg:h-[85vh] bg-gradient-to-br from-[#0F0E40] via-[#586992] to-[#7CA9CF]">
+    <section className="relative min-h-screen lg:h-[85vh] bg-gradient-to-br from-[#0F0E40] via-[#586992] to-[#7CA9CF] w-full overflow-hidden">
       {/* Enhanced Parallax Background */}
       <motion.div
-        className="absolute inset-0 overflow-hidden"
+        className="absolute inset-0 overflow-hidden w-full"
         style={{ y: bgParallax }}
       >
         {/* Parallax geometric shapes with theme colors */}
