@@ -9,8 +9,7 @@ export const CollegeDetailsSection: FC = () => {
       y: 0,
       transition: {
         delay: 0.3 + i * 0.1,
-        duration: 0.8,
-        ease: "easeOut"
+        duration: 0.8
       }
     })
   };

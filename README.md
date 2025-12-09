@@ -23,20 +23,20 @@ To set up the project locally, follow these steps:
 
 2. Install dependencies:
    ```bash
-   pnpm install
+   bun install
    ```
 
 3. Start the development server:
    ```bash
-   pnpm dev
+   bun run dev
    ```
 
 ## Usage Guidelines
 
-- **Development:** Use `pnpm dev` to start the development server.
-- **Build:** Use `pnpm run build` to create a production build.
-- **Lint:** Use `pnpm run lint` to run the linter and check for code quality issues.
-- **Preview:** Use `pnpm run preview` to preview the production build locally.
+- **Development:** Use `bun run dev` to start the development server.
+- **Build:** Use `bun run build` to create a production build.
+- **Lint:** Use `bun run lint` to run the linter and check for code quality issues.
+- **Preview:** Use `bun run preview` to preview the production build locally.
 
 ## Home
 
