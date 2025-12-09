@@ -413,7 +413,7 @@ export const EventCards: React.FC<EventCardsProps> = ({ onEventClick }) => {
                 </div>
 
                 <div className="text-amber-100 text-sm font-medium group-hover:text-white transition-colors">
-                  Explore >
+                  Explore &gt;
                 </div>
               </div>
             </div>
