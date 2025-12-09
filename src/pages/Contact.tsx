@@ -1,15 +1,40 @@
 import { FC } from 'react';
 import { ContactForm, ContactInfo, ContactFormData } from '../components/contact';
 import { motion } from 'framer-motion';
+import { PageMeta } from '../components/shared/PageMeta';
 
 export const Contact: FC = () => {
-  const handleSubmit = (data: ContactFormData) => {
-    // Handle form submission
-    console.log('Form submitted:', data);
+  const handleSubmit = async (data: ContactFormData) => {
+    const resp = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    const json = await resp.json()
+    // basic inline feedback could be added here if needed
+    if (!resp.ok) {
+      console.error('Contact submit error:', json)
+    }
   };
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <PageMeta
+        title="Contact SACKOBA Qatar | Get in Touch"
+        description="Questions about membership, events, or scholarships? Contact SACKOBA Qatar and we’ll get back to you."
+        canonical="https://sackobaqatar.com/contact"
+        ogImage="https://sackobaqatar.com/images/og/contact.jpg"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'ContactPage',
+          'url': 'https://sackobaqatar.com/contact',
+          'mainEntity': {
+            '@type': 'ContactPoint',
+            'contactType': 'customer support',
+            'email': 'info@sackobaqatar.com'
+          }
+        }}
+      />
       {/* Hero Section */}
       <section className="relative h-[34vh] bg-gradient-to-r from-[#541D67] to-[#B62D71]">
         <div className="absolute inset-0 bg-black/30" />

@@ -28,18 +28,6 @@ export const EventImageGallery: FC<EventImageGalleryProps> = ({ selectedYear = '
 
   const eventData = useMemo(() => {
     const data = getCompleteEventImageData();
-    console.log('🔍 EventImageGallery: Loaded event data:', data);
-    console.log('📊 EventImageGallery: Total year groups:', data.length);
-    if (data.length > 0) {
-      console.log('📅 EventImageGallery: First year group:', data[0]);
-      if (data[0].events.length > 0) {
-        console.log('🎉 EventImageGallery: First event:', data[0].events[0]);
-        if (data[0].events[0].images.length > 0) {
-          console.log('🖼️ EventImageGallery: First image:', data[0].events[0].images[0]);
-          console.log('🔗 EventImageGallery: First image URL:', data[0].events[0].images[0].url);
-        }
-      }
-    }
     return data;
   }, []);
 
@@ -91,7 +79,6 @@ export const EventImageGallery: FC<EventImageGalleryProps> = ({ selectedYear = '
       })).filter(yearGroup => yearGroup.events.length > 0);
     }
 
-    console.log('🔍 Filtered data:', filtered);
     return filtered;
   }, [eventData, filterYear, selectedCategory, searchQuery]);
 
@@ -99,6 +86,19 @@ export const EventImageGallery: FC<EventImageGalleryProps> = ({ selectedYear = '
   const totalResults = useMemo(() => {
     return filteredData.reduce((total, yearGroup) => total + yearGroup.events.length, 0);
   }, [filteredData]);
+
+  const [visibleCount, setVisibleCount] = useState(6);
+  const visibleData = useMemo(() => {
+    const flat: { group: YearGroup; event: EventCategory }[] = []
+    filteredData.forEach((group: YearGroup) => group.events.forEach((event: EventCategory) => flat.push({ group, event })))
+    const sliced = flat.slice(0, visibleCount)
+    const grouped = new Map<string, YearGroup>()
+    sliced.forEach(({ group, event }) => {
+      if (!grouped.has(group.year)) grouped.set(group.year, { ...group, events: [] })
+      grouped.get(group.year)!.events.push(event)
+    })
+    return Array.from(grouped.values())
+  }, [filteredData, visibleCount])
 
   const toggleEventExpansion = (eventId: string) => {
     const newExpanded = new Set(expandedEvents);
@@ -185,12 +185,12 @@ export const EventImageGallery: FC<EventImageGalleryProps> = ({ selectedYear = '
         totalResults={totalResults}
       />
 
-      {filteredData.map((yearGroup: YearGroup) => (
+      {visibleData.map((yearGroup: YearGroup, groupIndex) => (
         <motion.div
           key={yearGroup.year}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: groupIndex < 2 ? 0.5 : 0.2 }}
           className="space-y-4"
         >
           <div className="year-header" style={{ background: 'linear-gradient(to right, #541D67, #B62D71)', color: 'white' }}>
@@ -286,11 +286,11 @@ export const EventImageGallery: FC<EventImageGalleryProps> = ({ selectedYear = '
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3 }}
+                        transition={{ duration: 0.2 }}
                         className="mt-4 overflow-hidden"
                       >
                         <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4">
-                          {event.images.map((image, index) => {
+                          {event.images.map((image) => {
                             const optimizedUrl = getOptimizedImageUrl(image.url, getImageSizes('gallery'));
                             const srcSet = generateResponsiveSrcSet(image.url);
                             const blurDataUrl = createBlurPlaceholder(200, 200);
@@ -299,7 +299,7 @@ export const EventImageGallery: FC<EventImageGalleryProps> = ({ selectedYear = '
                                 key={image.filename}
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.3, delay: index * 0.1 }}
+                                transition={{ duration: 0.2 }}
                                 className="group relative aspect-square bg-gray-100 rounded-lg overflow-hidden cursor-pointer hover:shadow-lg transition-all duration-300 h-full"
                                 onClick={() => openImageModal(image.url, image.title, event.name, image.description)}
                               >
@@ -368,6 +368,17 @@ export const EventImageGallery: FC<EventImageGalleryProps> = ({ selectedYear = '
           </div>
         </motion.div>
       ))}
+
+      {visibleCount < totalResults && (
+        <div className="flex justify-center pt-4">
+          <button
+            onClick={() => setVisibleCount(c => Math.min(c + 6, totalResults))}
+            className="px-4 py-2 rounded-md bg-[#541D67] text-white hover:bg-[#6a2a8a]"
+          >
+            Load more
+          </button>
+        </div>
+      )}
 
       {/* Image Modal */}
       {selectedImage && (

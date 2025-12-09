@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { motion } from 'framer-motion';
 import { HiDownload } from 'react-icons/hi';
+import { PageMeta } from '../components/shared/PageMeta';
 
 export const MembershipTerms: FC = () => {
   const terms = [
@@ -45,6 +46,18 @@ export const MembershipTerms: FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#B62D71]/10 via-[#541D67]/20 to-[#5B4886]/30 py-16 px-4">
+      <PageMeta
+        title="Membership Terms | SACKOBA Qatar"
+        description="Eligibility, fees, and renewal terms for SACKOBA Qatar membership."
+        canonical="https://sackobaqatar.com/membership-terms"
+        ogImage="https://sackobaqatar.com/images/og/membership.jpg"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'Membership Terms',
+          'url': 'https://sackobaqatar.com/membership-terms'
+        }}
+      />
       <motion.div 
         className="max-w-7xl mx-auto"
         initial="hidden"

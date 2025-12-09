@@ -8,6 +8,7 @@ import { EventCards } from '../components/events/EventCards';
 import { events as staticEvents } from '../data/events';
 import { useEventFiltering } from '../hooks/useEventFiltering';
 import { getCompleteEventImageYears } from '../data/completeEventImageData';
+import { PageMeta } from '../components/shared/PageMeta';
 
 export const Events: FC = () => {
   const [loading, setLoading] = useState(true);
@@ -50,6 +51,18 @@ export const Events: FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      <PageMeta
+        title="SACKOBA Qatar Events | Browse & Gallery"
+        description="Explore SACKOBA Qatar events by year, view highlights, and browse the image gallery."
+        canonical="https://sackobaqatar.com/events"
+        ogImage="https://sackobaqatar.com/images/og/events.jpg"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'CollectionPage',
+          'name': 'Events',
+          'url': 'https://sackobaqatar.com/events'
+        }}
+      />
       <EventsHero />
 
       {/* Tab Navigation */}
