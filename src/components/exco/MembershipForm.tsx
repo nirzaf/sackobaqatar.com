@@ -1,10 +1,5 @@
 import { FC, useState } from 'react';
-import { createClient } from '@supabase/supabase-js';
-
-// Initialize Supabase client
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
+import { useMemo } from 'react';
 
 interface FormData {
   fullName: string;
@@ -77,21 +72,28 @@ export const MembershipForm: FC = () => {
     }));
   };
 
+  const emailValid = useMemo(() => /.+@.+\..+/.test(formData.email), [formData.email])
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setMessage({ type: '', text: '' });
 
     try {
-      const { error } = await supabase
-        .from('membership_applications')
-        .insert([formData]);
-
-      if (error) throw error;
+      if (!emailValid) {
+        throw new Error('Please enter a valid email address.')
+      }
+      const resp = await fetch('/api/membership', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      })
+      const json = await resp.json()
+      if (!resp.ok) throw new Error(json?.error || 'Submission failed')
 
       setMessage({
         type: 'success',
-        text: 'Your membership application has been submitted successfully!',
+        text: `Your membership application has been submitted successfully! Reference: ${json.referenceId}`,
       });
       setFormData({
         fullName: '',
@@ -119,7 +121,7 @@ export const MembershipForm: FC = () => {
     } catch (error) {
       setMessage({
         type: 'error',
-        text: 'An error occurred while submitting your application. Please try again.',
+        text: (error as any)?.message || 'An error occurred while submitting your application. Please try again.',
       });
     } finally {
       setIsSubmitting(false);
