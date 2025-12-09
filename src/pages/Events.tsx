@@ -50,7 +50,7 @@ export const Events: FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-[#0A0A2A] via-[#0F0E40] to-[#0B0A1D] text-slate-100">
       <PageMeta
         title="SACKOBA Qatar Events | Browse & Gallery"
         description="Explore SACKOBA Qatar events by year, view highlights, and browse the image gallery."
@@ -66,32 +66,32 @@ export const Events: FC = () => {
       <EventsHero />
 
       {/* Tab Navigation */}
-      <div className="bg-white border-b border-gray-200 sticky top-0 z-10">
+      <div className="bg-[#0F0E40]/85 border-b border-white/10 sticky top-0 z-10 backdrop-blur-xl shadow-lg">
         <div className="container mx-auto px-6">
           <div className="flex space-x-4">
             <button
               onClick={() => setActiveTab('cards')}
-              className={`py-4 px-6 rounded-lg font-medium text-sm transition-colors duration-200 ${activeTab === 'cards'
-                ? 'bg-[#541D67] text-white shadow-md'
-                : 'bg-white text-[#541D67] border border-[#541D67] hover:bg-[#F8F6F9]'
+              className={`py-4 px-6 rounded-lg font-medium text-sm transition-colors duration-200 backdrop-blur ${activeTab === 'cards'
+                ? 'bg-white/20 text-white shadow-md border border-white/40'
+                : 'bg-white/5 text-white/80 border border-white/15 hover:bg-white/10 hover:text-white'
                 }`}
             >
               All Events
             </button>
             <button
               onClick={() => setActiveTab('events')}
-              className={`py-4 px-6 rounded-lg font-medium text-sm transition-colors duration-200 ${activeTab === 'events'
-                ? 'bg-[#B62D71] text-white shadow-md'
-                : 'bg-white text-[#B62D71] border border-[#B62D71] hover:bg-[#F8F6F9]'
+              className={`py-4 px-6 rounded-lg font-medium text-sm transition-colors duration-200 backdrop-blur ${activeTab === 'events'
+                ? 'bg-white/20 text-white shadow-md border border-white/40'
+                : 'bg-white/5 text-white/80 border border-white/15 hover:bg-white/10 hover:text-white'
                 }`}
             >
               Main Events
             </button>
             <button
               onClick={() => setActiveTab('gallery')}
-              className={`py-4 px-6 rounded-lg font-medium text-sm transition-colors duration-200 ${activeTab === 'gallery'
-                ? 'bg-[#D946EF] text-white shadow-md'
-                : 'bg-white text-[#D946EF] border border-[#D946EF] hover:bg-[#F8F6F9]'
+              className={`py-4 px-6 rounded-lg font-medium text-sm transition-colors duration-200 backdrop-blur ${activeTab === 'gallery'
+                ? 'bg-white/20 text-white shadow-md border border-white/40'
+                : 'bg-white/5 text-white/80 border border-white/15 hover:bg-white/10 hover:text-white'
                 }`}
             >
               Image Gallery
@@ -133,10 +133,10 @@ export const Events: FC = () => {
             transition={{ duration: 0.5 }}
           >
             <div className="mb-8 text-center">
-              <h2 className="text-3xl font-bold text-[#541D67] mb-4">
+              <h2 className="text-3xl font-bold text-white mb-4 drop-shadow">
                 Event Image Gallery
               </h2>
-              <p className="text-[#5B4886] max-w-2xl mx-auto">
+              <p className="text-slate-100/85 max-w-2xl mx-auto">
                 Browse through our collection of event photos organized by year and category.
                 Click on any image to view it in full size.
               </p>

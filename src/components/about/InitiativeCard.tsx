@@ -8,11 +8,11 @@ interface InitiativeCardProps {
 
 export const InitiativeCard: FC<InitiativeCardProps> = ({ title, content }) => (
   <motion.div 
-    className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+    className="bg-white/10 backdrop-blur-sm border border-white/10 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-slate-100"
     whileHover={{ scale: 1.02 }}
     transition={{ duration: 0.2 }}
   >
-    <h3 className="text-xl font-bold text-[#0F0E40] mb-3">{title}</h3>
-    <p className="text-[#586992]">{content}</p>
+    <h3 className="text-xl font-bold text-white mb-3 drop-shadow">{title}</h3>
+    <p className="text-slate-100/85">{content}</p>
   </motion.div>
 );

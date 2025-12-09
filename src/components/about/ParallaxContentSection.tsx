@@ -28,7 +28,7 @@ export const ParallaxContentSection: FC<ParallaxContentSectionProps> = ({
     >
       {title && (
         <motion.h2
-          className="text-2xl md:text-3xl font-bold text-[#0F0E40] mb-8 text-center md:text-left"
+          className="text-2xl md:text-3xl font-bold text-white mb-8 text-center md:text-left drop-shadow"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: '-100px' }}

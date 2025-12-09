@@ -301,17 +301,17 @@ const eventCardsData: EventCard[] = [
 const getCategoryColor = (category: string) => {
   switch (category) {
     case 'Sports':
-      return 'bg-green-100 text-green-800 border-green-200';
+      return 'bg-green-500/20 text-green-100 border-green-200/30';
     case 'Cultural':
-      return 'bg-purple-100 text-purple-800 border-purple-200';
+      return 'bg-purple-500/20 text-purple-100 border-purple-200/30';
     case 'Religious':
-      return 'bg-blue-100 text-blue-800 border-blue-200';
+      return 'bg-blue-500/20 text-blue-100 border-blue-200/30';
     case 'Social':
-      return 'bg-yellow-100 text-yellow-800 border-yellow-200';
+      return 'bg-yellow-500/20 text-yellow-50 border-yellow-200/30';
     case 'Academic':
-      return 'bg-indigo-100 text-indigo-800 border-indigo-200';
+      return 'bg-indigo-500/20 text-indigo-100 border-indigo-200/30';
     default:
-      return 'bg-gray-100 text-gray-800 border-gray-200';
+      return 'bg-white/10 text-white border-white/20';
   }
 };
 
@@ -323,10 +323,10 @@ export const EventCards: React.FC<EventCardsProps> = ({ onEventClick }) => {
   };
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 text-slate-100">
       <div className="text-center">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Events</h2>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+        <h2 className="text-3xl font-bold text-white mb-4 drop-shadow">Our Events</h2>
+        <p className="text-lg text-slate-100/85 max-w-3xl mx-auto">
           Explore our rich collection of events spanning over a decade. From sports tournaments to cultural celebrations,
           religious gatherings to academic meetings - discover the vibrant community life of SACKOBA Qatar.
         </p>
@@ -339,11 +339,11 @@ export const EventCards: React.FC<EventCardsProps> = ({ onEventClick }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group overflow-hidden"
+            className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group overflow-hidden"
             onClick={() => handleCardClick(eventCard)}
           >
             {/* Event Image */}
-            <div className="relative h-48 bg-gray-200 overflow-hidden">
+            <div className="relative h-48 bg-white/5 overflow-hidden">
               <img
                 src={eventCard.previewImage}
                 alt={eventCard.name}
@@ -392,28 +392,28 @@ export const EventCards: React.FC<EventCardsProps> = ({ onEventClick }) => {
 
             {/* Event Details */}
             <div className="p-4">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-purple-600 transition-colors duration-200">
+              <h3 className="text-lg font-semibold text-white mb-2 line-clamp-2 group-hover:text-amber-100 transition-colors duration-200 drop-shadow">
                 {eventCard.name}
               </h3>
 
-              <div className="flex items-center text-sm text-gray-500 mb-2">
+              <div className="flex items-center text-sm text-slate-200/80 mb-2">
                 <CalendarIcon className="h-4 w-4 mr-1" />
                 <span>{eventCard.year}</span>
               </div>
 
-              <div className="flex items-center text-sm text-gray-500 mb-3">
+              <div className="flex items-center text-sm text-slate-200/80 mb-3">
                 <MapPinIcon className="h-4 w-4 mr-1" />
                 <span>{eventCard.location}</span>
               </div>
 
               <div className="flex items-center justify-between">
-                <div className="flex items-center text-sm text-gray-500">
+                <div className="flex items-center text-sm text-slate-200/80">
                   <PhotoIcon className="h-4 w-4 mr-1" />
                   <span>View Gallery</span>
                 </div>
 
-                <div className="text-purple-600 text-sm font-medium group-hover:text-purple-700">
-                  Explore →
+                <div className="text-amber-100 text-sm font-medium group-hover:text-white transition-colors">
+                  Explore >
                 </div>
               </div>
             </div>
@@ -422,9 +422,9 @@ export const EventCards: React.FC<EventCardsProps> = ({ onEventClick }) => {
       </div>
 
       <div className="text-center mt-8">
-        <p className="text-gray-600">
-          Total Events: <span className="font-semibold text-purple-600">{eventCardsData.length}</span> |
-          Years Covered: <span className="font-semibold text-purple-600">
+        <p className="text-slate-100/85">
+          Total Events: <span className="font-semibold text-white">{eventCardsData.length}</span> |
+          Years Covered: <span className="font-semibold text-white">
             {Math.min(...eventCardsData.map(e => parseInt(e.year)))} - {Math.max(...eventCardsData.map(e => parseInt(e.year)))}
           </span>
         </p>

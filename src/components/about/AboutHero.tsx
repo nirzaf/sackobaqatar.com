@@ -97,7 +97,7 @@ export const AboutHero: FC = () => {
       </motion.div>
 
       {/* Bottom Gradient Overlay */}
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#0A0A2A] to-transparent" />
     </section>
   );
 };

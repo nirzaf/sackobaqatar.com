@@ -11,13 +11,13 @@ export const YearFilter: FC<YearFilterProps> = ({ years, selectedYear, onYearCha
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="sticky top-0 z-50 bg-white/90 backdrop-blur-lg border-b border-[#B1B3CE]/20">
+    <div className="sticky top-0 z-50 bg-[#0F0E40]/80 backdrop-blur-xl border-b border-white/10">
       <div className="container mx-auto px-4 py-4">
         <div className="relative max-w-xs mx-auto">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="w-full px-4 py-2.5 bg-white text-[#541D67] rounded-lg text-sm font-medium
-              border border-[#B1B3CE]/20 hover:bg-[#F8F6F9] transition-all duration-300
+            className="w-full px-4 py-2.5 bg-white/10 text-white rounded-lg text-sm font-medium
+              border border-white/20 hover:bg-white/15 transition-all duration-300
               flex items-center justify-between"
           >
             <span>{selectedYear === 'all' ? 'All Years' : selectedYear}</span>
@@ -25,7 +25,7 @@ export const YearFilter: FC<YearFilterProps> = ({ years, selectedYear, onYearCha
           </button>
           
           {isOpen && (
-            <div className="absolute top-full left-0 w-full mt-2 bg-white rounded-lg shadow-lg border border-[#B1B3CE]/20 py-2">
+            <div className="absolute top-full left-0 w-full mt-2 bg-[#0A0A2A] rounded-lg shadow-xl border border-white/15 py-2 backdrop-blur-xl">
               {years.map((year) => (
                 <button
                   key={year}
@@ -33,8 +33,8 @@ export const YearFilter: FC<YearFilterProps> = ({ years, selectedYear, onYearCha
                     onYearChange(year);
                     setIsOpen(false);
                   }}
-                  className={`w-full px-4 py-2 text-left text-sm hover:bg-[#F8F6F9] transition-colors
-                    ${selectedYear === year ? 'text-[#B62D71] font-medium' : 'text-[#5B4886]'}`}
+                  className={`w-full px-4 py-2 text-left text-sm hover:bg-white/10 transition-colors
+                    ${selectedYear === year ? 'text-white font-medium' : 'text-slate-200'}`}
                 >
                   {year === 'all' ? 'All Years' : year}
                 </button>

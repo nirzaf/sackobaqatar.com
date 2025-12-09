@@ -12,7 +12,7 @@ export const EventsGrid: FC<EventsGridProps> = ({
   activeSection
 }) => {
   return (
-    <div className="container mx-auto px-6 pb-24">
+    <div className="container mx-auto px-6 pb-24 text-slate-100">
       <AnimatePresence mode="wait">
         {events.length === 0 ? (
           <motion.div
@@ -22,9 +22,9 @@ export const EventsGrid: FC<EventsGridProps> = ({
             transition={{ duration: 0.3 }}
             className="flex flex-col items-center justify-center py-16 text-center"
           >
-            <Calendar className="w-16 h-16 text-[#9A78AB] mb-4" />
-            <h3 className="text-2xl font-bold text-[#541D67] mb-2">No Events Found</h3>
-            <p className="text-[#5B4886] max-w-md">
+            <Calendar className="w-16 h-16 text-white/70 mb-4" />
+            <h3 className="text-2xl font-bold text-white mb-2">No Events Found</h3>
+            <p className="text-slate-100/85 max-w-md">
               {searchQuery 
                 ? `No events found matching "${searchQuery}". Try adjusting your search.` 
                 : `No ${activeSection} events at the moment. Check back later!`}
@@ -45,9 +45,9 @@ export const EventsGrid: FC<EventsGridProps> = ({
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300"
+                className="group relative overflow-hidden rounded-2xl bg-white/10 backdrop-blur-sm border border-white/10 shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="aspect-[16/9] overflow-hidden bg-[#F8F6F9]">
+                <div className="aspect-[16/9] overflow-hidden bg-white/5">
                   {event.images[0] ? (
                     <img
                       src={event.images[0].url}
@@ -60,24 +60,24 @@ export const EventsGrid: FC<EventsGridProps> = ({
                     </div>
                   )}
                   <div className="absolute top-4 left-4">
-                    <span className="px-4 py-1.5 rounded-full text-xs font-medium bg-white/90 text-[#541D67] backdrop-blur-sm">
+                    <span className="px-4 py-1.5 rounded-full text-xs font-medium bg-black/70 text-white backdrop-blur-sm">
                       {event.year}
                     </span>
                   </div>
                 </div>
 
                 <div className="p-6 relative z-10">
-                  <div className="flex items-center gap-2 text-[#9A78AB] text-sm mb-3">
+                  <div className="flex items-center gap-2 text-slate-200/80 text-sm mb-3">
                     <Calendar className="w-4 h-4" />
                     <span>{format(new Date(event.date), 'MMM dd, yyyy')}</span>
                   </div>
                   
-                  <h3 className="text-xl font-bold mb-3 text-[#541D67] group-hover:text-[#B62D71] transition-colors">
+                  <h3 className="text-xl font-bold mb-3 text-white group-hover:text-amber-100 transition-colors drop-shadow">
                     {event.name}
                   </h3>
                   
                   {event.description && (
-                    <p className="text-[#5B4886]/80 text-sm line-clamp-2 mb-4">
+                    <p className="text-slate-100/80 text-sm line-clamp-2 mb-4">
                       {event.description}
                     </p>
                   )}
